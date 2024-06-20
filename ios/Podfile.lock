@@ -1,0 +1,26 @@
+PODS:
+  - Flutter (1.0.0)
+  - Verifone2CO (1.1.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - Verifone2CO (from `https://github.com/2Checkout/2checkout-ios-sdk`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  Verifone2CO:
+    :git: https://github.com/2Checkout/2checkout-ios-sdk
+
+CHECKOUT OPTIONS:
+  Verifone2CO:
+    :commit: b9912b2257681d930c6bae572848958e258c9228
+    :git: https://github.com/2Checkout/2checkout-ios-sdk
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  Verifone2CO: cc3abfbf5b221905f984191ec8189504dbf0dc6a
+
+PODFILE CHECKSUM: 22fb63eca9a742769ea76f4e7af82dd8067d7aa4
+
+COCOAPODS: 1.15.2
