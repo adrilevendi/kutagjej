@@ -57,42 +57,42 @@ void main() async {
 
   // TODO: Request permission
 
-  final messaging = FirebaseMessaging.instance;
+  // final messaging = FirebaseMessaging.instance;
 
-  final settings = await messaging.requestPermission(
-    alert: true,
-    announcement: false,
-    badge: true,
-    carPlay: false,
-    criticalAlert: false,
-    provisional: false,
-    sound: true,
-  );
+  // final settings = await messaging.requestPermission(
+  //   alert: true,
+  //   announcement: false,
+  //   badge: true,
+  //   carPlay: false,
+  //   criticalAlert: false,
+  //   provisional: false,
+  //   sound: true,
+  // );
 
   if (kDebugMode) {
-    print('Permission granted: ${settings.authorizationStatus}');
+    // print('Permission granted: ${settings.authorizationStatus}');
   }
 
   // TODO: Register with FCM
   // It requests a registration token for sending messages to users from your App server or other trusted server environment.
-  String? token = await messaging.getToken();
+  // String? token = await messaging.getToken();
 
   if (kDebugMode) {
-    print('Registration Token=$token');
+    // print('Registration Token=$token');
   }
   // TODO: Set up foreground message handler
-  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    if (kDebugMode) {
-      print('Handling a foreground message: ${message.messageId}');
-      print('Message data: ${message.data}');
-      print('Message notification: ${message.notification?.title}');
-      print('Message notification: ${message.notification?.body}');
-    }
+  // FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+  // if (kDebugMode) {
+  //   print('Handling a foreground message: ${message.messageId}');
+  //   print('Message data: ${message.data}');
+  //   print('Message notification: ${message.notification?.title}');
+  //   print('Message notification: ${message.notification?.body}');
+  // }
 
-    _messageStreamController.sink.add(message);
-  });
+  // _messageStreamController.sink.add(message);
+  // });
   // TODO: Set up background message handler
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
