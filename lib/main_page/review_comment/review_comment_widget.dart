@@ -1,14 +1,8 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'review_comment_model.dart';
 export 'review_comment_model.dart';
 
@@ -45,16 +39,16 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
       child: Container(
         width: 360.0,
         height: 100.0,
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 1270.0,
         ),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x230E151B),
@@ -71,7 +65,7 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +76,7 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
                 tablet: false,
               ))
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: 100.0,
                     height: 100.7,
@@ -97,12 +91,12 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
                         tablet: false,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 500),
-                            fadeOutDuration: Duration(milliseconds: 500),
+                            fadeInDuration: const Duration(milliseconds: 500),
+                            fadeOutDuration: const Duration(milliseconds: 500),
                             imageUrl:
                                 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
                             width: 90.0,
@@ -128,7 +122,7 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 8.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -181,7 +175,7 @@ class _ReviewCommentWidgetState extends State<ReviewCommentWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Container(
                         width: 300.0,
                         height: 40.0,

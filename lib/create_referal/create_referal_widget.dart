@@ -2,10 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'create_referal_model.dart';
 export 'create_referal_model.dart';
 
@@ -74,11 +71,11 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-            ].divide(SizedBox(height: 4.0)),
+            ].divide(const SizedBox(height: 4.0)),
           ),
           actions: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).alternate,
                 borderRadius: 12.0,
@@ -114,14 +111,14 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Container(
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 770.0,
                             ),
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -202,7 +199,7 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               16.0, 20.0, 16.0, 20.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -292,7 +289,7 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               16.0, 16.0, 16.0, 16.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -337,7 +334,7 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      final _datePickedDate =
+                                      final datePickedDate =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -383,12 +380,12 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                         },
                                       );
 
-                                      if (_datePickedDate != null) {
+                                      if (datePickedDate != null) {
                                         safeSetState(() {
                                           _model.datePicked = DateTime(
-                                            _datePickedDate.year,
-                                            _datePickedDate.month,
-                                            _datePickedDate.day,
+                                            datePickedDate.year,
+                                            datePickedDate.month,
+                                            datePickedDate.day,
                                           );
                                         });
                                       }
@@ -409,10 +406,10 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -437,8 +434,8 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(SizedBox(height: 12.0))
-                                    .addToEnd(SizedBox(height: 32.0)),
+                                    .divide(const SizedBox(height: 12.0))
+                                    .addToEnd(const SizedBox(height: 32.0)),
                               ),
                             ),
                           ),
@@ -448,13 +445,13 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                   ),
                 ),
                 Container(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: 770.0,
                   ),
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () {
                         print('Button pressed ...');
@@ -465,10 +462,10 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -477,7 +474,7 @@ class _CreateReferalWidgetState extends State<CreateReferalWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

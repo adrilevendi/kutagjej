@@ -3,14 +3,9 @@ import 'package:ku_ta_gjej/login1/login1_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/prof_page_small_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'favourite_profs_model.dart';
 import '/components/njoftim_tease_widget.dart';
 export 'favourite_profs_model.dart';
@@ -86,12 +81,12 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0,
             ),
             body: Padding(
-              padding: EdgeInsets.all(0),
+              padding: const EdgeInsets.all(0),
               child: Column(
                 children: [
                   Expanded(
@@ -100,14 +95,14 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                       // padding: EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
                       child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
                           queryBuilder: (usersRecord) => usersRecord.whereIn(
                               'uid',
                               currentUserDocument?.favorites
-                                  ?.toList()
+                                  .toList()
                                   .map((e) => e.id)
                                   .toList()),
                         ),
@@ -153,7 +148,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                   )),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(19.0, 30.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(19.0, 30.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => StreamBuilder<List<PostRecord>>(
                         stream: queryPostRecord(queryBuilder: (postRecord) {
@@ -164,7 +159,6 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                               )
                               .orderBy('endTime');
 
-                          ;
                         }),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -185,7 +179,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                               snapshot.data!;
                           listViewPostRecordList.map((e) => e).toList();
                           return ListView.builder(
-                            padding: EdgeInsets.fromLTRB(
+                            padding: const EdgeInsets.fromLTRB(
                               0,
                               0,
                               0,

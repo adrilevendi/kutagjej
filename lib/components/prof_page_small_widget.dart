@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 import 'prof_page_small_model.dart';
 export 'prof_page_small_model.dart';
@@ -56,7 +53,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
           height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 4,
                 color: Color(0x33000000),
@@ -114,7 +111,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(15),
                                     bottomRight: Radius.circular(0),
                                     topLeft: Radius.circular(15),
@@ -140,7 +137,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10, 5, 0, 0),
                                     child: Container(
                                       width: 40,
@@ -163,7 +160,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0, 0, 3, 1),
                                             child: StreamBuilder<
                                                 List<ReviewRecord>>(
@@ -250,7 +247,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(0),
                                     bottomRight: Radius.circular(15),
                                     topLeft: Radius.circular(0),
@@ -265,7 +262,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -304,7 +301,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                                 ),
                                               ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0, 4, 5, 0),
                                               child: AuthUserStreamWidget(
                                                 builder: (context) =>
@@ -315,7 +312,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                                         icon: Icon(
                                                           (currentUserDocument
                                                                           ?.favorites
-                                                                          ?.toList() ??
+                                                                          .toList() ??
                                                                       [])
                                                                   .contains(
                                                                       rowUsersRecord
@@ -325,7 +322,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                                               : Icons
                                                                   .bookmark_border,
                                                           color: (currentUserDocument?.favorites
-                                                                          ?.toList() ??
+                                                                          .toList() ??
                                                                       [])
                                                                   .contains(
                                                                       rowUsersRecord
@@ -347,7 +344,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                                             if (functions.isFavoriteProf(
                                                                     widget
                                                                         .userRef,
-                                                                    (currentUserDocument?.favorites?.toList() ??
+                                                                    (currentUserDocument?.favorites.toList() ??
                                                                             [])
                                                                         .toList()) ==
                                                                 true) {
@@ -383,11 +380,11 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                                         }),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 24)),
+                                          ].divide(const SizedBox(width: 24)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
@@ -442,7 +439,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                               },
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5, 0, 5, 0),
                                               child: Icon(
                                                 Icons.location_pin,
@@ -456,12 +453,12 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20, 5, 0, 0),
                                         child: Container(
                                           width: 222,
                                           height: 30,
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: Text(
                                             valueOrDefault<String>(
                                               rowUsersRecord.shortDescription,

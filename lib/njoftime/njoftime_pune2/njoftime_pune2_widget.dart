@@ -1,13 +1,9 @@
-import 'package:ku_ta_gjej/auth/firebase_auth/auth_util.dart';
 
 import '/backend/backend.dart';
 import '/components/njoftim_tease_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'njoftime_pune2_model.dart';
 export 'njoftime_pune2_model.dart';
 import '/search_prof/filter_sidebar/filter_sidebar_widget.dart';
@@ -64,19 +60,19 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     FlutterFlowTheme.of(context).primary,
                     FlutterFlowTheme.of(context).secondary
                   ],
-                  stops: [0.0, 1.0],
-                  begin: AlignmentDirectional(1.0, 0.98),
-                  end: AlignmentDirectional(-1.0, -0.98),
+                  stops: const [0.0, 1.0],
+                  begin: const AlignmentDirectional(1.0, 0.98),
+                  end: const AlignmentDirectional(-1.0, -0.98),
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -95,13 +91,13 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
                           onChanged: (_) =>  EasyDebounce.debounce(
                                   '_model.textController',
-                                  Duration(milliseconds: 2000),
+                                  const Duration(milliseconds: 2000),
                                   () async {
                                     await queryPostRecordOnce(
                                       queryBuilder: (query) {
@@ -131,9 +127,9 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                                       TextSearchItem.fromTerms(
                                                           record, [
                                                     // record.title!,
-                                                    record.company!,
+                                                    record.company,
                                                     record.position!,
-                                                    record.description!
+                                                    record.description
                                                   ]),
                                                 )
                                                 .toList(),
@@ -154,7 +150,7 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             isDense: true,
-                            contentPadding: EdgeInsets.fromLTRB(21, 21, 21, 0),
+                            contentPadding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
 
                             labelText: FFLocalizations.of(context).getText(
                               'n1ogo7bu' /* Search... */,
@@ -174,14 +170,14 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(50.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x4D96EE89),
                                 width: 2.0,
                               ),
@@ -202,7 +198,7 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                               borderRadius: BorderRadius.circular(50.0),
                             ),
                             filled: true,
-                            fillColor: Color(0x31F8F6F6),
+                            fillColor: const Color(0x31F8F6F6),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -215,10 +211,10 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -231,18 +227,18 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                             width: 80.0,
                             height: 40.0,
                             decoration: BoxDecoration(
-                              color: Color(0x1EF6F9F7),
+                              color: const Color(0x1EF6F9F7),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 2.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -277,14 +273,14 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'jdqapd1l' /* Results */,
@@ -296,9 +292,9 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     ),
                   ),
                  Align(
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 20.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -322,7 +318,7 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: Container(
+                                          child: SizedBox(
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.65,
@@ -348,9 +344,9 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -385,7 +381,6 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                           print("Query PAram location:");
 
                                           print(pr.parameters);
-                                        ;
                                         }
                    pr.where(
                           'paid',
@@ -427,7 +422,7 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                 .map((e) => e)
                                 .toList();
                   return ListView.builder(
-                    padding: EdgeInsets.fromLTRB(
+                    padding: const EdgeInsets.fromLTRB(
                       0,
                       0,
                       0,

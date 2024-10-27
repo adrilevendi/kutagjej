@@ -1,13 +1,7 @@
 import '/flutter_flow/flutter_flow_credit_card_form.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'checkout37_widget.dart' show Checkout37Widget;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class Checkout37Model extends FlutterFlowModel<Checkout37Widget> {
   ///  State fields for stateful widgets in this page.

@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'prof_snippet_model.dart';
 export 'prof_snippet_model.dart';
 
@@ -64,7 +61,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
         height: 275.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -92,7 +89,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(15.0),
@@ -108,10 +105,10 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
                       ],
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -120,7 +117,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Container(
                                   width: 60.0,
@@ -141,7 +138,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
                                         size: 21.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 3.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -160,7 +157,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     160.0, 10.0, 0.0, 0.0),
                                 child: Container(
                                   width: 35.0,
@@ -182,7 +179,7 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -201,14 +198,14 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                     child: Icon(
                       Icons.location_pin,
                       color: FlutterFlowTheme.of(context).alternate,
@@ -229,18 +226,18 @@ class _ProfSnippetWidgetState extends State<ProfSnippetWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Container(
                       width: 240.0,
                       height: 35.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'yhbtl7x8' /* Hello World Hello World Hello ... */,

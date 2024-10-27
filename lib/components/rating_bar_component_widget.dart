@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'rating_bar_component_model.dart';
 export 'rating_bar_component_model.dart';
 
@@ -45,7 +43,7 @@ class _RatingBarComponentWidgetState extends State<RatingBarComponentWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
       child: RatingBarIndicator(
         itemBuilder: (context, index) => Icon(
           Icons.star_rounded,

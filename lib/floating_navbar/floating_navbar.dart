@@ -1,7 +1,7 @@
 import 'floating_navbar_item.dart';
 import 'package:flutter/material.dart';
 
-typedef Widget ItemBuilder(
+typedef ItemBuilder = Widget Function(
     BuildContext context, int index, FloatingNavbarItem items);
 
 class FloatingNavbar extends StatefulWidget {
@@ -24,7 +24,7 @@ class FloatingNavbar extends StatefulWidget {
   final List<BoxShadow>? boxShadows;
 
   FloatingNavbar({
-    Key? key,
+    super.key,
     required this.items,
     required this.currentIndex,
     required this.onTap,
@@ -46,7 +46,7 @@ class FloatingNavbar extends StatefulWidget {
         assert(items.length <= 5),
         assert(currentIndex <= items.length),
         assert(width > 50),
-        this.itemBuilder = itemBuilder ??
+        itemBuilder = itemBuilder ??
             _defaultItemBuilder(
               unselectedItemColor: unselectedItemColor,
               selectedItemColor: selectedItemColor,
@@ -60,8 +60,7 @@ class FloatingNavbar extends StatefulWidget {
               items: items,
               onTap: onTap,
               selectedBackgroundColor: selectedBackgroundColor,
-            ),
-        super(key: key);
+            );
 
   @override
   _FloatingNavbarState createState() => _FloatingNavbarState();
@@ -121,7 +120,6 @@ ItemBuilder _defaultItemBuilder({
   double? iconSize,
   double? itemBorderRadius,
   double? borderRadius,
-  BoxShadow? boxShadow,
 }) {
   return (BuildContext context, int index, FloatingNavbarItem item) => Expanded(
         child: Row(
@@ -129,7 +127,7 @@ ItemBuilder _defaultItemBuilder({
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             AnimatedContainer(
-              duration: Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 300),
               decoration: BoxDecoration(
                   color: currentIndex == index
                       ? selectedBackgroundColor

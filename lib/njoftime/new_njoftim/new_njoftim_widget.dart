@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
@@ -6,13 +5,10 @@ import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'new_njoftim_model.dart';
 export 'new_njoftim_model.dart';
@@ -88,20 +84,20 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     FlutterFlowTheme.of(context).primary,
                     FlutterFlowTheme.of(context).secondary
                   ],
-                  stops: [0.0, 1.0],
-                  begin: AlignmentDirectional(1.0, 0.98),
-                  end: AlignmentDirectional(-1.0, -0.98),
+                  stops: const [0.0, 1.0],
+                  begin: const AlignmentDirectional(1.0, 0.98),
+                  end: const AlignmentDirectional(-1.0, -0.98),
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -113,10 +109,10 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -129,12 +125,12 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                             width: 40.0,
                             height: 40.0,
                             decoration: BoxDecoration(
-                              color: Color(0x2FF6F9F7),
+                              color: const Color(0x2FF6F9F7),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -164,7 +160,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 35.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 35.0, 20.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -247,7 +243,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                             color: FlutterFlowTheme.of(context).accent4,
                             borderRadius: BorderRadius.circular(20.0),
                             border: Border.all(
-                              color: Color(0x65101213),
+                              color: const Color(0x65101213),
                             ),
                           ),
                           child: Column(
@@ -256,12 +252,14 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                             children: [
                               Builder(
                                 builder: (context) {
-                                  if (_model.uploadedFileUrl.length <= 0) //
-                                    return Icon(
+                                  if (_model.uploadedFileUrl.isEmpty) {
+                                    //
+                                    return const Icon(
                                       FFIcons.kplus,
                                       color: Color(0xFFB8B7B7),
                                       size: 70.0,
                                     );
+                                  }
 
                                   return Image(
                                     image: NetworkImage(_model.uploadedFileUrl),
@@ -280,7 +278,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 35.0, 20.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController1,
@@ -356,7 +354,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController2,
@@ -432,7 +430,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController5,
@@ -508,7 +506,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController3,
@@ -581,7 +579,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -655,7 +653,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                       FlutterFlowTheme.of(context).alternate,
                                   borderWidth: 1.0,
                                   borderRadius: 15.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 4.0, 16.0, 4.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
@@ -670,7 +668,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -743,7 +741,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 1.0,
                               borderRadius: 15.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -756,7 +754,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -807,7 +805,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 1.0,
                               borderRadius: 15.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -823,7 +821,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 20.0),
                             child: TextFormField(
                               controller: _model.textController4,
@@ -838,7 +836,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Noto Sans',
-                                      color: Color(0xD9757575),
+                                      color: const Color(0xD9757575),
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
@@ -896,7 +894,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -954,9 +952,9 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                       setState(() {
                                         _model.dropDownValue5 =
                                             val! - firstPostDiscount;
-                                        _model.priceWeekTotal = (val! -
+                                        _model.priceWeekTotal = (val -
                                                 firstPostDiscount) *
-                                            dropDownServiceRecord!.pricePerWeek;
+                                            dropDownServiceRecord.pricePerWeek;
                                       });
                                       FFAppState().price = 0;
                                       // _model.dropDownValueController6 = FormFieldController<num>(null);
@@ -1005,7 +1003,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                     isMultiSelect: false,
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(top: 20),
+                                    padding: const EdgeInsets.only(top: 20),
                                     child: FlutterFlowDropDown<num>(
                                       controller:
                                           _model.dropDownValueController6 ??=
@@ -1021,7 +1019,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                         setState(() {
                                           _model.dropDownValue6 = val;
                                           _model.priceDayTotal = (val!) *
-                                              dropDownServiceRecord!
+                                              dropDownServiceRecord
                                                   .pricePerWeekAdditionalDay;
                                         });
                                         FFAppState().price =
@@ -1075,11 +1073,11 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     ),
                     if (currentUserDocument?.firstPost != true)
                       Container(
+                        padding: const EdgeInsets.only(top: 15),
                         child: Text(
                           "Postimi juaj i pare eshte falas per 1 javë.",
                           style: FlutterFlowTheme.of(context).bodySmall,
                         ),
-                        padding: EdgeInsets.only(top: 15),
                       ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -1207,7 +1205,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '7kxmfq6z' /* POSTO NJOFTIMIN -  */,
@@ -1231,7 +1229,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'p56zvft7' /* ALL */,
@@ -1251,7 +1249,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1260,7 +1258,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
                                                 FFAppState().price.toString(),

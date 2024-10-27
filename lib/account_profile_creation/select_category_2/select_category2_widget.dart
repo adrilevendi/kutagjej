@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'select_category2_model.dart';
 export 'select_category2_model.dart';
 
@@ -43,7 +40,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(37.0),
+          preferredSize: const Size.fromHeight(37.0),
           child: AppBar(
             backgroundColor: Colors.transparent,
             automaticallyImplyLeading: false,
@@ -62,7 +59,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 context.pop();
               },
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.0,
           ),
@@ -77,7 +74,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 30.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,21 +86,21 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                         width: 80.0,
                         height: 65.0,
                         fit: BoxFit.fill,
-                        alignment: Alignment(0.0, 0.0),
+                        alignment: const Alignment(0.0, 0.0),
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 20.0, 0.0, 20.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -129,7 +126,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'yg2c0erp' /* Select Category: */,
@@ -145,7 +142,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,7 +152,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                       height: 270.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -182,7 +179,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
@@ -195,7 +192,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 18.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -229,7 +226,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x33000000),
@@ -248,7 +245,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
@@ -261,7 +258,7 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 18.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(

@@ -1,20 +1,15 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/post_tease_widget.dart';
 import '/components/prof_page_small_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/main_page/feedback_modal/feedback_modal_widget.dart';
-import 'dart:math';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -57,7 +52,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             ],
           ),
           behavior: SnackBarBehavior.floating,
-          duration: Duration(seconds: 25),
+          duration: const Duration(seconds: 25),
           showCloseIcon: true,
           backgroundColor: Colors.white,
           margin: EdgeInsets.only(
@@ -76,8 +71,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -400.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -400.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -89,8 +84,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -102,8 +97,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.1, 1.1),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.1, 1.1),
           ),
         ],
       ),
@@ -114,8 +109,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -126,8 +121,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -138,8 +133,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -150,8 +145,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 500.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -162,8 +157,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 500.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -174,8 +169,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 300.0.ms,
-            begin: Offset(-400.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-400.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -186,8 +181,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 300.0.ms,
-            begin: Offset(-400.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-400.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -198,8 +193,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 300.0.ms,
-            begin: Offset(-400.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-400.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -210,8 +205,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 700.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -225,7 +220,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
     SchedulerBinding.instance.addPostFrameCallback((_) {
       animationsMap['containerOnPageLoadAnimation2']!.controller.duration =
-          Duration(seconds: 1);
+          const Duration(seconds: 1);
       animationsMap['containerOnPageLoadAnimation2']!
           .controller
           .forward(from: 0.0);
@@ -292,13 +287,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   FlutterFlowTheme.of(context).primary,
                                   FlutterFlowTheme.of(context).secondary
                                 ],
-                                stops: [0.3, 1.0],
-                                begin: AlignmentDirectional(-0.34, 1.0),
-                                end: AlignmentDirectional(0.34, -1.0),
+                                stops: const [0.3, 1.0],
+                                begin: const AlignmentDirectional(-0.34, 1.0),
+                                end: const AlignmentDirectional(0.34, -1.0),
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   25.0, 20.0, 25.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -310,7 +305,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     'assets/images/wowo2.png',
                                     width: 40,
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -318,7 +313,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       children: [],
                                     ),
                                   ),
-                                  Align(
+                                  const Align(
                                     alignment: AlignmentDirectional(0.0, -1.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -338,7 +333,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         scrollDirection: Axis.horizontal,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 50.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -346,7 +341,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 20.0, 0.0),
                                     child: InkWell(
                                       onTap: () {
@@ -361,7 +356,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 25.0, 0.0, 0.0),
                                             child: Container(
                                               width: 119.0,
@@ -387,7 +382,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -425,7 +420,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ),
                                     )),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -434,7 +429,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 25.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -455,7 +450,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   BorderRadius.circular(20.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Column(
@@ -465,7 +460,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 6.0,
                                                                 0.0, 0.0),
                                                     child: Icon(
@@ -479,7 +474,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -521,7 +516,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -530,7 +525,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 25.0, 0.0, 0.0),
                                         child: Container(
                                           width: 119.0,
@@ -547,7 +542,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: InkWell(
@@ -576,7 +571,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -591,7 +586,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         2.0,
@@ -608,7 +603,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -651,7 +646,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -660,7 +655,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 25.0, 0.0, 0.0),
                                         child: Container(
                                           width: 119.0,
@@ -699,7 +694,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -711,7 +706,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       2.0,
@@ -728,7 +723,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       5.0,
@@ -774,7 +769,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         ],
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.9, -0.8),
+                        alignment: const AlignmentDirectional(0.9, -0.8),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -789,10 +784,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               builder: (context) {
                                 return Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: Container(
+                                  child: SizedBox(
                                     height:
                                         MediaQuery.sizeOf(context).height * 0.7,
-                                    child: FeedbackModalWidget(),
+                                    child: const FeedbackModalWidget(),
                                   ),
                                 );
                               },
@@ -802,12 +797,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             width: 80.0,
                             height: 40.0,
                             decoration: BoxDecoration(
-                              color: Color(0x48FFFFFF),
+                              color: const Color(0x48FFFFFF),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'hygk1czm' /* Feedback */,
@@ -831,19 +826,19 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 250.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.transparent,
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                    child: Container(
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: SizedBox(
                       width: double.infinity,
                       height: 313.0,
                       child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 40.0),
                             child: PageView(
                               controller: _model.pageViewController ??=
@@ -879,9 +874,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       InkWell(
                                         child: Container(
                                           decoration: const BoxDecoration(
-                                              color: const Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 10, 10, 10)),
-                                          child: Image(
+                                          child: const Image(
                                             image: AssetImage(
                                                 'assets/images/banner.jpg'), //Instagram
                                             fit: BoxFit.contain,
@@ -901,9 +896,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 ),
                                 Container(
                                   decoration: const BoxDecoration(
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 10, 10, 10)),
-                                  child: Image(
+                                  child: const Image(
                                     image: AssetImage(
                                         'assets/images/reales.jpeg'), //Instagram
                                     fit: BoxFit.contain,
@@ -911,9 +906,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 ),
                                 Container(
                                   decoration: const BoxDecoration(
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 10, 10, 10)),
-                                  child: Image(
+                                  child: const Image(
                                     image: AssetImage(
                                         'assets/images/cs.jpeg'), //Instagram
                                     fit: BoxFit.cover,
@@ -923,9 +918,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 1.0),
+                            alignment: const AlignmentDirectional(-1.0, 1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 16.0),
                               child: smooth_page_indicator.SmoothPageIndicator(
                                 controller: _model.pageViewController ??=
@@ -936,7 +931,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   await _model.pageViewController!
                                       .animateToPage(
                                     i,
-                                    duration: Duration(milliseconds: 500),
+                                    duration: const Duration(milliseconds: 500),
                                     curve: Curves.ease,
                                   );
                                   setState(() {});
@@ -968,7 +963,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'zlkfywcf' /* Closing Annuncments */,
@@ -987,7 +982,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         context.pushNamed('NjoftimePune2');
                       },
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'mxcw8tl7' /* See All */,
@@ -1008,7 +1003,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                   child: Container(
                     // width: 393,
                     height: 190,
@@ -1047,7 +1042,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               final rowPostRecord = rowPostRecordList[rowIndex];
                               return Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 0, 20, 0),
+                                    const EdgeInsetsDirectional.fromSTEB(2, 0, 20, 0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -1096,20 +1091,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: InkWell(
                                   onTap: () {
                                     context.pushNamed("Plans");
                                   },
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 25.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1122,7 +1117,7 @@ Professional */
                                           .displaySmall
                                           .override(
                                             fontFamily: 'Noto Sans',
-                                            color: Color(0xFFFFDF15),
+                                            color: const Color(0xFFFFDF15),
                                             fontSize: 30.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w900,
@@ -1134,7 +1129,7 @@ Professional */
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -1157,7 +1152,7 @@ where pe... */
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(1.0, 0.0),
+                        alignment: const AlignmentDirectional(1.0, 0.0),
                         child: Icon(
                           Icons.verified_user_rounded,
                           color: FlutterFlowTheme.of(context).warning,
@@ -1169,7 +1164,7 @@ where pe... */
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1177,7 +1172,7 @@ where pe... */
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '470rwmdk' /* Recommended */,
@@ -1196,7 +1191,7 @@ where pe... */
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width,
                     decoration: BoxDecoration(
@@ -1232,14 +1227,14 @@ where pe... */
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: listViewUsersRecordList.length,
                           itemBuilder: (context, listViewIndex) {
                             final listViewUsersRecord =
                                 listViewUsersRecordList[listViewIndex];
                             return Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                                  const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,

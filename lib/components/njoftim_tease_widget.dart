@@ -2,8 +2,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'njoftim_tease_model.dart';
 export 'njoftim_tease_model.dart';
 
@@ -44,18 +42,18 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(1.0, 1.0),
+      alignment: const AlignmentDirectional(1.0, 1.0),
       child: Stack(
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x2F1D2429),
@@ -68,7 +66,7 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                   borderRadius: BorderRadius.circular(9.0),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -83,7 +81,7 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Text(
                                   '${widget.post?.company} - ${widget.post?.position}',
                                   style: FlutterFlowTheme.of(context)
@@ -105,11 +103,11 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                             size: 21.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 3.0, 0.0, 30.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.post?.minPay?.toString(),
+                                widget.post?.minPay.toString(),
                                 '999',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -126,7 +124,7 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                             size: 21.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 3.0, 0.0, 30.0, 0.0),
                             child: StreamBuilder<LocationsRecord>(
                               stream: LocationsRecord.getDocument(
@@ -166,10 +164,10 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                             size: 21.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 3.0, 0.0, 30.0, 0.0),
                             child: Text(
-                              '${widget.post?.shiftHours?.toString()}',
+                              '${widget.post?.shiftHours.toString()}',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -182,7 +180,7 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -190,16 +188,16 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.shuffle,
                                   color: Color(0xFF3CC14D),
                                   size: 21.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       3.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Turni ${widget.post?.shift?.toString()}',
+                                    'Turni ${widget.post?.shift.toString()}',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -220,13 +218,13 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(1.0, 0.0),
+            alignment: const AlignmentDirectional(1.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 168.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 168.0, 16.0, 0.0),
               child: Container(
                 width: 150.0,
                 height: 30.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFFFBA203),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
@@ -236,7 +234,7 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                   ),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(PostRecord.getTimeLeft(widget.post?.endTime),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Roboto Slab',

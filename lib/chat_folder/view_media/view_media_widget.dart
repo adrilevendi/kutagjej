@@ -3,15 +3,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'view_media_model.dart';
 export 'view_media_model.dart';
 
@@ -50,8 +45,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.5, 0.0),
-            end: Offset(0.0, 1.0),
+            begin: const Offset(0.5, 0.0),
+            end: const Offset(0.0, 1.0),
           ),
         ],
       ),
@@ -69,8 +64,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.5, 0.0),
-            end: Offset(0.0, 1.0),
+            begin: const Offset(0.5, 0.0),
+            end: const Offset(0.0, 1.0),
           ),
         ],
       ),
@@ -88,8 +83,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.5, 0.0),
-            end: Offset(0.0, 1.0),
+            begin: const Offset(0.5, 0.0),
+            end: const Offset(0.0, 1.0),
           ),
         ],
       ),
@@ -107,8 +102,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 120.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 120.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -136,11 +131,11 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFFF1F4F8),
             image: DecorationImage(
               fit: BoxFit.cover,
@@ -154,7 +149,7 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -164,8 +159,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                       borderRadius: 30.0,
                       borderWidth: 1.0,
                       buttonSize: 40.0,
-                      fillColor: Color(0x33090F13),
-                      icon: Icon(
+                      fillColor: const Color(0x33090F13),
+                      icon: const Icon(
                         Icons.arrow_back_rounded,
                         color: Color(0xFF14181B),
                         size: 20.0,
@@ -179,15 +174,15 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 30.0,
                             borderWidth: 1.0,
                             buttonSize: 40.0,
-                            fillColor: Color(0x33090F13),
-                            icon: Icon(
+                            fillColor: const Color(0x33090F13),
+                            icon: const Icon(
                               Icons.ios_share,
                               color: Color(0xFF14181B),
                               size: 20.0,
@@ -245,8 +240,8 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                           borderRadius: 30.0,
                           borderWidth: 1.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0x33090F13),
-                          icon: Icon(
+                          fillColor: const Color(0x33090F13),
+                          icon: const Icon(
                             Icons.favorite_border,
                             color: Color(0xFF14181B),
                             size: 20.0,
@@ -264,7 +259,7 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
               Container(
                 width: double.infinity,
                 height: 500.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0x00090F13), Color(0x991D2429)],
                     stops: [0.0, 0.5],
@@ -273,7 +268,7 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -281,7 +276,7 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'cymp2kr2' /* Non so se la bellezza salverà ... */,
@@ -289,7 +284,7 @@ class _ViewMediaWidgetState extends State<ViewMediaWidget>
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0x9AFFFFFF),
+                                    color: const Color(0x9AFFFFFF),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,

@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class PostRecord extends FirestoreRecord {
   PostRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -168,14 +168,14 @@ class PostRecord extends FirestoreRecord {
    static String getTimeLeft(
     DateTime? endTime,
   ) {
-    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : Duration(days: 1);
+    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : const Duration(days: 1);
       return "${d.inDays} Day${d.inDays==1?'':'s'} - ${d.inHours - d.inDays *24} : ${d.inMinutes - d.inHours*60} : ${d.inSeconds - d.inMinutes * 60}";
   }
 
   static int getDaysLeft(
     DateTime? endTime,
   ) {
-    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : Duration(days: 1);
+    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : const Duration(days: 1);
       return d.inDays;
   }
 

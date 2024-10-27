@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'incoming_call_model.dart';
 export 'incoming_call_model.dart';
 
@@ -50,26 +47,26 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                 FlutterFlowTheme.of(context).primary,
                 FlutterFlowTheme.of(context).secondary
               ],
-              stops: [0.0, 1.0],
-              begin: AlignmentDirectional(1.0, 0.98),
-              end: AlignmentDirectional(-1.0, -0.98),
+              stops: const [0.0, 1.0],
+              begin: const AlignmentDirectional(1.0, 0.98),
+              end: const AlignmentDirectional(-1.0, -0.98),
             ),
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 100.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -92,15 +89,15 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -126,15 +123,15 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Container(
                             width: 135.0,
                             height: 135.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
@@ -152,9 +149,9 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -175,7 +172,7 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 270.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 270.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

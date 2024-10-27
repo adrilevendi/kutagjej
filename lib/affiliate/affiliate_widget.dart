@@ -3,11 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'affiliate_model.dart';
 export 'affiliate_model.dart';
 
@@ -53,7 +50,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -73,7 +70,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -83,7 +80,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -109,9 +106,9 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: StreamBuilder<List<ReferalRecord>>(
                     stream: queryReferalRecord(
                       queryBuilder: (referalRecord) => referalRecord.where(
@@ -144,7 +141,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
                           final listViewReferalRecord =
                               listViewReferalRecordList[listViewIndex];
                           return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 20.0),
                             child: Container(
                               width: 100.0,
@@ -152,7 +149,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -185,7 +182,7 @@ class _AffiliateWidgetState extends State<AffiliateWidget> {
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: Duration(milliseconds: 4000),
+                                      duration: const Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context)
                                               .secondary,

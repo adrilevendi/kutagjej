@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'payment_confirm_model.dart';
 export 'payment_confirm_model.dart';
 
@@ -45,7 +43,7 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -79,9 +77,9 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
                   width: 2.0,
                 ),
               ),
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(30.0),
                 child: Icon(
                   Icons.check_rounded,
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -90,7 +88,7 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'ye6ejsp1' /* Payment Confirmed! */,
@@ -113,7 +111,7 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
             //   ),
             // ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'v8gyntzr' /* Your payment has been confirme... */,
@@ -200,7 +198,7 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
             // ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -215,9 +213,9 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
                         width: 230.0,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle: FlutterFlowTheme.of(context)
                             .bodyLarge
@@ -228,7 +226,7 @@ class _PaymentConfirmWidgetState extends State<PaymentConfirmWidget> {
                               letterSpacing: 0.0,
                             ),
                         elevation: 0.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

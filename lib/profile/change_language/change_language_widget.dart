@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'change_language_model.dart';
 export 'change_language_model.dart';
 
@@ -43,13 +41,13 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 0.0, 0.0),
           child: Container(
             width: 280.0,
             height: 250.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 4.0,
                   color: Color(0x33000000),
@@ -70,13 +68,13 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '6l62sxvj' /* Select Language: */,
@@ -97,7 +95,7 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             15.0, 12.0, 15.0, 0.0),
                         child: FlutterFlowDropDown<String>(
                           controller: _model.dropDownValueController ??=
@@ -138,7 +136,7 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                           borderColor: FlutterFlowTheme.of(context).secondary,
                           borderWidth: 2.0,
                           borderRadius: 15.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
+                          margin: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: false,
@@ -150,7 +148,7 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -164,9 +162,9 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -176,7 +174,7 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -191,7 +189,7 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(305.0, 10.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(305.0, 10.0, 0.0, 0.0),
           child: InkWell(
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,

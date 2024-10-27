@@ -7,13 +7,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/profile/change_language/change_language_widget.dart';
-import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'profile1_model.dart';
 export 'profile1_model.dart';
 
@@ -54,8 +50,8 @@ class _Profile1WidgetState extends State<Profile1Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(3.0, 3.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(3.0, 3.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -74,8 +70,8 @@ class _Profile1WidgetState extends State<Profile1Widget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -103,10 +99,10 @@ class _Profile1WidgetState extends State<Profile1Widget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: AlignmentDirectional(0.0, -1.0),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
@@ -140,12 +136,12 @@ class _Profile1WidgetState extends State<Profile1Widget>
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 180.0,
                         child: Stack(
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Container(
                                 width: double.infinity,
@@ -157,9 +153,9 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                       FlutterFlowTheme.of(context).secondary,
                                       FlutterFlowTheme.of(context).tertiary
                                     ],
-                                    stops: [0.0, 0.5, 1.0],
-                                    begin: AlignmentDirectional(-1.0, -1.0),
-                                    end: AlignmentDirectional(1.0, 1.0),
+                                    stops: const [0.0, 0.5, 1.0],
+                                    begin: const AlignmentDirectional(-1.0, -1.0),
+                                    end: const AlignmentDirectional(1.0, 1.0),
                                   ),
                                 ),
                                 child: Container(
@@ -168,12 +164,12 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        Color(0x00FFFFFF),
+                                        const Color(0x00FFFFFF),
                                         FlutterFlowTheme.of(context).tertiary
                                       ],
-                                      stops: [0.0, 1.0],
-                                      begin: AlignmentDirectional(0.0, -1.0),
-                                      end: AlignmentDirectional(0, 1.0),
+                                      stops: const [0.0, 1.0],
+                                      begin: const AlignmentDirectional(0.0, -1.0),
+                                      end: const AlignmentDirectional(0, 1.0),
                                     ),
                                   ),
                                 ),
@@ -181,9 +177,9 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   'containerOnPageLoadAnimation']!),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 1.0),
+                              alignment: const AlignmentDirectional(-1.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: 90.0,
@@ -198,16 +194,16 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(4.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(50.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           imageUrl: valueOrDefault(currentUserPhoto, 'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg'),
                                           width: 100.0,
                                           height: 100.0,
@@ -223,7 +219,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 0.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
@@ -238,7 +234,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 4.0, 0.0, 16.0),
                         child: Text(
                           valueOrDefault<String>(
@@ -255,7 +251,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '1kp9vqjz' /* Your Account */,
@@ -268,7 +264,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -284,7 +280,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -302,7 +298,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -313,7 +309,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -329,7 +325,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.9, 0.0),
+                                      alignment: const AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -346,7 +342,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                       ),
                       if (columnCount > 0)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -362,7 +358,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x33000000),
@@ -380,7 +376,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -391,7 +387,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -408,7 +404,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.9, 0.0),
+                                            const AlignmentDirectional(0.9, 0.0),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)
@@ -424,7 +420,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                           ),
                         ),
                                             Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -446,7 +442,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                           : FocusScope.of(context).unfocus(),
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: Container(
+                                    child: const SizedBox(
                                       height: 600.0,
                                       child: ChangeLanguageWidget(),
                                     ),
@@ -461,7 +457,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -479,7 +475,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -490,7 +486,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -506,7 +502,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.9, 0.0),
+                                      alignment: const AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -522,7 +518,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -538,7 +534,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -560,7 +556,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                 context.pushNamed('Plans');
                               },
                               child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -571,7 +567,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     size: 21.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -587,7 +583,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.9, 0.0),
+                                      alignment: const AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -605,7 +601,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                       ),
                       if (Theme.of(context).brightness == Brightness.light)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -627,7 +623,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 24.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -656,13 +652,13 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                       ),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.95, 0.0),
+                                                const AlignmentDirectional(0.95, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 8.0, 0.0),
                                               child: Icon(
                                                 Icons.nights_stay,
@@ -674,7 +670,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -0.85, 0.0),
                                             child: Container(
                                               width: 36.0,
@@ -683,7 +679,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: [
+                                                boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x430B0D0F),
@@ -710,7 +706,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       if (Theme.of(context).brightness == Brightness.dark)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -732,7 +728,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 24.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -761,13 +757,13 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                       ),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-0.9, 0.0),
+                                                const AlignmentDirectional(-0.9, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 2.0, 0.0, 0.0),
                                               child: Icon(
                                                 Icons.wb_sunny_rounded,
@@ -780,7 +776,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.9, 0.0),
+                                                const AlignmentDirectional(0.9, 0.0),
                                             child: Container(
                                               width: 36.0,
                                               height: 36.0,
@@ -788,7 +784,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: [
+                                                boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x430B0D0F),
@@ -814,7 +810,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 16.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -828,7 +824,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -844,7 +840,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -862,7 +858,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -873,7 +869,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -889,7 +885,7 @@ class _Profile1WidgetState extends State<Profile1Widget>
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.9, 0.0),
+                                      alignment: const AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -1041,9 +1037,9 @@ class _Profile1WidgetState extends State<Profile1Widget>
                       //   ),
                       // ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 30.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1060,9 +1056,9 @@ class _Profile1WidgetState extends State<Profile1Widget>
                             options: FFButtonOptions(
                               width: 150.0,
                               height: 44.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,

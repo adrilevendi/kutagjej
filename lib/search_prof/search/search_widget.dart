@@ -72,10 +72,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                 .map(
                   (record) => TextSearchItem.fromTerms(record, [
                     // record.title!,
-                    record.displayName!,
+                    record.displayName,
                     record.category!,
-                    record.shortDescription!,
-                    record.email!
+                    record.shortDescription,
+                    record.email
                   ]),
                 )
                 .toList(),
@@ -139,19 +139,19 @@ class _SearchWidgetState extends State<SearchWidget> {
                           FlutterFlowTheme.of(context).primary,
                           FlutterFlowTheme.of(context).secondary
                         ],
-                        stops: [0.0, 1.0],
-                        begin: AlignmentDirectional(1.0, 0.98),
-                        end: AlignmentDirectional(-1.0, -0.98),
+                        stops: const [0.0, 1.0],
+                        begin: const AlignmentDirectional(1.0, 0.98),
+                        end: const AlignmentDirectional(-1.0, -0.98),
                       ),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 15.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -171,14 +171,14 @@ class _SearchWidgetState extends State<SearchWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.textController',
-                                  Duration(milliseconds: 2000),
+                                  const Duration(milliseconds: 2000),
                                   () async {
                                     searchForProf();
                                   },
@@ -188,7 +188,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                 decoration: InputDecoration(
                                   isDense: true,
                                   contentPadding:
-                                      EdgeInsets.fromLTRB(21, 21, 21, 0),
+                                      const EdgeInsets.fromLTRB(21, 21, 21, 0),
                                   labelText:
                                       FFLocalizations.of(context).getText(
                                     'f8ppmmr2' /* Search... */,
@@ -208,14 +208,14 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x00000000),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x3FF4F7F4),
                                       width: 2.0,
                                     ),
@@ -236,7 +236,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                   filled: true,
-                                  fillColor: Color(0x34FFFFFF),
+                                  fillColor: const Color(0x34FFFFFF),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -250,9 +250,9 @@ class _SearchWidgetState extends State<SearchWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -268,12 +268,12 @@ class _SearchWidgetState extends State<SearchWidget> {
                                   width: 42.0,
                                   height: 40.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x35FFFFFF),
+                                    color: const Color(0x35FFFFFF),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
-                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -304,14 +304,14 @@ class _SearchWidgetState extends State<SearchWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -326,9 +326,9 @@ class _SearchWidgetState extends State<SearchWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 20.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -352,7 +352,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: Container(
+                                          child: SizedBox(
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.65,
@@ -378,9 +378,9 @@ class _SearchWidgetState extends State<SearchWidget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -432,7 +432,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                       List<LocationsRecord> containerLocationsRecordList =
                           snapshot.data!;
                       return Padding(
-                        padding: EdgeInsets.only(top: 5),
+                        padding: const EdgeInsets.only(top: 5),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width,
                           height: MediaQuery.sizeOf(context).height * 0.77,
@@ -492,7 +492,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                             true) {
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     15, 0, 15, 15),
                                             child: wrapWithModel(
                                                 model: _model
@@ -509,7 +509,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                     setState(() {}),
                                                 child: Padding(
                                                   padding:
-                                                      EdgeInsets.only(top: 15),
+                                                      const EdgeInsets.only(top: 15),
                                                   child:
                                                       ProfFeaturedTeaseWidget(
                                                     key: Key(
@@ -523,7 +523,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         } else {
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10, 0, 0, 0),
                                             child: wrapWithModel(
                                               model: _model.profPageSmallModels
@@ -535,7 +535,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                               updateCallback: () =>
                                                   setState(() {}),
                                               child: Padding(
-                                                padding: EdgeInsets.only(
+                                                padding: const EdgeInsets.only(
                                                     left: 10,
                                                     right: 10,
                                                     top: 10),

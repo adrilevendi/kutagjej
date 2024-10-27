@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'transaction_details_model.dart';
 export 'transaction_details_model.dart';
 
@@ -69,7 +67,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -82,14 +80,14 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '2t27x3l1' /* Recipient */,
@@ -103,7 +101,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -116,7 +114,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -133,7 +131,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10.0),
                                       child: Image.network(
@@ -146,7 +144,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -166,7 +164,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -193,7 +191,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,7 +223,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -258,7 +256,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -291,7 +289,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -324,7 +322,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -356,7 +354,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 16.0, 0.0, 16.0),
                         child: Divider(
                           thickness: 2.0,
@@ -365,7 +363,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'g5m5bc6b' /* Transaction Breakdown */,
@@ -379,7 +377,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -412,7 +410,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -445,7 +443,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -476,7 +474,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 16.0, 0.0, 16.0),
                         child: Divider(
                           thickness: 2.0,
@@ -494,7 +492,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'd3gxapxf' /* Transaction for monthly subscr... */,
@@ -511,7 +509,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 30.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 30.0),
                   child: FFButtonWidget(
                     onPressed: () {
                       print('Button pressed ...');
@@ -523,9 +521,9 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       width: double.infinity,
                       height: 60.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).headlineSmall.override(

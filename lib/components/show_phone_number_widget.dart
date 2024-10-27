@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'show_phone_number_model.dart';
@@ -57,7 +55,7 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
           
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(0),
               bottomRight: Radius.circular(0),
               topLeft: Radius.circular(20),
@@ -76,16 +74,16 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(30, 20, 30, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(30, 20, 30, 0),
                 child: Container(
                   width: double.infinity,
                   height: 70,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minHeight: 80,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 5,
                         color: Color(0x3416202A),
@@ -99,7 +97,7 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -108,13 +106,13 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                       onTap: () async {
                         await launchUrl(Uri(
                           scheme: 'tel',
-                          path: widget!.number!,
+                          path: widget.number!,
                         ));
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.local_phone,
                             color: Color(0xFF57636C),
                             size: 24,
@@ -126,14 +124,14 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12, 0, 0, 0),
                                   child: Text("Phone Number",
                                     style: FlutterFlowTheme.of(context)
                                         .labelSmall
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF57636C),
+                                          color: const Color(0xFF57636C),
                                           fontSize: 12,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w500,
@@ -141,18 +139,18 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12, 4, 0, 0),
                                   child: Text(
                                     valueOrDefault<String>(
-                                      widget!.number,
+                                      widget.number,
                                       '0696896667',
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF14181B),
+                                          color: const Color(0xFF14181B),
                                           fontSize: 16,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w500,
@@ -162,7 +160,7 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                               ],
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_forward_ios,
                             color: Color(0xFF57636C),
                             size: 18,

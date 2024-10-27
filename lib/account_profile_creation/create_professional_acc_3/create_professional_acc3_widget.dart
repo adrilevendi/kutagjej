@@ -1,21 +1,13 @@
-import 'package:ku_ta_gjej/backend/schema/locations_record.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 // import 'package:dropdown_search/dropdown_search.dart';
 
 import 'create_professional_acc3_model.dart';
@@ -73,15 +65,15 @@ class _CreateProfessionalAcc3WidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -109,7 +101,7 @@ class _CreateProfessionalAcc3WidgetState
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
                 child: Container(
                   width: double.infinity,
                   height: 230.0,
@@ -119,16 +111,16 @@ class _CreateProfessionalAcc3WidgetState
                         FlutterFlowTheme.of(context).primary,
                         FlutterFlowTheme.of(context).secondary
                       ],
-                      stops: [0.0, 1.0],
-                      begin: AlignmentDirectional(1.0, 0.98),
-                      end: AlignmentDirectional(-1.0, -0.98),
+                      stops: const [0.0, 1.0],
+                      begin: const AlignmentDirectional(1.0, 0.98),
+                      end: const AlignmentDirectional(-1.0, -0.98),
                     ),
                     borderRadius: BorderRadius.circular(16.0),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 72.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 72.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'ithmdff1' /* KU TA GJEJ */,
@@ -143,26 +135,26 @@ class _CreateProfessionalAcc3WidgetState
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 140.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 140.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 0.0, 12.0, 12.0),
                         child: Container(
                           width: double.infinity,
                           height: 500.0,
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             maxWidth: 570.0,
                           ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x33000000),
@@ -184,9 +176,9 @@ class _CreateProfessionalAcc3WidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsets.all(32.0),
+                                    padding: const EdgeInsets.all(32.0),
                                     child: StreamBuilder<List<LocationsRecord>>(
                                       stream: queryLocationsRecord(
                                         queryBuilder: (locationsRecord) =>
@@ -229,10 +221,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 24.0),
                                                   child: Text(
@@ -256,7 +248,7 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 24.0),
                                                 child: Text(
@@ -275,10 +267,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -286,7 +278,7 @@ class _CreateProfessionalAcc3WidgetState
                                                     focusNode:
                                                         _model.emriFocusNode,
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.name
                                                     ],
                                                     obscureText: false,
@@ -382,10 +374,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -393,7 +385,7 @@ class _CreateProfessionalAcc3WidgetState
                                                     focusNode: _model
                                                         .emailAddressoprofFocusNode,
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.email
                                                     ],
                                                     obscureText: false,
@@ -489,10 +481,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                                                                             Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -500,7 +492,7 @@ class _CreateProfessionalAcc3WidgetState
                                                     focusNode: _model
                                                         .professionFocusNode,
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.jobTitle
                                                     ],
                                                     obscureText: false,
@@ -596,10 +588,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
  Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -607,7 +599,7 @@ class _CreateProfessionalAcc3WidgetState
                                                     focusNode: _model
                                                         .emailAddressFocusNode1,
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.telephoneNumber
                                                     ],
                                                     obscureText: false,
@@ -703,10 +695,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -714,7 +706,7 @@ class _CreateProfessionalAcc3WidgetState
                                                     focusNode: _model
                                                         .passwordFocusNode,
                                                     autofocus: true,
-                                                    autofillHints: [
+                                                    autofillHints: const [
                                                       AutofillHints.password
                                                     ],
                                                     obscureText: !_model
@@ -831,10 +823,10 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -936,7 +928,7 @@ class _CreateProfessionalAcc3WidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 40.0, 0.0, 20.0),
                                                 child: FFButtonWidget(
@@ -1008,7 +1000,7 @@ class _CreateProfessionalAcc3WidgetState
                                                           startTime:
                                                               getCurrentTimestamp,
                                                           endTime:
-                                                              getCurrentTimestamp.add(Duration(days: 45)),
+                                                              getCurrentTimestamp.add(const Duration(days: 45)),
                                                         ));
                                                   },
                                                   text: FFLocalizations.of(
@@ -1020,11 +1012,11 @@ class _CreateProfessionalAcc3WidgetState
                                                     width: double.infinity,
                                                     height: 44.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1040,7 +1032,7 @@ class _CreateProfessionalAcc3WidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),

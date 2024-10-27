@@ -128,6 +128,8 @@ dependencies:
   dropdown_search: ^6.0.1
   flutter_pannable_rating_bar: ^2.7.2+1
 
+  http_parser: any
+  flutter_web_plugins: any
 flutter_icons:
   image_path: "kutagjej_logo.png"
   android: true

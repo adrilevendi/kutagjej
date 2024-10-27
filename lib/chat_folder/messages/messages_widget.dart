@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'messages_model.dart';
 export 'messages_model.dart';
 
@@ -62,7 +59,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -73,7 +70,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'zdy2fqhf' /* Below are messages with profes... */,
@@ -85,13 +82,13 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: StreamBuilder<UsersRecord>(
                         stream:
                             UsersRecord.getDocument(widget.users!.reference),
@@ -144,7 +141,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                   borderRadius: BorderRadius.circular(0.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(12.0),
+                                  padding: const EdgeInsets.all(12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -190,7 +187,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2.0),
+                                              padding: const EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(40.0),
@@ -208,7 +205,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -268,7 +265,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
@@ -294,7 +291,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -357,7 +354,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 0.0,
@@ -372,7 +369,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                             borderRadius: BorderRadius.circular(0.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -390,7 +387,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
                                       child: Image.network(
@@ -404,7 +401,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -425,7 +422,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -446,7 +443,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -492,7 +489,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 0.0,
@@ -507,7 +504,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                             borderRadius: BorderRadius.circular(0.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -525,7 +522,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
                                       child: Image.network(
@@ -539,7 +536,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -560,7 +557,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -581,7 +578,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -600,7 +597,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 5.0),
                                               child: badges.Badge(
@@ -629,7 +626,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 elevation: 0.0,
-                                                padding: EdgeInsets.all(6.0),
+                                                padding: const EdgeInsets.all(6.0),
                                                 position: badges.BadgePosition
                                                     .topEnd(),
                                                 animationType: badges
@@ -668,7 +665,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 1.0,
@@ -683,7 +680,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                             borderRadius: BorderRadius.circular(0.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -701,7 +698,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
                                       child: Image.network(
@@ -715,7 +712,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -736,7 +733,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -757,7 +754,7 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)

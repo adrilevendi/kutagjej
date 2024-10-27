@@ -3,12 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'motivation5_model.dart';
 export 'motivation5_model.dart';
 
@@ -63,7 +59,7 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF14181B),
+        backgroundColor: const Color(0xFF14181B),
         body: Container(
           width: double.infinity,
           height: double.infinity,
@@ -73,9 +69,9 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
                 FlutterFlowTheme.of(context).primary,
                 FlutterFlowTheme.of(context).secondary
               ],
-              stops: [0.0, 1.0],
-              begin: AlignmentDirectional(1.0, 0.98),
-              end: AlignmentDirectional(-1.0, -0.98),
+              stops: const [0.0, 1.0],
+              begin: const AlignmentDirectional(1.0, 0.98),
+              end: const AlignmentDirectional(-1.0, -0.98),
             ),
           ),
           child: Column(
@@ -83,7 +79,7 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'kgjv0n3t' /* WATCH THE VIDEO BEFORE GOING T... */,
@@ -96,7 +92,7 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
                       ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
                 child: FlutterFlowVideoPlayer(
                   path:
@@ -110,7 +106,7 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
@@ -122,9 +118,9 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
                     width: 300.0,
                     height: 60.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondary,
                     textStyle: FlutterFlowTheme.of(context)
                         .titleMedium
@@ -134,7 +130,7 @@ class _Motivation5WidgetState extends State<Motivation5Widget>
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

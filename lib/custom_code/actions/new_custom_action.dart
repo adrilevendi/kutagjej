@@ -1,19 +1,12 @@
 // Automatic FlutterFlow imports
-import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
-import 'package:flutter/material.dart';
+// Imports other custom actions
+// Imports custom functions
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:path/path.dart' as path;
-import 'package:path_provider/path_provider.dart' as paths;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:io';
-import 'package:typed_data/typed_data.dart';
 import 'package:crypto/crypto.dart';
 
 // Initialize client
@@ -32,8 +25,8 @@ class Client {
   String sessionId = '';
 
   Map<String, dynamic> generateAuth() {
-    final merchantCode = Configuration.MERCHANT_CODE;
-    final key = Configuration.MERCHANT_KEY;
+    const merchantCode = Configuration.MERCHANT_CODE;
+    const key = Configuration.MERCHANT_KEY;
     final date = DateTime.now().toUtc().toString();
     final string = '${merchantCode.length}$merchantCode${date.length}$date';
     final hash =
@@ -60,14 +53,12 @@ class Client {
       payload = jsonDecode(payload);
     }
 
-    if (sessionId != null) {
-      if (payload is List) {
-        payload = [sessionId, ...payload];
-      } else {
-        payload = [sessionId, payload];
-      }
+    if (payload is List) {
+      payload = [sessionId, ...payload];
+    } else {
+      payload = [sessionId, payload];
     }
-
+  
     payload = payload.where((item) => item != null).toList();
 
     final request = jsonEncode({

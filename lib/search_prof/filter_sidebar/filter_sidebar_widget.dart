@@ -1,16 +1,11 @@
-import 'package:json_path/fun_sdk.dart';
 
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'filter_sidebar_model.dart';
 export 'filter_sidebar_model.dart';
@@ -52,7 +47,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
@@ -64,7 +59,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -75,7 +70,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -86,7 +81,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,9 +107,9 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -123,7 +118,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -134,7 +129,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 35.0, 15.0, 32.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 35.0, 15.0, 32.0),
               child: ListView(
                 padding: EdgeInsets.zero,
                 primary: false,
@@ -195,7 +190,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                         borderColor: FlutterFlowTheme.of(context).primary,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
-                        margin: EdgeInsetsDirectional.fromSTEB(
+                        margin: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 10.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -212,7 +207,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                       );
                     },
                   ),
-                                   ].divide(SizedBox(height: 10.0)),
+                                   ].divide(const SizedBox(height: 10.0)),
               ),
             ),
           ],

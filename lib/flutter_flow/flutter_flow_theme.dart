@@ -149,10 +149,10 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFF1C4494);
   late Color chat = const Color.fromRGBO(224, 252, 197, 1);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFE0E3E7);
-  late Color background = Color(0xFF1A1F24);
-  late Color placeholderText = Color(0xD9757575);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFFE0E3E7);
+  late Color background = const Color(0xFF1A1F24);
+  late Color placeholderText = const Color(0xD9757575);
 }
 
 abstract class Typography {
@@ -308,7 +308,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = Color.fromARGB(255, 11, 61, 27);
+  late Color primary = const Color.fromARGB(255, 11, 61, 27);
   late Color secondary = const Color.fromARGB(255, 43, 108, 52);
   late Color tertiary = const Color.fromARGB(255, 150, 238, 137);
   late Color alternate = const Color(0xFF50CC60);
@@ -324,12 +324,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color warning = const Color.fromARGB(255, 252, 197, 17);
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
-  late Color chat = Color.fromARGB(255, 28, 148, 48);
+  late Color chat = const Color.fromARGB(255, 28, 148, 48);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF22282F);
-  late Color background = Color(0xFF1A1F24);
-  late Color placeholderText = Color.fromARGB(255, 105, 105, 105);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFF22282F);
+  late Color background = const Color(0xFF1A1F24);
+  late Color placeholderText = const Color.fromARGB(255, 105, 105, 105);
 }
 
 extension TextStyleHelper on TextStyle {

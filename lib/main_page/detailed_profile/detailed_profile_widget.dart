@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
@@ -9,17 +8,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/main_page/rating_modal/rating_modal_widget.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import 'detailed_profile_model.dart';
@@ -31,7 +25,7 @@ class DetailedProfileWidget extends StatefulWidget {
     String? userName,
     this.chating,
     required this.userRef,
-  }) : this.userName = userName ?? 'test user name';
+  }) : userName = userName ?? 'test user name';
 
   final String userName;
   final ChatsRecord? chating;
@@ -62,8 +56,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, -400.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -400.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +68,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 500.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 500.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -87,8 +81,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -100,8 +94,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -231,7 +225,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 55.0, 20.0, 0.0),
                                               child: Row(
@@ -273,7 +267,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         7.0,
                                                                         0.0,
@@ -321,15 +315,11 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             children: [
                                                               InkWell(
                                                                 onTap: () {
-                                                                  Share.share('KuTaGjej | ' +
-                                                                      widget
-                                                                          .userName +
-                                                                      ' ' +
-                                                                      Uri.base
-                                                                          .toString());
+                                                                  Share.share('KuTaGjej | ${widget
+                                                                          .userName} ${Uri.base}');
                                                                 },
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10,
                                                                           0,
@@ -356,7 +346,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5,
                                                                             0,
@@ -383,7 +373,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                         () async {
                                                                       if (functions.isFavoriteProf(
                                                                               detailedProfileUsersRecord.reference,
-                                                                              (currentUserDocument?.favorites?.toList() ?? []).toList()) ==
+                                                                              (currentUserDocument?.favorites.toList() ?? []).toList()) ==
                                                                           true) {
                                                                         await currentUserReference!
                                                                             .update({
@@ -406,7 +396,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                Duration(milliseconds: 4000),
+                                                                                const Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -433,7 +423,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                Duration(milliseconds: 4000),
+                                                                                const Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -441,13 +431,13 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       }
                                                                     },
                                                                     child: Icon(
-                                                                      (currentUserDocument?.favorites?.toList() ?? []).contains(widget
+                                                                      (currentUserDocument?.favorites.toList() ?? []).contains(widget
                                                                               .userRef)
                                                                           ? Icons
                                                                               .bookmark_rounded
                                                                           : Icons
                                                                               .bookmark_border,
-                                                                      color: (currentUserDocument?.favorites?.toList() ?? []).contains(widget
+                                                                      color: (currentUserDocument?.favorites.toList() ?? []).contains(widget
                                                                               .userRef)
                                                                           ? FlutterFlowTheme.of(context)
                                                                               .secondary
@@ -475,12 +465,12 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
+                                    alignment: const AlignmentDirectional(0.0, 1.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -488,7 +478,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(0.0),
                                           bottomRight: Radius.circular(0.0),
                                           topLeft: Radius.circular(30.0),
@@ -496,7 +486,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 30.0, 0.0, 0.0),
                                         child: SingleChildScrollView(
                                           child: Column(
@@ -516,7 +506,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     flex: 70,
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -536,7 +526,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         1.0),
                                                                 child: Text(
@@ -564,12 +554,12 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                   true)
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             3.0,
                                                                             0.0,
@@ -598,7 +588,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -685,7 +675,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Row(
@@ -713,7 +703,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     Flexible(
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -854,7 +844,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 2.0, 20.0, 0.0),
                                                 child: Row(
@@ -945,7 +935,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             }),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -963,7 +953,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                         .transparent,
                                                                 onTap:
                                                                     () async {
-                                                                  var _shouldSetState =
+                                                                  var shouldSetState =
                                                                       false;
                                                                   if (loggedIn) {
                                                                     _model.existingChat =
@@ -983,7 +973,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                           true,
                                                                     ).then((s) =>
                                                                             s.firstOrNull);
-                                                                    _shouldSetState =
+                                                                    shouldSetState =
                                                                         true;
                                                                     if (_model
                                                                             .existingChat !=
@@ -1025,7 +1015,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                                 currentUserReference,
                                                                           ),
                                                                           chatsRecordReference);
-                                                                      _shouldSetState =
+                                                                      shouldSetState =
                                                                           true;
 
                                                                       context
@@ -1047,16 +1037,17 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       );
                                                                     }
 
-                                                                    if (_shouldSetState)
+                                                                    if (shouldSetState) {
                                                                       setState(
                                                                           () {});
+                                                                    }
                                                                     return;
                                                                   } else {
                                                                     context.pushNamed(
                                                                         'Login1');
                                                                   }
 
-                                                                  if (_shouldSetState) {
+                                                                  if (shouldSetState) {
                                                                     setState(
                                                                         () {});
                                                                   }
@@ -1101,7 +1092,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                             .center,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1208,7 +1199,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                Container(
+                                                                                SizedBox(
                                                                               height: MediaQuery.sizeOf(context).height * 0.65,
                                                                               child: RatingModalWidget(
                                                                                 profPage: detailedProfileUsersRecord.reference,
@@ -1265,7 +1256,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                             .center,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1301,7 +1292,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 30.0, 0.0, 0.0),
                                                 child: Text(
@@ -1319,7 +1310,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 0.0),
                                                 child: Row(
@@ -1329,7 +1320,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     Expanded(
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     20.0,
                                                                     0.0,
@@ -1366,7 +1357,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 20.0, 0.0),
                                                 child: Row(
@@ -1380,7 +1371,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1410,7 +1401,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                         opacity: 1.0,
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
@@ -1532,14 +1523,14 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                 FFButtonOptions(
                                                               height: 30.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1564,7 +1555,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -1581,16 +1572,16 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 20.0, 0.0),
                                                 child: Container(
                                                   width: double.infinity,
                                                   height: 245.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -1732,7 +1723,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             padding:
                                                                 EdgeInsets.zero,
                                                             gridDelegate:
-                                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                                const SliverGridDelegateWithFixedCrossAxisCount(
                                                               crossAxisCount: 3,
                                                               crossAxisSpacing:
                                                                   10.0,
@@ -1783,7 +1774,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0,
                                                                 12.0, 0.0, 0.0),
                                                     child: Text(
@@ -1807,7 +1798,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 5.0, 0.0, 0.0),
                                                 child: Column(
@@ -1816,7 +1807,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1877,7 +1868,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       listViewIndex];
                                                               return Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1888,7 +1879,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                   width: 350.0,
                                                                   height: 100.0,
                                                                   constraints:
-                                                                      BoxConstraints(
+                                                                      const BoxConstraints(
                                                                     maxWidth:
                                                                         1270.0,
                                                                   ),
@@ -1897,7 +1888,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             4.0,
@@ -1925,7 +1916,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             12.0,
@@ -1948,7 +1939,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                               false,
                                                                         ))
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 16.0,
@@ -1968,12 +1959,12 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                                   tablet: false,
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsets.all(4.0),
+                                                                                  padding: const EdgeInsets.all(4.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(10.0),
                                                                                     child: CachedNetworkImage(
-                                                                                      fadeInDuration: Duration(milliseconds: 500),
-                                                                                      fadeOutDuration: Duration(milliseconds: 500),
+                                                                                      fadeInDuration: const Duration(milliseconds: 500),
+                                                                                      fadeOutDuration: const Duration(milliseconds: 500),
                                                                                       imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
                                                                                       width: 90.0,
                                                                                       height: 90.0,
@@ -2003,7 +1994,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                         child: StreamBuilder<UsersRecord>(
                                                                                           stream: UsersRecord.getDocument(listViewReviewRecord.reviewerRef!),
                                                                                           builder: (context, snapshot) {
@@ -2036,7 +2027,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Text(
-                                                                                        listViewReviewRecord.createdTime!.day.toString() + "/" + listViewReviewRecord.createdTime!.month.toString(),
+                                                                                        "${listViewReviewRecord.createdTime!.day}/${listViewReviewRecord.createdTime!.month}",
                                                                                         style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                               fontFamily: 'Noto Sans',
                                                                                               letterSpacing: 0.0,
@@ -2056,7 +2047,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 300.0,
                                                                                   height: 40.0,
@@ -2089,9 +2080,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                       ),
                                                     ),
                                                   ]
-                                                      .divide(SizedBox(
+                                                      .divide(const SizedBox(
                                                           height: 12.0))
-                                                      .around(SizedBox(
+                                                      .around(const SizedBox(
                                                           height: 12.0)),
                                                 ),
                                               ),

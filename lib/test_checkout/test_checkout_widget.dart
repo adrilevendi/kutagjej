@@ -2,11 +2,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '/flutter_flow/flutter_flow_credit_card_form.dart';
@@ -64,7 +61,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
           leading: Builder(
@@ -88,9 +85,9 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                 Center(
                   child: Container(
                     width: 420,
-                    margin: EdgeInsets.only(left: 15, right: 15, top: 25),
+                    margin: const EdgeInsets.only(left: 15, right: 15, top: 25),
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(10),
@@ -109,7 +106,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                       children: [
                         // Image.asset("assets/images/shirt.jpg"),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 30.0),
                           child: Text(
                             widget.post.title,
@@ -123,7 +120,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                         ),
 
                         Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 20.0, 30.0),
                             child: Column(
                               children: [
@@ -142,7 +139,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                             )),
 
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               30.0, 30.0, 0.0, 0.0),
                           child: Text(
                             'ALL  ${widget.amount}',
@@ -153,7 +150,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                         ),
 
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 30.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -175,11 +172,11 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
                                       child: Container(
-                                          padding: EdgeInsets.all(15),
+                                          padding: const EdgeInsets.all(15),
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            borderRadius: BorderRadius.only(
+                                            borderRadius: const BorderRadius.only(
                                               bottomLeft: Radius.circular(0),
                                               bottomRight: Radius.circular(0),
                                               topLeft: Radius.circular(20),
@@ -206,7 +203,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF0F1113),
+                                                              const Color(0xFF0F1113),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -216,7 +213,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                     InputDecoration(
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFE0E3E7),
                                                       width: 2.0,
                                                     ),
@@ -226,7 +223,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFE0E3E7),
                                                       width: 2.0,
                                                     ),
@@ -262,7 +259,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                                 200,
                                                             right: 20,
                                                             left: 20),
-                                                        content: Text(
+                                                        content: const Text(
                                                           'Ju lutemi plotesoni te dhenat saktë!',
                                                         ),
                                                       ),
@@ -280,11 +277,11 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                 text: "Pay",
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -299,7 +296,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -320,9 +317,9 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -333,7 +330,7 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -347,15 +344,15 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                 )
               else
                 Padding(
-                  padding: EdgeInsets.only(right: 20, left: 20),
-                  child: Container(
+                  padding: const EdgeInsets.only(right: 20, left: 20),
+                  child: SizedBox(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 600.0,
                     child: custom_widgets.TestCheckout(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 400.0,
                       post: {
-                        'title': "Njoftim i ri - " + widget.post.title,
+                        'title': "Njoftim i ri - ${widget.post.title}",
                         'description': widget.post.description
                       },
                       amount: widget.amount,

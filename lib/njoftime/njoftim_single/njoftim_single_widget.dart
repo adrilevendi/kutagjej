@@ -47,8 +47,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 320.0.ms,
-            begin: Offset(0.0, 300.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 300.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -59,8 +59,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 500.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 500.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -72,8 +72,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -85,8 +85,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -98,8 +98,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -111,8 +111,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -219,7 +219,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 55.0, 20.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -257,7 +257,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     7.0,
                                                                     0.0,
@@ -293,11 +293,11 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                     ),
                                                     child: Row(
                                                       children: [
-                                                        Padding(padding: EdgeInsetsDirectional.fromSTEB(12, 0, 10, 0),
+                                                        Padding(padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 10, 0),
                                                         child: InkWell(
                                                           onTap: () {
                                                             
-                                                        Share.share('KuTaGjej | '+ njoftimSinglePostRecord.title +' ' + Uri.base.toString());
+                                                        Share.share('KuTaGjej | ${njoftimSinglePostRecord.title} ${Uri.base}');
 
                                                           },
                                                           child: Icon(
@@ -373,14 +373,14 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 400.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
                                     topLeft: Radius.circular(30.0),
@@ -411,18 +411,18 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   2.0,
                                                                   0.0,
                                                                   0.0),
                                                       child: AnimatedContainer(
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 100),
                                                         curve:
                                                             Curves.elasticOut,
@@ -440,7 +440,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                          const Color(
                                                                   0xFFF66980) : 
                                                           const Color.fromARGB(255, 237, 246, 105) ,
-                                                              offset: Offset(
+                                                              offset: const Offset(
                                                                   0.0, 0.0),
                                                               spreadRadius: 3.0,
                                                             )
@@ -464,7 +464,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                             color: njoftimSinglePostRecord.endTime!.difference(getCurrentTimestamp).inDays < 2 ? 
                                                             const Color(
                                                                 0xFFF3677D):
-                                                                Color.fromARGB(255, 243, 229, 103),
+                                                                const Color.fromARGB(255, 243, 229, 103),
                                                             width: 2.0,
                                                           ),
                                                         ),
@@ -477,7 +477,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(PostRecord.getTimeLeft(njoftimSinglePostRecord.endTime),
                                                                 textAlign:
@@ -516,10 +516,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 1.0),
+                                            const AlignmentDirectional(-1.0, 1.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -538,7 +538,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 20.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -553,7 +553,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 njoftimSinglePostRecord.minPay
@@ -572,7 +572,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -587,7 +587,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
                                               child: StreamBuilder<
                                                   LocationsRecord>(
@@ -636,7 +636,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -651,7 +651,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 '${njoftimSinglePostRecord.shiftHours.toString()} Orë',
@@ -669,7 +669,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -684,7 +684,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Turni ${njoftimSinglePostRecord.shift.toString()}',
@@ -702,7 +702,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 30.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -720,7 +720,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 0.0),
                                         child: Text(
                                           njoftimSinglePostRecord.description,
@@ -736,14 +736,14 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                               ),
                                         ),
                                       ),
-                                      Row(
+                                      const Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [],
                                       ),
                                       Flexible(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 20.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -761,7 +761,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       20.0,
@@ -778,7 +778,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                               var _shouldSetState =
+                                                               var shouldSetState =
                                                                       false;
                                                              if (loggedIn) {
                                                                     _model.existingChat =
@@ -798,7 +798,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                           true,
                                                                     ).then((s) =>
                                                                             s.firstOrNull);
-                                                                    _shouldSetState =
+                                                                    shouldSetState =
                                                                         true;
                                                                     if (_model
                                                                             .existingChat !=
@@ -840,7 +840,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                                 currentUserReference,
                                                                           ),
                                                                           chatsRecordReference);
-                                                                      _shouldSetState =
+                                                                      shouldSetState =
                                                                           true;
 
                                                                       context
@@ -862,9 +862,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                       );
                                                                     }
 
-                                                                    if (_shouldSetState)
+                                                                    if (shouldSetState) {
                                                                       setState(
                                                                           () {});
+                                                                    }
                                                                     return;
                                                                   } else {
                                                                     context.pushNamed(
@@ -874,7 +875,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                             },
                                                             child:
                                                                 AnimatedContainer(
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       100),
                                                               curve: Curves
@@ -890,7 +891,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         4.0,
@@ -918,7 +919,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -962,7 +963,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       20.0,
@@ -984,7 +985,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                             },
                                                             child:
                                                                 AnimatedContainer(
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       100),
                                                               curve: Curves
@@ -1000,7 +1001,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
-                                                                boxShadow: [
+                                                                boxShadow: const [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         4.0,
@@ -1059,7 +1060,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                   children: [
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                       child:
@@ -1100,7 +1101,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                         .min,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             20.0,
@@ -1143,7 +1144,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                       child:
                                                                           AnimatedContainer(
                                                                         duration:
-                                                                            Duration(milliseconds: 100),
+                                                                            const Duration(milliseconds: 100),
                                                                         curve: Curves
                                                                             .elasticOut,
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1154,7 +1155,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
-                                                                          boxShadow: [
+                                                                          boxShadow: const [
                                                                             BoxShadow(
                                                                               blurRadius: 4.0,
                                                                               color: Color(0x33000000),
@@ -1175,7 +1176,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                               MainAxisAlignment.center,
                                                                           children: [
                                                                             Align(
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'squq3lw1' /* Paguaj & Publiko */,
@@ -1200,7 +1201,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 ],
                                                               );
                                                             } else {
-                                                              return Column(
+                                                              return const Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,

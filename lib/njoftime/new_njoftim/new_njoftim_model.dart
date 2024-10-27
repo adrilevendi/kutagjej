@@ -75,7 +75,7 @@ class NewNjoftimModel extends FlutterFlowModel<NewNjoftimWidget> {
       for(var i=0; i< length; i++) {
         // print(i);
         vlist[i] = i+1;
-        flist[i] = "${(i+1).toString()} ${text}";
+        flist[i] = "${(i+1).toString()} $text";
       }
       return {"labels": flist, "values": vlist};
 

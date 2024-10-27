@@ -52,7 +52,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -72,7 +72,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -100,13 +100,13 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -117,7 +117,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -145,10 +145,10 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
+                                  duration: const Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
@@ -159,7 +159,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -172,7 +172,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -192,10 +192,10 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
+                                  duration: const Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
@@ -206,7 +206,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -219,7 +219,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -238,13 +238,13 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(height: 12.0)),
+                            ].divide(const SizedBox(height: 12.0)),
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 16.0),
                             child: Container(
                               width: 250.0,
@@ -259,7 +259,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -322,7 +322,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                 size: 16.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         4.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -411,7 +411,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                 size: 16.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         4.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -454,7 +454,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -471,14 +471,14 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
-                                          Duration(milliseconds: 500),
+                                          const Duration(milliseconds: 500),
                                       fadeOutDuration:
-                                          Duration(milliseconds: 500),
+                                          const Duration(milliseconds: 500),
                                       imageUrl:
                                           'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                       width: 44.0,
@@ -490,7 +490,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -527,7 +527,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -548,13 +548,13 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                 ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 1170.0,
                     ),
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -585,7 +585,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                               List<PostRecord> mobileViewPostRecordList =
                                   snapshot.data!;
                               return ListView.separated(
-                                padding: EdgeInsets.fromLTRB(
+                                padding: const EdgeInsets.fromLTRB(
                                   0,
                                   0,
                                   0,
@@ -595,12 +595,12 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                 scrollDirection: Axis.vertical,
                                 itemCount: mobileViewPostRecordList.length,
                                 separatorBuilder: (_, __) =>
-                                    SizedBox(height: 12.0),
+                                    const SizedBox(height: 12.0),
                                 itemBuilder: (context, mobileViewIndex) {
                                   final mobileViewPostRecord =
                                       mobileViewPostRecordList[mobileViewIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 20.0, 16.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -620,7 +620,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                       },
                                       child: Container(
                                         width: 500.0,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                           maxWidth: 570.0,
                                         ),
                                         decoration: BoxDecoration(
@@ -635,14 +635,14 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 0.0, 8.0),
                                                 child: RichText(
@@ -679,7 +679,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 child: Text(
@@ -695,7 +695,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 4.0, 12.0, 16.0),
                                                 child: Text(
@@ -718,7 +718,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                         .alternate,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 8.0),
                                                 child: Row(
@@ -728,7 +728,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                       MainAxisAlignment.end,
                                                   children: [
                                                     AnimatedContainer(
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds: 100),
                                                       curve: Curves.elasticOut,
                                                       width: MediaQuery.sizeOf(
@@ -741,7 +741,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondary,
-                                                        boxShadow: [
+                                                        boxShadow: const [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -792,7 +792,7 @@ class _ProfilePostsListWidgetState extends State<ProfilePostsListWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 'Ndrysho njoftimin',

@@ -1,17 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'edit_njoftim_model.dart';
 export 'edit_njoftim_model.dart';
 
@@ -72,7 +67,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
               TextEditingController(text: postToEdit.company);
           _model.textFieldFocusNode2 ??= FocusNode();
           _model.textController3 ??=
-              TextEditingController(text: postToEdit.minPay?.toString());
+              TextEditingController(text: postToEdit.minPay.toString());
           _model.textFieldFocusNode3 ??= FocusNode();
           _model.textController4 ??=
               TextEditingController(text: postToEdit.description);
@@ -114,20 +109,20 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                             FlutterFlowTheme.of(context).primary,
                             FlutterFlowTheme.of(context).secondary
                           ],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(1.0, 0.98),
-                          end: AlignmentDirectional(-1.0, -0.98),
+                          stops: const [0.0, 1.0],
+                          begin: const AlignmentDirectional(1.0, 0.98),
+                          end: const AlignmentDirectional(-1.0, -0.98),
                         ),
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
@@ -140,9 +135,9 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
+                              alignment: const AlignmentDirectional(1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 20.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -156,12 +151,12 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                     width: 40.0,
                                     height: 40.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0x2FF6F9F7),
+                                      color: const Color(0x2FF6F9F7),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -190,7 +185,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 35.0, 20.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -268,7 +263,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                     color: FlutterFlowTheme.of(context).accent4,
                                     borderRadius: BorderRadius.circular(20.0),
                                     border: Border.all(
-                                      color: Color(0x65101213),
+                                      color: const Color(0x65101213),
                                     ),
                                   ),
                                   child: Row(
@@ -277,9 +272,8 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                     children: [
                                       Builder(
                                         builder: (context) {
-                                          if (postToEdit.image == null ||
-                                              postToEdit.image == '') {
-                                            return Icon(
+                                          if (postToEdit.image == '') {
+                                            return const Icon(
                                               FFIcons.kplus,
                                               color: Color(0xFFB8B7B7),
                                               size: 70.0,
@@ -308,7 +302,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 35.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController1,
@@ -393,7 +387,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 35.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController2,
@@ -478,7 +472,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController5,
@@ -562,7 +556,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController3,
@@ -642,7 +636,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -733,7 +727,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                           borderWidth: 1.0,
                                           borderRadius: 15.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isOverButton: true,
@@ -747,7 +741,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -827,7 +821,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                           .alternate,
                                       borderWidth: 1.0,
                                       borderRadius: 15.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -839,7 +833,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -897,7 +891,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                           .alternate,
                                       borderWidth: 1.0,
                                       borderRadius: 15.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -913,7 +907,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 20.0),
                                     child: TextFormField(
                                       controller: _model.textController4,
@@ -929,7 +923,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Noto Sans',
-                                              color: Color(0xD9757575),
+                                              color: const Color(0xD9757575),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
@@ -998,19 +992,19 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 0.0),
                                     child: Builder(
                                       builder: (context) {
                                         if (postToEdit.paid == true) {
-                                          return Row(
+                                          return const Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [],
                                           );
                                         } else {
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             child: StreamBuilder<
                                                 List<ServiceRecord>>(
@@ -1160,7 +1154,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                                           .alternate,
                                                   borderWidth: 1.0,
                                                   borderRadius: 15.0,
-                                                  margin: EdgeInsetsDirectional
+                                                  margin: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 4.0, 16.0, 4.0),
                                                   hidesUnderline: true,
@@ -1182,7 +1176,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 20.0, 20.0, 20.0),
                                   child: Expanded(
                                     child: Container(
@@ -1229,7 +1223,7 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)

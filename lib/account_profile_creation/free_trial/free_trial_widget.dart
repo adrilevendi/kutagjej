@@ -5,9 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'free_trial_model.dart';
 export 'free_trial_model.dart';
 
@@ -46,7 +43,7 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: const Size.fromHeight(40.0),
           child: AppBar(
             backgroundColor: Colors.transparent,
             automaticallyImplyLeading: false,
@@ -65,7 +62,7 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                 context.pop();
               },
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.0,
           ),
@@ -87,12 +84,12 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 65.0, 0.0, 0.0),
                           child: Container(
                             width: 80.0,
                             height: 65.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -105,18 +102,18 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -140,14 +137,14 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -170,7 +167,7 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 20.0),
                           child: Container(
                             width: double.infinity,
@@ -183,15 +180,15 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 90.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              if(loggedIn)
-                              
-                              context.pushNamed('EditProfile--2--');
-                              else
-                              context.pushNamed('CreateProfessionalAcc-3-');
+                              if(loggedIn) {
+                                context.pushNamed('EditProfile--2--');
+                              } else {
+                                context.pushNamed('CreateProfessionalAcc-3-');
+                              }
                             },
                             text: FFLocalizations.of(context).getText(
                               'py5fq08b' /* APLIKONI TANI ! */,
@@ -199,9 +196,9 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                             options: FFButtonOptions(
                               width: 353.0,
                               height: 60.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -212,7 +209,7 @@ class _FreeTrialWidgetState extends State<FreeTrialWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),

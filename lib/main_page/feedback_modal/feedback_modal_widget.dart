@@ -3,10 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'feedback_modal_model.dart';
 export 'feedback_modal_model.dart';
 
@@ -47,7 +44,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
@@ -59,7 +56,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -71,14 +68,14 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Flexible(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'c4wsgi7d' /* Jepni pershtypjet tuaja */,
@@ -92,7 +89,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -112,7 +109,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 0.0),
               child: Container(
                 width: double.infinity,
                 height: 135.0,
@@ -124,9 +121,9 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
                   child: TextFormField(
-                    key: ValueKey('ratingcommentinput'),
+                    key: const ValueKey('ratingcommentinput'),
                     controller: _model.textController,
                     focusNode: _model.textFieldFocusNode,
                     autofocus: true,
@@ -162,7 +159,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   await FeedbackRecord.collection
@@ -179,7 +176,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
                       ),
-                      duration: Duration(milliseconds: 4000),
+                      duration: const Duration(milliseconds: 4000),
                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                     ),
                   );
@@ -191,9 +188,9 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
                 options: FFButtonOptions(
                   width: 300.0,
                   height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Noto Sans',
@@ -201,7 +198,7 @@ class _FeedbackModalWidgetState extends State<FeedbackModalWidget> {
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

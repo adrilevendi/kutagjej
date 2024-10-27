@@ -6,13 +6,9 @@ import '/chat_folder/delete_chats_prompt/delete_chats_prompt_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:badges/badges.dart' as badges;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 import 'list11_messages_model.dart';
 export 'list11_messages_model.dart';
@@ -56,11 +52,11 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(20),
+          preferredSize: const Size.fromHeight(20),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0,
           ),
@@ -72,7 +68,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.all(14),
+                padding: const EdgeInsets.all(14),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,7 +127,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                         : FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
+                                      child: SizedBox(
                                         height: 300,
                                         child: DeleteChatsPromptWidget(
                                           chatsToDelete: _model.selectedChats,
@@ -152,7 +148,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'oqmpl6wx' /* Below are messages with others... */,
@@ -164,7 +160,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -212,7 +208,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
 
                             return Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
+                                  const EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                               child: StreamBuilder<UsersRecord>(
                                 stream: UsersRecord.getDocument(
                                     listViewChatsRecord.recipient ==
@@ -309,7 +305,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                             Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional.fromSTEB(12, 0,12,12),
+                                                  padding: const EdgeInsetsDirectional.fromSTEB(12, 0,12,12),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -336,7 +332,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(2),
+                                                              const EdgeInsets.all(2),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
@@ -440,7 +436,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                         ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0,
                                                                             4,
@@ -476,7 +472,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0,
                                                                             4,
                                                                             0,
@@ -512,7 +508,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                     return Stack(
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
                                                                                           child: Icon(
                                                                                             Icons.check,
                                                                                             color: FlutterFlowTheme.of(context).accent2,
@@ -520,9 +516,9 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Align(
-                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                          alignment: const AlignmentDirectional(0, 0),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
                                                                                             child: Icon(
                                                                                               Icons.check,
                                                                                               color: valueOrDefault<Color>(
@@ -571,7 +567,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                         
                                                                                     
                                                                                     return Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 5),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 5),
                                                                                         child: badges.Badge(
                                                                                           badgeContent: Text(
                                                                                             valueOrDefault<String>(
@@ -589,7 +585,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                           shape: badges.BadgeShape.circle,
                                                                                           badgeColor: FlutterFlowTheme.of(context).primary,
                                                                                           elevation: 0,
-                                                                                          padding: EdgeInsets.all(6),
+                                                                                          padding: const EdgeInsets.all(6),
                                                                                           position: badges.BadgePosition.topEnd(),
                                                                                           animationType: badges.BadgeAnimationType.scale,
                                                                                           toAnimate: true,

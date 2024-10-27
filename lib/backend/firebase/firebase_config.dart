@@ -5,7 +5,7 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         // name: "kutagjej",
-        options: FirebaseOptions(
+        options: const FirebaseOptions(
             apiKey: "AIzaSyAAJDn2R97m_90l1GlAl5sZ_Z4pOrEZIWY",
             authDomain: "kutagjej.firebaseapp.com",
             projectId: "kutagjej",

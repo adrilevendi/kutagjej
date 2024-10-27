@@ -3,13 +3,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'prof_featured_tease_model.dart';
 export 'prof_featured_tease_model.dart';
 
@@ -18,7 +14,7 @@ class ProfFeaturedTeaseWidget extends StatefulWidget {
     super.key,
     required this.prof,
     bool? isFavorite,
-  }) : this.isFavorite = isFavorite ?? true;
+  }) : isFavorite = isFavorite ?? true;
 
   final UsersRecord? prof;
   final bool isFavorite;
@@ -54,8 +50,8 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -98,7 +94,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
         height: 227.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x52F6BD00),
@@ -131,7 +127,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(15.0),
@@ -150,10 +146,10 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                       ],
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -162,7 +158,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Container(
                                   width: 60.0,
@@ -183,7 +179,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                         size: 21.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 3.0, 0.0),
                                         child:
                                             StreamBuilder<List<ReviewRecord>>(
@@ -242,7 +238,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     230.0, 10.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -258,7 +254,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                                       widget.prof?.reference,
                                                       (currentUserDocument
                                                                   ?.favorites
-                                                                  ?.toList() ??
+                                                                  .toList() ??
                                                               [])
                                                           .toList()) ==
                                                   true) {
@@ -296,7 +292,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                                       widget.prof?.reference,
                                                       (currentUserDocument
                                                                   ?.favorites
-                                                                  ?.toList() ??
+                                                                  .toList() ??
                                                               [])
                                                           .toList())!
                                                   ? FlutterFlowTheme.of(context)
@@ -312,7 +308,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                                       widget.prof?.reference,
                                                       (currentUserDocument
                                                                   ?.favorites
-                                                                  ?.toList() ??
+                                                                  .toList() ??
                                                               [])
                                                           .toList())!
                                                   ? FlutterFlowTheme.of(context)
@@ -334,7 +330,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -348,7 +344,7 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                         ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                     child: Icon(
                       Icons.verified_user,
                       color: FlutterFlowTheme.of(context).warning,
@@ -359,14 +355,14 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                     child: Icon(
                       Icons.location_pin,
                       color: FlutterFlowTheme.of(context).warning,
@@ -385,18 +381,18 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Container(
                       width: 310.0,
                       height: 35.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Text(
                         valueOrDefault<String>(
                           widget.prof?.shortDescription,

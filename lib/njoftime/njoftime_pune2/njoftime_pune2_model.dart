@@ -1,12 +1,8 @@
 import '/backend/backend.dart';
 import '/components/njoftim_tease_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'njoftime_pune2_widget.dart' show NjoftimePune2Widget;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class NjoftimePune2Model extends FlutterFlowModel<NjoftimePune2Widget> {
   ///  State fields for stateful widgets in this page.

@@ -1,12 +1,11 @@
 // Automatic FlutterFlow imports
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 
-import 'index.dart'; // Imports other custom widgets
-import '/custom_code/actions/index.dart'; // Imports custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+// Imports other custom widgets
+// Imports custom actions
+// Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
@@ -22,7 +21,6 @@ import 'package:flutter/material.dart';
 import 'dart:developer';
 
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:twocheckout_flutter/model/payment_form_result.dart';
 import 'package:twocheckout_flutter/model/payment_method_type.dart';
 import 'package:twocheckout_flutter/model/token_result.dart';
@@ -165,7 +163,7 @@ class _TestCheckoutState extends State<TestCheckout>
         Container(
 
 width: 420,
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
           decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
 
@@ -189,7 +187,7 @@ width: 420,
           
             // Image.asset("assets/images/shirt.jpg"),
              Padding(
-              padding:  EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
+              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
               child:  Text(
               widget.post['title'],
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -201,7 +199,7 @@ width: 420,
             ),
 
              Padding(
-              padding:  EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 30.0),
+              padding:  const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 30.0),
               child:
              Column(children: [
              
@@ -220,7 +218,7 @@ width: 420,
             ),
 
             Padding(
-              padding:  EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
               child:
              Text( 'ALL  ${widget.amount.toString()}',
              style: const TextStyle(
@@ -230,7 +228,7 @@ width: 420,
             ),
 
            Padding(
-              padding:  EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
+              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   showPaymentMethods();
@@ -240,9 +238,9 @@ width: 420,
                 ),
                 options: FFButtonOptions(
                   height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Noto Sans',
@@ -250,7 +248,7 @@ width: 420,
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
@@ -325,7 +323,7 @@ gotoThankYou();
   @override
   void authorizePaymentDidCompleteAuthorizing(Map<dynamic, dynamic> result) {
     /// Use 2Checkout order status api to check the payment status before navigate to next screen.
-    print("Dart: authorizePaymentDidCompleteAuthorizing ${result}");
+    print("Dart: authorizePaymentDidCompleteAuthorizing $result");
      final snackBar = SnackBar(
                         content: const Text('Checking payment status!'),
                         action: SnackBarAction(

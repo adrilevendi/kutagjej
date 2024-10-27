@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'checkout37_model.dart';
 export 'checkout37_model.dart';
 
@@ -46,16 +44,16 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F5F8),
+        backgroundColor: const Color(0xFFF1F5F8),
         appBar: AppBar(
-          backgroundColor: Color(0xFFF1F5F8),
+          backgroundColor: const Color(0xFFF1F5F8),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF0F1113),
               size: 30.0,
@@ -70,13 +68,13 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Plus Jakarta Sans',
-                  color: Color(0xFF0F1113),
+                  color: const Color(0xFF0F1113),
                   fontSize: 14.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -86,12 +84,12 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 5.0,
                         color: Color(0x44111417),
@@ -104,7 +102,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -124,12 +122,12 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 5.0,
                         color: Color(0x44111417),
@@ -142,17 +140,17 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 8.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 2.0, 0.0, 0.0),
                                 child: Icon(
@@ -163,7 +161,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Theme(
                                     data: ThemeData(
@@ -173,7 +171,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                               BorderRadius.circular(25),
                                         ),
                                       ),
-                                      unselectedWidgetColor: Color(0xFF95A1AC),
+                                      unselectedWidgetColor: const Color(0xFF95A1AC),
                                     ),
                                     child: CheckboxListTile(
                                       value: _model.checkboxListTileValue1 ??=
@@ -191,14 +189,14 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF0F1113),
+                                              color: const Color(0xFF0F1113),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
-                                      tileColor: Color(0xFFF5F5F5),
-                                      activeColor: Color(0xFF827AE1),
+                                      tileColor: const Color(0xFFF5F5F5),
+                                      activeColor: const Color(0xFF827AE1),
                                       dense: true,
                                       controlAffinity:
                                           ListTileControlAffinity.trailing,
@@ -211,7 +209,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                         ),
                         if (_model.checkboxListTileValue1 ?? true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 8.0, 12.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -222,28 +220,28 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                   '1z4h45y6' /* Your Name */,
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF827AE1),
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFFDE4C62),
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFFDE4C62),
                                     width: 2.0,
                                   ),
@@ -256,7 +254,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF0F1113),
+                                    color: const Color(0xFF0F1113),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -267,7 +265,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                           ),
                         if (_model.checkboxListTileValue1 ?? true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
                             child: FlutterFlowCreditCardForm(
                               formKey: _model.creditCardFormKey,
@@ -279,21 +277,21 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF0F1113),
+                                    color: const Color(0xFF0F1113),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                               inputDecoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
@@ -308,12 +306,12 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 5.0,
                         color: Color(0x44111417),
@@ -326,17 +324,17 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 8.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 2.0, 0.0, 0.0),
                                 child: FaIcon(
@@ -347,7 +345,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Theme(
                                     data: ThemeData(
@@ -357,7 +355,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                               BorderRadius.circular(25),
                                         ),
                                       ),
-                                      unselectedWidgetColor: Color(0xFF95A1AC),
+                                      unselectedWidgetColor: const Color(0xFF95A1AC),
                                     ),
                                     child: CheckboxListTile(
                                       value: _model.checkboxListTileValue2 ??=
@@ -375,14 +373,14 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF0F1113),
+                                              color: const Color(0xFF0F1113),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
-                                      tileColor: Color(0xFFF5F5F5),
-                                      activeColor: Color(0xFF827AE1),
+                                      tileColor: const Color(0xFFF5F5F5),
+                                      activeColor: const Color(0xFF827AE1),
                                       dense: true,
                                       controlAffinity:
                                           ListTileControlAffinity.trailing,
@@ -399,12 +397,12 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 5.0,
                         color: Color(0x44111417),
@@ -417,17 +415,17 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 8.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 2.0, 0.0, 0.0),
                                 child: FaIcon(
@@ -438,7 +436,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Theme(
                                     data: ThemeData(
@@ -448,7 +446,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                               BorderRadius.circular(25),
                                         ),
                                       ),
-                                      unselectedWidgetColor: Color(0xFF95A1AC),
+                                      unselectedWidgetColor: const Color(0xFF95A1AC),
                                     ),
                                     child: CheckboxListTile(
                                       value: _model.checkboxListTileValue3 ??=
@@ -466,14 +464,14 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF0F1113),
+                                              color: const Color(0xFF0F1113),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
-                                      tileColor: Color(0xFFF5F5F5),
-                                      activeColor: Color(0xFF827AE1),
+                                      tileColor: const Color(0xFFF5F5F5),
+                                      activeColor: const Color(0xFF827AE1),
                                       dense: true,
                                       controlAffinity:
                                           ListTileControlAffinity.trailing,
@@ -491,7 +489,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -504,28 +502,28 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                           text: FFLocalizations.of(context).getText(
                             'lv79q16l' /* Apple Pay */,
                           ),
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.apple,
                           ),
                           options: FFButtonOptions(
                             width: 270.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF0F1113),
+                            color: const Color(0xFF0F1113),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: Color(0xFFF1F5F8),
+                                  color: const Color(0xFFF1F5F8),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                             elevation: 2.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -537,7 +535,7 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                           context.pushNamed(
                             'paymentConfirm',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                               ),
@@ -550,21 +548,21 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF0F1113),
+                          color: const Color(0xFF0F1113),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Outfit',
-                                    color: Color(0xFFF1F5F8),
+                                    color: const Color(0xFFF1F5F8),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                           elevation: 2.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -579,28 +577,28 @@ class _Checkout37WidgetState extends State<Checkout37Widget> {
                           text: FFLocalizations.of(context).getText(
                             'i2ie6ai0' /* Pay w/Paypal */,
                           ),
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.paypal,
                           ),
                           options: FFButtonOptions(
                             width: 270.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF0F1113),
+                            color: const Color(0xFF0F1113),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: Color(0xFFF1F5F8),
+                                  color: const Color(0xFFF1F5F8),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                             elevation: 2.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

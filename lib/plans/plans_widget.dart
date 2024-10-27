@@ -1,17 +1,9 @@
-import 'package:ku_ta_gjej/auth/base_auth_user_provider.dart';
 import 'package:ku_ta_gjej/auth/firebase_auth/auth_util.dart';
 import 'package:ku_ta_gjej/backend/backend.dart';
 
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import '/custom_code/actions/index.dart' as actions;
-import '/custom_code/widgets/index.dart' as custom_widgets;
-import 'package:ku_ta_gjej/test_checkout/test_checkout_widget.dart';
 
 import 'plans_model.dart';
 export 'plans_model.dart';
@@ -63,18 +55,18 @@ class _PlansWidgetState extends State<PlansWidget> {
                     FlutterFlowTheme.of(context).primary,
                     FlutterFlowTheme.of(context).secondary
                   ],
-                  stops: [0, 1],
-                  begin: AlignmentDirectional(1, 0.98),
-                  end: AlignmentDirectional(-1, -0.98),
+                  stops: const [0, 1],
+                  begin: const AlignmentDirectional(1, 0.98),
+                  end: const AlignmentDirectional(-1, -0.98),
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -91,7 +83,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '3emfzyuu' /* Subscription */,
@@ -112,7 +104,7 @@ class _PlansWidgetState extends State<PlansWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 20),
+              padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 20),
               child: Container(
                 width: double.infinity,
                 height: 230,
@@ -122,7 +114,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                     BoxShadow(
                       blurRadius: 4,
                       color: FlutterFlowTheme.of(context).lineColor,
-                      offset: Offset(
+                      offset: const Offset(
                         0.0,
                         2,
                       ),
@@ -138,7 +130,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 5, 0, 0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(15, 5, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'to2qy1sm' /*    Professional - ALL 962 / Mu... */,
@@ -159,13 +151,13 @@ class _PlansWidgetState extends State<PlansWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 5, 20),
+                                const EdgeInsetsDirectional.fromSTEB(20, 0, 5, 20),
                             child: Icon(
                               Icons.check_circle,
                               color: FlutterFlowTheme.of(context).secondary,
@@ -197,7 +189,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                     //   ),
                     // ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
+                      padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ol4t0yb1' /* Ftoni miq per te fituar ulje t... */,
@@ -217,15 +209,15 @@ class _PlansWidgetState extends State<PlansWidget> {
                     ),
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 0, 8),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -288,7 +280,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                 });
               },
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
                 child: Container(
                   width: double.infinity,
                   height: currentUserDocument!.verified ? 110 : 220,
@@ -298,7 +290,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                       BoxShadow(
                         blurRadius: 5,
                         color: FlutterFlowTheme.of(context).warning,
-                        offset: Offset(
+                        offset: const Offset(
                           0,
                           0,
                         ),
@@ -315,16 +307,16 @@ class _PlansWidgetState extends State<PlansWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 7, 10, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(10, 7, 10, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(0, -1),
+                                  alignment: const AlignmentDirectional(0, -1),
                                   child: Text(
                                     !currentUserDocument!.verified
                                         ? "Get ProBadge ALL 4000/mo"
@@ -341,7 +333,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0, -1),
+                                alignment: const AlignmentDirectional(0, -1),
                                 child: Icon(
                                   Icons.verified_user_rounded,
                                   color: FlutterFlowTheme.of(context).warning,
@@ -367,24 +359,24 @@ class _PlansWidgetState extends State<PlansWidget> {
                         visible: !currentUserDocument!.verified,
                         child: Expanded(
                           child: Container(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                             // width: 500,
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0, -1),
+                                              const AlignmentDirectional(0, -1),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0, 6, 0, 0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -431,7 +423,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     2, 0, 0, 0),
                                             child: Icon(
                                               Icons.personal_injury_rounded,
@@ -443,9 +435,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0, -1),
+                                                const AlignmentDirectional(0, -1),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(4, 5, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -470,7 +462,7 @@ Description Descript... */
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0, 5, 0, 5),
                                       child: Container(
                                         width: 150,
@@ -484,7 +476,7 @@ Description Descript... */
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .warning,
-                                              offset: Offset(0, 0.0),
+                                              offset: const Offset(0, 0.0),
                                             )
                                           ],
                                           borderRadius:
@@ -508,7 +500,7 @@ Description Descript... */
                                                             context)
                                                         .accent3,
                                                     borderRadius:
-                                                        BorderRadius.only(
+                                                        const BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(0),
                                                       bottomRight:
@@ -523,14 +515,14 @@ Description Descript... */
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0, 2, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 10, 0, 0, 0),
                                                     child: Text(
@@ -552,7 +544,7 @@ Description Descript... */
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 2, 0, 0, 0),
                                                     child: Icon(
@@ -569,14 +561,14 @@ Description Descript... */
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0, 2, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 10, 2, 0, 0),
                                                     child: Text(
@@ -616,7 +608,7 @@ Description Descript... */
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     2, 0, 0, 0),
                                             child: Icon(
                                               Icons.personal_injury_rounded,
@@ -628,9 +620,9 @@ Description Descript... */
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0, -1),
+                                                const AlignmentDirectional(0, -1),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(4, 5, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -670,15 +662,15 @@ Description Descript... */
                           },
                           child: Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(0, 0),
+                              alignment: const AlignmentDirectional(0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
+                                      alignment: const AlignmentDirectional(0, 0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0, 0, 0, 8),
                                         child: Text(
                                           FFLocalizations.of(context).getText(

@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : WelcomeScreen1Widget(),
+          appStateNotifier.loggedIn ? NavBarPage() : const WelcomeScreen1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : WelcomeScreen1Widget(),
+              appStateNotifier.loggedIn ? NavBarPage() : const WelcomeScreen1Widget(),
           routes: [
             FFRoute(
               name: 'DetailedProfile',
@@ -131,17 +131,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               // builder: (context, params) => params.isEmpty
               //     ? NavBarPage(initialPage: 'Search')
               //     : SearchWidget(),
-              builder: (context, params) => SearchWidget(),
+              builder: (context, params) => const SearchWidget(),
             ),
             FFRoute(
               name: 'Motivation--5--',
               path: 'motivation5',
-              builder: (context, params) => Motivation5Widget(),
+              builder: (context, params) => const Motivation5Widget(),
             ),
             FFRoute(
               name: 'paymentConfirm',
               path: 'paymentConfirm',
-              builder: (context, params) => PaymentConfirmWidget(),
+              builder: (context, params) => const PaymentConfirmWidget(),
             ),
             FFRoute(
               name: 'Auth1',
@@ -156,7 +156,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CheckoutForm',
               path: 'checkoutForm',
-              builder: (context, params) => CheckoutFormWidget(),
+              builder: (context, params) => const CheckoutFormWidget(),
             ),
             FFRoute(
               name: 'Messages',
@@ -192,34 +192,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'INCOMING-CALL',
               path: 'incomingCall',
-              builder: (context, params) => IncomingCallWidget(),
+              builder: (context, params) => const IncomingCallWidget(),
             ),
             FFRoute(
               name: 'CALL',
               path: 'call',
-              builder: (context, params) => CallWidget(),
+              builder: (context, params) => const CallWidget(),
             ),
             FFRoute(
               name: 'auth_2_ForgotPassword',
               path: 'auth2ForgotPassword',
-              builder: (context, params) => Auth2ForgotPasswordWidget(),
+              builder: (context, params) => const Auth2ForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'CreateProfile--4--',
               path: 'createProfile4',
-              builder: (context, params) => CreateProfile4Widget(),
+              builder: (context, params) => const CreateProfile4Widget(),
             ),
             FFRoute(
               name: 'Profile--1--',
               path: 'profile1',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Profile--1--')
-                  : Profile1Widget(),
+                  : const Profile1Widget(),
             ),
             FFRoute(
               name: 'EditProfile--2--',
               path: 'editProfile2',
-              builder: (context, params) => EditProfile2Widget(),
+              builder: (context, params) => const EditProfile2Widget(),
             ),
             //  FFRoute(
             //   name: 'EditProfile',
@@ -229,44 +229,44 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CreateProfessionalAcc-3-',
               path: 'createProfessionalAcc3',
-              builder: (context, params) => CreateProfessionalAcc3Widget(),
+              builder: (context, params) => const CreateProfessionalAcc3Widget(),
             ),
             FFRoute(
               name: 'CreateBusinessAccount',
               path: 'createBusinessAccount',
-              builder: (context, params) => CreateBusinessAccountWidget(),
+              builder: (context, params) => const CreateBusinessAccountWidget(),
             ),
             FFRoute(
               name: 'SelectCategory-2-',
               path: 'selectCategory2',
-              builder: (context, params) => SelectCategory2Widget(),
+              builder: (context, params) => const SelectCategory2Widget(),
             ),
             FFRoute(
               name: 'WelcomeScreen-1-',
               path: 'welcomeScreen1',
-              builder: (context, params) => WelcomeScreen1Widget(),
+              builder: (context, params) => const WelcomeScreen1Widget(),
             ),
             FFRoute(
               name: 'ForgotPasswordConfirmation',
               path: 'forgotPasswordConfirmation',
-              builder: (context, params) => ForgotPasswordConfirmationWidget(),
+              builder: (context, params) => const ForgotPasswordConfirmationWidget(),
             ),
             FFRoute(
               name: 'Home',
               path: 'home',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Home')
-                  : HomeWidget(),
+                  : const HomeWidget(),
             ),
             FFRoute(
               name: 'testCreateUserPage',
               path: 'testCreateUserPage',
-              builder: (context, params) => TestCreateUserPageWidget(),
+              builder: (context, params) => const TestCreateUserPageWidget(),
             ),
             FFRoute(
               name: 'NjoftimePune2',
               path: 'njoftimePune2',
-              builder: (context, params) => NjoftimePune2Widget(),
+              builder: (context, params) => const NjoftimePune2Widget(),
             ),
             FFRoute(
               name: 'NjoftimSingle',
@@ -283,12 +283,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Plans',
               path: 'plans',
-              builder: (context, params) => PlansWidget(),
+              builder: (context, params) => const PlansWidget(),
             ),
             FFRoute(
               name: 'TransactionDetails',
               path: 'transactionDetails',
-              builder: (context, params) => TransactionDetailsWidget(),
+              builder: (context, params) => const TransactionDetailsWidget(),
             ),
             FFRoute(
               name: 'SendMedia',
@@ -309,19 +309,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'ViewMedia',
               path: 'viewMedia',
-              builder: (context, params) => ViewMediaWidget(),
+              builder: (context, params) => const ViewMediaWidget(),
             ),
             FFRoute(
               name: 'List11Messages',
               path: 'list11Messages',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'List11Messages')
-                  : List11MessagesWidget(),
+                  : const List11MessagesWidget(),
             ),
             FFRoute(
               name: 'NewNjoftim',
               path: 'newNjoftim',
-              builder: (context, params) => NewNjoftimWidget(),
+              builder: (context, params) => const NewNjoftimWidget(),
             ),
             FFRoute(
               name: 'testCheckout',
@@ -343,42 +343,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Affiliate',
               path: 'affiliate',
-              builder: (context, params) => AffiliateWidget(),
+              builder: (context, params) => const AffiliateWidget(),
             ),
             FFRoute(
               name: 'CreateReferal',
               path: 'createReferal',
-              builder: (context, params) => CreateReferalWidget(),
+              builder: (context, params) => const CreateReferalWidget(),
             ),
             FFRoute(
               name: 'Createreferal2',
               path: 'createreferal2',
-              builder: (context, params) => Createreferal2Widget(),
+              builder: (context, params) => const Createreferal2Widget(),
             ),
             FFRoute(
               name: 'Billing',
               path: 'billing',
-              builder: (context, params) => BillingWidget(),
+              builder: (context, params) => const BillingWidget(),
             ),
             FFRoute(
               name: 'newCard',
               path: 'newCard',
-              builder: (context, params) => NewCardWidget(),
+              builder: (context, params) => const NewCardWidget(),
             ),
             FFRoute(
               name: 'Login1',
               path: 'login1',
-              builder: (context, params) => Login1Widget(),
+              builder: (context, params) => const Login1Widget(),
             ),
             FFRoute(
               name: 'Checkout37',
               path: 'checkout37',
-              builder: (context, params) => Checkout37Widget(),
+              builder: (context, params) => const Checkout37Widget(),
             ),
             FFRoute(
               name: 'profilePostsList',
               path: 'profilePostsList',
-              builder: (context, params) => ProfilePostsListWidget(),
+              builder: (context, params) => const ProfilePostsListWidget(),
             ),
             FFRoute(
               name: 'editNjoftim',
@@ -392,17 +392,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'freeTrial',
               path: 'freeTrial',
-              builder: (context, params) => FreeTrialWidget(),
+              builder: (context, params) => const FreeTrialWidget(),
             ),
             FFRoute(
               name: 'store',
               path: 'store',
-              builder: (context, params) => StoreWidget(),
+              builder: (context, params) => const StoreWidget(),
             ),
             FFRoute(
               name: 'real_estate',
               path: 'real_estate',
-              builder: (context, params) => RealEstateWidget(),
+              builder: (context, params) => const RealEstateWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -640,7 +640,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
