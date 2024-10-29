@@ -36,7 +36,7 @@ class _Auth1WidgetState extends State<Auth1Widget>
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 2,
+      length: 1,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
     _model.emailAddressTextController1 ??= TextEditingController();
@@ -103,7 +103,8 @@ class _Auth1WidgetState extends State<Auth1Widget>
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                    32.0, 12.0, 32.0, 32.0),
                 child: Container(
                   width: double.infinity,
                   height: 180.0,
@@ -121,9 +122,10 @@ class _Auth1WidgetState extends State<Auth1Widget>
                   ),
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
-                    child: Text("KU TA GJEJ",
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 0.0, 0.0, 30.0),
+                    child: Text(
+                      "KU TA GJEJ",
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Noto Sans',
                             color: FlutterFlowTheme.of(context).primaryBtnText,
@@ -136,7 +138,8 @@ class _Auth1WidgetState extends State<Auth1Widget>
               Align(
                 alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 120.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -213,16 +216,14 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                       ),
                                       InkWell(
                                         child: Tab(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'is38v6f4' /* Log In */,
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'is38v6f4' /* Log In */,
+                                          ),
                                         ),
-                                      ),
                                         onTap: () {
                                           context.pushNamed('Login1');
                                         },
-                                      
-                                        
                                       ),
                                     ],
                                     controller: _model.tabBarController,
@@ -240,9 +241,11 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(
+                                                    0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(32.0),
+                                              padding:
+                                                  const EdgeInsets.all(32.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -267,7 +270,7 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
-                                                                0.0, 24.0),
+                                                            0.0, 24.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -290,7 +293,7 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
+                                                            0.0, 16.0),
                                                     child: SizedBox(
                                                       width: double.infinity,
                                                       child: TextFormField(
@@ -410,7 +413,7 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
+                                                            0.0, 16.0),
                                                     child: SizedBox(
                                                       width: double.infinity,
                                                       child: TextFormField(
@@ -547,85 +550,84 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Padding(padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
-                                                child: FFButtonWidget(
-                                                    onPressed: () async {
-                                                      GoRouter.of(context)
-                                                          .prepareAuthEvent();
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0, 15, 0, 15),
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        GoRouter.of(context)
+                                                            .prepareAuthEvent();
 
-                                                      final user = await authManager
-                                                          .createAccountWithEmail(
-                                                        context,
-                                                        _model
-                                                            .emailAddressTextController1
-                                                            .text,
-                                                        _model
-                                                            .passwordTextController1
-                                                            .text,
-                                                      );
-                                                      if (user == null) {
-                                                        return;
+                                                        final user =
+                                                            await authManager
+                                                                .createAccountWithEmail(
+                                                          context,
+                                                          _model
+                                                              .emailAddressTextController1
+                                                              .text,
+                                                          _model
+                                                              .passwordTextController1
+                                                              .text,
+                                                        );
+                                                        if (user == null) {
+                                                          return;
+                                                        }
 
-                                                      }
-
-                                                      await UsersRecord
-                                                          .collection
-                                                          .doc(user.uid)
-                                                          .update(
-                                                              createUsersRecordData(
-                                                            role: 'biznes',
-                                                          )).then((onValue) {
-                                                            context.pushNamed('Home');
-                                                          });
-                                                    },
-                                                    text: "Sign up",
-                                                    options: FFButtonOptions(
-                                                      height: 40.0,
-                                                       width: double.infinity,
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans',
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                      elevation: 3.0,
-                                                      borderSide: const BorderSide(
+                                                        await UsersRecord
+                                                            .collection
+                                                            .doc(user.uid)
+                                                            .update(
+                                                                createUsersRecordData(
+                                                              role: 'biznes',
+                                                            ))
+                                                            .then((onValue) {
+                                                          context.pushNamed(
+                                                              'Home');
+                                                        });
+                                                      },
+                                                      text: "Sign up",
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        width: double.infinity,
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(24.0,
+                                                                0.0, 24.0, 0.0),
+                                                        iconPadding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(0.0,
+                                                                0.0, 0.0, 0.0),
                                                         color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        elevation: 3.0,
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color: Colors
+                                                              .transparent,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
                                                     ),
                                                   ),
-
-                                              ),
-
                                                   Align(
                                                     alignment:
                                                         const AlignmentDirectional(
@@ -633,11 +635,8 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  24.0),
+                                                              .fromSTEB(16.0,
+                                                              0.0, 16.0, 24.0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -663,7 +662,7 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
+                                                            0.0, 16.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         context.pushNamed(
@@ -695,18 +694,12 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                         height: 44.0,
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(0.0,
+                                                                0.0, 0.0, 0.0),
                                                         iconPadding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(0.0,
+                                                                0.0, 0.0, 0.0),
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
@@ -740,13 +733,13 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                       ),
                                                     ),
                                                   ),
-                                                                                                  ],
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
-                                                                          ],
+                                    ],
                                   ),
                                 ),
                               ],

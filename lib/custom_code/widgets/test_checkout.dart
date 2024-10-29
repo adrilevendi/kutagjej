@@ -28,13 +28,12 @@ import 'package:twocheckout_flutter/twocheckout_flutter.dart';
 // import 'package:twocheckout_flutter_example/payment_flow_done.dart';
 
 class TestCheckout extends StatefulWidget {
-  const TestCheckout({
-    super.key,
-    this.width,
-    this.height,
-    required this.post,
-    required this.amount
-  });
+  const TestCheckout(
+      {super.key,
+      this.width,
+      this.height,
+      required this.post,
+      required this.amount});
 
   final double? width;
   final double? height;
@@ -63,9 +62,9 @@ class _TestCheckoutState extends State<TestCheckout>
         secretKey: "t)[5w(c?RG=&O^4vk8~y", merchantCode: "255244469173");
   }
 
-  void showPaymentMethods()  {
+  void showPaymentMethods() {
     /// Show payment methods using the TwoCheckoutFlutter plugin
-     _twoCheckoutFlutterPlugin.showPaymentMethods(
+    _twoCheckoutFlutterPlugin.showPaymentMethods(
         price: widget.amount, currency: "ALL");
   }
 
@@ -139,133 +138,129 @@ class _TestCheckoutState extends State<TestCheckout>
   }
 
   gotoThankYou() {
-   log('going to success payment');
+    log('going to success payment');
     context.pushNamed('paymentConfirm');
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-                  backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-
-          title: const Align(
-            alignment:  AlignmentDirectional(0.2, 0.0),
-            child:  Text('Zgjidhni menyren e pageses'),
-            )
-        ),
-        body:   Center(
-          child: 
-        Container(
-
-width: 420,
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-          decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-          ),
-              child: 
-              Column(
-          
-          
-          children: [
-          
-            // Image.asset("assets/images/shirt.jpg"),
-             Padding(
-              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
-              child:  Text(
-              widget.post['title'],
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            ),
-            
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            ),
-
-             Padding(
-              padding:  const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 30.0),
-              child:
-             Column(children: [
-             
-            //   Text(widget.post.minPay.toString() + " Euro",
-            //  style: const TextStyle(
-            //   fontSize: 14,
-            //  ),
-            //   ),
-              Text(widget.post['description'],
-             style: const TextStyle(
-              fontSize: 12,
-             ), 
-              ),    
-             ],)
-              
-            ),
-
-            Padding(
-              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-              child:
-             Text( 'ALL  ${widget.amount.toString()}',
-             style: const TextStyle(
-              fontSize: 19,
-             ),
-              ),  
-            ),
-
-           Padding(
-              padding:  const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  showPaymentMethods();
-                                },
-                text: FFLocalizations.of(context).getText(
-                  'b8pbibzh' /* Button */,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Noto Sans',
-                        color: Colors.white,
-                        letterSpacing: 0.0,
-                      ),
-                  elevation: 3.0,
-                  borderSide: const BorderSide(
-                    color: Colors.transparent,
-                    width: 1.0,
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            title: const Align(
+              alignment: AlignmentDirectional(0.2, 0.0),
+              child: Text('Zgjidhni menyren e pageses'),
+            )),
+        body: Center(
+          child: Container(
+            width: 420,
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [
+                BoxShadow(
+                  blurRadius: 4.0,
+                  color: Color(0x33000000),
+                  offset: Offset(
+                    0.0,
+                    2.0,
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
+                )
+              ],
+            ),
+            child: Column(
+              children: [
+                // Image.asset("assets/images/shirt.jpg"),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 30.0, 0.0, 30.0),
+                  child: Text(
+                    widget.post['title'],
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
+
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ),
+
+                Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        20.0, 10.0, 20.0, 30.0),
+                    child: Column(
+                      children: [
+                        //   Text(widget.post.minPay.toString() + " Euro",
+                        //  style: const TextStyle(
+                        //   fontSize: 14,
+                        //  ),
+                        //   ),
+                        Text(
+                          widget.post['description'],
+                          style: const TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    )),
+
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  child: Text(
+                    'ALL  ${widget.amount.toString()}',
+                    style: const TextStyle(
+                      fontSize: 19,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 30.0, 0.0, 30.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      showPaymentMethods();
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      'b8pbibzh' /* Button */,
+                    ),
+                    options: FFButtonOptions(
+                      height: 40.0,
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 0.0, 24.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Noto Sans',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                              ),
+                      elevation: 3.0,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+                // ElevatedButton(
+
+                //     onPressed: () {
+                //       createCardTokenWithoutUI();
+                //     },
+                //     child: const Text("Create Card Token"))
+              ],
+            ),
           ),
-            // ElevatedButton(
-          
-            //     onPressed: () {
-            //       createCardTokenWithoutUI();
-            //     },
-            //     child: const Text("Create Card Token"))
-          ],
         ),
-      ),
-      ),
       ),
     );
   }
@@ -284,34 +279,31 @@ width: 420,
     ///
     // _twoCheckoutFlutterPlugin.authorizePaymentWithOrderResponse(
     //     "https://www.google.com", {});
-      // context.pushNamed('paymentConfirm',
-      //                 queryParameters: {
-      //                   'amount': 1950.00
-      //                 }
+    // context.pushNamed('paymentConfirm',
+    //                 queryParameters: {
+    //                   'amount': 1950.00
+    //                 }
 
-      //                 );
-      print(paymentFormResult.token);
-gotoThankYou();
-     final snackBar = SnackBar(
-                        content: const Text('Payment form submitted!'),
-                        action: SnackBarAction(
-                          label: 'Undo',
-                          onPressed: () {
-                            // Some code to undo the change.
-                          },
-                        ),
-                      );
+    //                 );
+    print(paymentFormResult.token);
+    gotoThankYou();
+    final snackBar = SnackBar(
+      content: const Text('Payment form submitted!'),
+      action: SnackBarAction(
+        label: 'Undo',
+        onPressed: () {
+          // Some code to undo the change.
+        },
+      ),
+    );
 
-                      // Find the ScaffoldMessenger in the widget tree
-                      // and use it to show a SnackBar.
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      
-                    
-                      // PostRecord.collection.doc(widget.post.reference.id).update({
-                      //   'paid': true,
-                      // });
+    // Find the ScaffoldMessenger in the widget tree
+    // and use it to show a SnackBar.
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
-                      
+    // PostRecord.collection.doc(widget.post.reference.id).update({
+    //   'paid': true,
+    // });
   }
 
   @override
@@ -324,26 +316,26 @@ gotoThankYou();
   void authorizePaymentDidCompleteAuthorizing(Map<dynamic, dynamic> result) {
     /// Use 2Checkout order status api to check the payment status before navigate to next screen.
     print("Dart: authorizePaymentDidCompleteAuthorizing $result");
-     final snackBar = SnackBar(
-                        content: const Text('Checking payment status!'),
-                        action: SnackBarAction(
-                          label: 'Undo',
-                          onPressed: () {
-                            // Some code to undo the change.
-                          },
-                        ),
-                      );
+    final snackBar = SnackBar(
+      content: const Text('Checking payment status!'),
+      action: SnackBarAction(
+        label: 'Undo',
+        onPressed: () {
+          // Some code to undo the change.
+        },
+      ),
+    );
 
-                      // Find the ScaffoldMessenger in the widget tree
-                      // and use it to show a SnackBar.
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    // Find the ScaffoldMessenger in the widget tree
+    // and use it to show a SnackBar.
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
   void paymentFailedWithError(String message) {
     showMyDialog("Error", message);
-     print("-------------Error------------- ");
-    print( message);
+    print("-------------Error------------- ");
+    print(message);
   }
 
   @override
