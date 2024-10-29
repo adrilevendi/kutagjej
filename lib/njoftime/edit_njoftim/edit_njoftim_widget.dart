@@ -285,7 +285,9 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
                                               postToEdit.image,
-                                              // width: 300.0,
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width -
+                                                  60,
                                               height: 168.0,
                                               fit: BoxFit.cover,
                                             ),
