@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862406504590",
+    "project_id": "kutagjej",
+    "storage_bucket": "kutagjej.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862406504590:android:03cd0d9b207498274b59df",
+        "android_client_info": {
+          "package_name": "com.bonnle.kutagjej"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJGjaAlslIN3NFxhx4lmJvG4tgYBiOyk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

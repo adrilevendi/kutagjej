@@ -172,6 +172,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'KU TA GJEJ',
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -384,11 +385,8 @@ class _NavBarPageState extends State<NavBarPage> {
                                                     Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(0.0,
+                                                                12.0, 0.0, 0.0),
                                                         child: Container(
                                                           width: 50.0,
                                                           height: 4.0,
@@ -408,7 +406,8 @@ class _NavBarPageState extends State<NavBarPage> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(top: 25),
+                                              padding: const EdgeInsets.only(
+                                                  top: 25),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -419,7 +418,7 @@ class _NavBarPageState extends State<NavBarPage> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                25, 10, 0, 0),
+                                                            25, 10, 0, 0),
                                                     child: Column(
                                                       children: [
                                                         Row(
@@ -437,10 +436,10 @@ class _NavBarPageState extends State<NavBarPage> {
                                                                     // height: 4.0,
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            12.0,
-                                                                            10.0,
-                                                                            10.0),
+                                                                        10.0,
+                                                                        12.0,
+                                                                        10.0,
+                                                                        10.0),
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
@@ -482,8 +481,9 @@ class _NavBarPageState extends State<NavBarPage> {
                                                           children: [
                                                             InkWell(
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                         0.0,
                                                                         12.0,
                                                                         10.0,
