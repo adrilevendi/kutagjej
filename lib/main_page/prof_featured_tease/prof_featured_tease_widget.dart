@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
+
 import 'prof_featured_tease_model.dart';
 export 'prof_featured_tease_model.dart';
 
@@ -148,8 +150,8 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -179,8 +181,8 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                         size: 21.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 3.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 3.0, 0.0),
                                         child:
                                             StreamBuilder<List<ReviewRecord>>(
                                           stream: queryReviewRecord(
@@ -288,34 +290,77 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                                             width: 35.0,
                                             height: 35.0,
                                             decoration: BoxDecoration(
-                                              color: functions.isFavoriteProf(
-                                                      widget.prof?.reference,
-                                                      (currentUserDocument
-                                                                  ?.favorites
-                                                                  .toList() ??
-                                                              [])
-                                                          .toList())!
-                                                  ? FlutterFlowTheme.of(context)
-                                                      .primary
-                                                  : FlutterFlowTheme.of(context)
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(100.0),
+                                                  BorderRadius.circular(14.0),
                                             ),
-                                            child: Icon(
-                                              Icons.bookmark_border,
-                                              color: functions.isFavoriteProf(
-                                                      widget.prof?.reference,
-                                                      (currentUserDocument
-                                                                  ?.favorites
-                                                                  .toList() ??
-                                                              [])
-                                                          .toList())!
-                                                  ? FlutterFlowTheme.of(context)
-                                                      .secondaryBackground
-                                                  : FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
+                                            child: ToggleIcon(
+                                              onPressed: () async {
+                                                if (!loggedIn) {
+                                                  context.pushNamed('Login1');
+                                                } else {
+                                                  if (functions.isFavoriteProf(
+                                                          widget
+                                                              .prof?.reference,
+                                                          (currentUserDocument
+                                                                      ?.favorites
+                                                                      .toList() ??
+                                                                  [])
+                                                              .toList()) ==
+                                                      true) {
+                                                    await currentUserReference!
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'favorites':
+                                                              FieldValue
+                                                                  .arrayRemove([
+                                                            widget
+                                                                .prof?.reference
+                                                          ]),
+                                                        },
+                                                      ),
+                                                    });
+                                                  } else {
+                                                    await currentUserReference!
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'favorites':
+                                                              FieldValue
+                                                                  .arrayUnion([
+                                                            widget
+                                                                .prof?.reference
+                                                          ]),
+                                                        },
+                                                      ),
+                                                    });
+                                                  }
+                                                }
+                                              },
+                                              value: functions.isFavoriteProf(
+                                                  widget.prof?.reference,
+                                                  (currentUserDocument
+                                                              ?.favorites
+                                                              .toList() ??
+                                                          [])
+                                                      .toList())!,
+                                              onIcon: Icon(
+                                                Icons.bookmark_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                size: 20.0,
+                                              ),
+                                              offIcon: Icon(
+                                                Icons.bookmark_border,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent2,
+                                                size: 20.0,
+                                              ),
                                             ),
                                           ),
                                         )),
@@ -330,7 +375,8 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ],
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -344,7 +390,8 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
                         ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        5.0, 0.0, 0.0, 0.0),
                     child: Icon(
                       Icons.verified_user,
                       color: FlutterFlowTheme.of(context).warning,
@@ -355,14 +402,16 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(20.0, 3.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 2.0, 0.0, 0.0),
                     child: Icon(
                       Icons.location_pin,
                       color: FlutterFlowTheme.of(context).warning,
@@ -381,14 +430,16 @@ class _ProfFeaturedTeaseWidgetState extends State<ProfFeaturedTeaseWidget>
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 8.0, 0.0, 0.0),
                     child: Container(
                       width: 310.0,
                       height: 35.0,

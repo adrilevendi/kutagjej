@@ -145,8 +145,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 15.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 20.0, 0.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -271,9 +271,11 @@ class _SearchWidgetState extends State<SearchWidget> {
                                     color: const Color(0x35FFFFFF),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(1.0, 0.0),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -303,8 +305,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -378,9 +380,11 @@ class _SearchWidgetState extends State<SearchWidget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(1.0, 0.0),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -435,7 +439,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                         padding: const EdgeInsets.only(top: 5),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width,
-                          height: MediaQuery.sizeOf(context).height * 0.77,
+                          height: MediaQuery.sizeOf(context).height * 2,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -491,9 +495,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         if (searchResultProfItem.verified ==
                                             true) {
                                           return Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 15, 15),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(15, 0, 15, 15),
                                             child: wrapWithModel(
                                                 model: _model
                                                     .profFeaturedTeaseModels
@@ -509,7 +512,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                     setState(() {}),
                                                 child: Padding(
                                                   padding:
-                                                      const EdgeInsets.only(top: 15),
+                                                      const EdgeInsets.only(
+                                                          top: 15),
                                                   child:
                                                       ProfFeaturedTeaseWidget(
                                                     key: Key(
@@ -522,9 +526,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                           );
                                         } else {
                                           return Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(10, 0, 0, 0),
                                             child: wrapWithModel(
                                               model: _model.profPageSmallModels
                                                   .getModel(

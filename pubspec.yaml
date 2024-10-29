@@ -129,7 +129,8 @@ dependencies:
   flutter_pannable_rating_bar: ^2.7.2+1
 
   http_parser: any
-  flutter_web_plugins: any
+  flutter_web_plugins:
+    sdk: flutter
 flutter_icons:
   image_path: "kutagjej_logo.png"
   android: true

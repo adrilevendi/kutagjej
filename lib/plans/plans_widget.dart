@@ -1,5 +1,7 @@
 import 'package:ku_ta_gjej/auth/firebase_auth/auth_util.dart';
 import 'package:ku_ta_gjej/backend/backend.dart';
+import 'package:ku_ta_gjej/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_credit_card_form.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -66,7 +68,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -83,7 +86,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '3emfzyuu' /* Subscription */,
@@ -130,7 +134,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(15, 5, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15, 5, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'to2qy1sm' /*    Professional - ALL 962 / Mu... */,
@@ -151,13 +156,14 @@ class _PlansWidgetState extends State<PlansWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(20, 0, 5, 20),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                20, 0, 5, 20),
                             child: Icon(
                               Icons.check_circle,
                               color: FlutterFlowTheme.of(context).secondary,
@@ -189,7 +195,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                     //   ),
                     // ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ol4t0yb1' /* Ftoni miq per te fituar ulje t... */,
@@ -256,24 +263,69 @@ class _PlansWidgetState extends State<PlansWidget> {
                   context: context,
                   builder: (context) {
                     return GestureDetector(
-                        //                                                           onTap: () => _model.unfocusNode.canRequestFocus
-                        //                                                               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                        //                                                               : FocusScope.of(context).unfocus(),
-                        //                                                           child:
-                        //                                                               Padding(
-                        //                                                             padding:
-                        //                                                                 MediaQuery.viewInsetsOf(context),
-                        //                                                             child:
-                        //                                                                 Container(
-                        //                                                               height: MediaQuery.sizeOf(context).height * 0.65,
-                        //                                                               child:TestCheckoutWidget(
-
-                        //   post: { 'title': 'ProBadge', 'description': "Pay your badge for ALL4000/mo" },
-                        //   amount: 4000,
-                        // ),
-                        //                                                             ),
-                        //                                                           ),
-                        );
+                      onTap: () => _model.unfocusNode.canRequestFocus
+                          ? FocusScope.of(context)
+                              .requestFocus(_model.unfocusNode)
+                          : FocusScope.of(context).unfocus(),
+                      child: Padding(
+                        padding: MediaQuery.viewInsetsOf(context),
+                        child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.65,
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  Text("Pay your badge for ALL4000/mo"),
+                                  FlutterFlowCreditCardForm(
+                                    formKey: _model.creditCardFormKey,
+                                    creditCardModel: _model.creditCardInfo,
+                                    obscureNumber: false,
+                                    obscureCvv: false,
+                                    spacing: 10.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: const Color(0xFF0F1113),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    inputDecoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0xFFE0E3E7),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0xFFE0E3E7),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                  FFButtonWidget(
+                                      text: "Pay",
+                                      onPressed: () {
+                                        _model.unfocusNode.canRequestFocus
+                                            ? FocusScope.of(context)
+                                                .requestFocus(
+                                                    _model.unfocusNode)
+                                            : FocusScope.of(context).unfocus();
+                                      },
+                                      options: FFButtonOptions(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary))
+                                ],
+                              ),
+                            )),
+                      ),
+                    );
                   },
                 ).then((value) {
                   safeSetState(() {});
@@ -309,7 +361,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                       Align(
                         alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(10, 7, 10, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10, 7, 10, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -359,15 +412,17 @@ class _PlansWidgetState extends State<PlansWidget> {
                         visible: !currentUserDocument!.verified,
                         child: Expanded(
                           child: Container(
-                            padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 5, 0, 0),
                             // width: 500,
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -375,9 +430,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           alignment:
                                               const AlignmentDirectional(0, -1),
                                           child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0, 6, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 6, 0, 0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -422,9 +476,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    2, 0, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(2, 0, 0, 0),
                                             child: Icon(
                                               Icons.personal_injury_rounded,
                                               color:
@@ -435,10 +488,12 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0, -1),
+                                                const AlignmentDirectional(
+                                                    0, -1),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(4, 5, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(4, 5, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -462,8 +517,9 @@ Description Descript... */
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0, 5, 0, 5),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0, 5, 0, 5),
                                       child: Container(
                                         width: 150,
                                         height: 70,
@@ -515,8 +571,9 @@ Description Descript... */
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 2, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 2, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -524,7 +581,7 @@ Description Descript... */
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                10, 0, 0, 0),
+                                                            10, 0, 0, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -546,7 +603,7 @@ Description Descript... */
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                2, 0, 0, 0),
+                                                            2, 0, 0, 0),
                                                     child: Icon(
                                                       Icons
                                                           .verified_user_rounded,
@@ -561,8 +618,9 @@ Description Descript... */
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 2, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 2, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -570,7 +628,7 @@ Description Descript... */
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                10, 2, 0, 0),
+                                                            10, 2, 0, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -607,9 +665,8 @@ Description Descript... */
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    2, 0, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(2, 0, 0, 0),
                                             child: Icon(
                                               Icons.personal_injury_rounded,
                                               color:
@@ -620,10 +677,12 @@ Description Descript... */
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0, -1),
+                                                const AlignmentDirectional(
+                                                    0, -1),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(4, 5, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(4, 5, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -666,30 +725,38 @@ Description Descript... */
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Expanded(
-                                    child: Align(
-                                      alignment: const AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 8),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'spqliimi' /* Cancel */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent2,
-                                                letterSpacing: 0,
-                                                fontWeight: FontWeight.w500,
+                                  Flex(
+                                    direction: Axis.horizontal,
+                                    children: [
+                                      Expanded(
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(0, 0),
+                                          child: Padding(
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 0, 0, 8),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'spqliimi' /* Cancel */,
                                               ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .accent2,
+                                                    letterSpacing: 0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ),
+                                    ],
+                                  )
                                 ],
                               ),
                             ),
