@@ -1165,76 +1165,88 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                               )
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 20.0, 20.0, 20.0),
-                                  width: MediaQuery.sizeOf(context).width - 40,
-                                  height: 55.0,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      if (postToEdit.hasTitle()) {
-                                        await postToEdit.reference
-                                            .update(createPostRecordData(
-                                          title: _model.textController1.text,
-                                          description:
-                                              _model.textController4.text,
-                                          company: _model.textController2.text,
-                                          employerName: '',
-                                          location: _model
-                                              .selectedLocation?.reference,
-                                          position: _model.textController5.text,
-                                        ));
-                                        if (postToEdit.paid == true) {
-                                          context.safePop();
-                                        } else {
-                                          context.safePop();
+                          const SizedBox(height: 15),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    // padding:
+                                    //     const EdgeInsetsDirectional.fromSTEB(
+                                    //         20.0, 20.0, 20.0, 20.0),
+                                    width:
+                                        MediaQuery.sizeOf(context).width - 40,
+                                    height: 55.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        if (postToEdit.hasTitle()) {
+                                          await postToEdit.reference
+                                              .update(createPostRecordData(
+                                            title: _model.textController1.text,
+                                            description:
+                                                _model.textController4.text,
+                                            company:
+                                                _model.textController2.text,
+                                            employerName: '',
+                                            location: _model
+                                                .selectedLocation?.reference,
+                                            position:
+                                                _model.textController5.text,
+                                          ));
+                                          if (postToEdit.paid == true) {
+                                            context.safePop();
+                                          } else {
+                                            context.safePop();
+                                          }
                                         }
-                                      }
-                                    },
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Align(
-                                          alignment: const AlignmentDirectional(
-                                              0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '52kb45pr' /* NDRYSHO NJOFTIMIN */,
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '52kb45pr' /* NDRYSHO NJOFTIMIN */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily: 'Noto Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  fontFamily: 'Noto Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  letterSpacing: 0.0,
-                                                ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          const SizedBox(height: 15),
                         ],
                       ),
                     ],
