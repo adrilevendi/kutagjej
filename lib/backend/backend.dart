@@ -50,7 +50,6 @@ export 'schema/referal_record.dart';
 export 'schema/unit_record.dart';
 export 'schema/subscription_record.dart';
 
-
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
   Query Function(Query)? queryBuilder,
@@ -210,6 +209,22 @@ Future<int> queryMessageRecordCount({
       queryBuilder: queryBuilder,
       limit: limit,
     );
+
+// Alternative method using a stream if you want real-time updates
+Stream<int> getUnreadMessageCountStream({
+  required DocumentReference<Object?>? reference,
+  required String userId,
+}) {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  return _firestore
+      .collectionGroup('messages')
+      // .collection('$reference/messages')
+      .where('read', isEqualTo: false)
+      .where('sender', isNotEqualTo: '/user/$userId')
+      .snapshots()
+      .map((snapshot) => snapshot.docs.length);
+}
 
 Stream<List<MessageRecord>> queryMessageRecord({
   DocumentReference? parent,
@@ -719,7 +734,6 @@ Future<List<SubscriptionRecord>> querySubscriptionRecordOnce({
       limit: limit,
       singleRecord: singleRecord,
     );
-
 
 Future<int> queryCollectionCount(
   Query collection, {
