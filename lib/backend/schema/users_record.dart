@@ -146,7 +146,9 @@ class UsersRecord extends FirestoreRecord {
       FirebaseFirestore.instance.collection('users');
 
   static Stream<UsersRecord> getDocument(DocumentReference ref) =>
-      ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));
+      ref.snapshots().map((s) {
+        return UsersRecord.fromSnapshot(s);
+      });
 
   static Future<UsersRecord> getDocumentOnce(DocumentReference ref) =>
       ref.get().then((s) => UsersRecord.fromSnapshot(s));

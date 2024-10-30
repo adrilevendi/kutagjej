@@ -67,7 +67,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
           ),
           child: StreamBuilder<UsersRecord>(
             stream: UsersRecord.getDocument(widget.userRef!),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot<UsersRecord> snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
                 return Center(
@@ -82,7 +82,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                   ),
                 );
               }
-              final rowUsersRecord = snapshot.data!;
+              final UsersRecord rowUsersRecord = snapshot.data!;
               return InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -165,11 +165,12 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                             child: StreamBuilder<
                                                 List<ReviewRecord>>(
                                               stream: queryReviewRecord(
-                                                queryBuilder: (reviewRecord) =>
-                                                    reviewRecord.where(
-                                                  'reviewedRef',
-                                                  isEqualTo: widget.userRef,
-                                                ),
+                                                queryBuilder: (reviewRecord) {
+                                                  return reviewRecord.where(
+                                                    'reviewedRef',
+                                                    isEqualTo: widget.userRef,
+                                                  );
+                                                },
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -464,7 +465,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                           child: Text(
                                             valueOrDefault<String>(
                                               rowUsersRecord.shortDescription,
-                                              'HELLO HELLO HELLO HELLO HELLO ',
+                                              '',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
