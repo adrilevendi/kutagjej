@@ -1,4 +1,3 @@
-
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -13,7 +12,7 @@ export 'filter_sidebar_model.dart';
 class FilterSidebarWidget extends StatefulWidget {
   const FilterSidebarWidget({super.key, required this.atUpdate});
 
-   final Function() atUpdate;
+  final Function() atUpdate;
   @override
   State<FilterSidebarWidget> createState() => _FilterSidebarWidgetState();
 }
@@ -70,7 +69,8 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -81,7 +81,8 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,19 +98,38 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      FFAppState().SearchFilterLocations =
-                          _model.dropDownValue2!.toList().cast<DocumentReference>();
-                      setState(() {});
+                      try {
+                        if (_model.dropDownValue2 == null) {
+                          // Show a snackbar to indicate the error
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                FFLocalizations.of(context).getText(
+                                  'j9lgcojy' /* Reset */,
+                                ),
+                              ),
+                            ),
+                          );
+                          return;
+                        }
+                        FFAppState().SearchFilterLocations = _model
+                            .dropDownValue2!
+                            .toList()
+                            .cast<DocumentReference>();
+                        setState(() {});
+                      } catch (e) {
+                        print(e.toString());
+                      }
                     },
                     text: FFLocalizations.of(context).getText(
                       'j9lgcojy' /* Reset */,
                     ),
                     options: FFButtonOptions(
                       height: 40.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 0.0, 24.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -129,7 +149,8 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 35.0, 15.0, 32.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(15.0, 35.0, 15.0, 32.0),
               child: ListView(
                 padding: EdgeInsets.zero,
                 primary: false,
@@ -159,15 +180,18 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                         multiSelectController:
                             _model.dropDownValueController1 ??=
                                 FormListFieldController<DocumentReference>(
-                                    _model.dropDownValue1 ??= List<DocumentReference>.from(
+                                    _model.dropDownValue1 ??=
+                                        List<DocumentReference>.from(
                           FFAppState().SearchFilterLocations ?? [],
                         )),
-                        options: List<DocumentReference<Object?>>.from(dropDownLocationsRecordList
-                            .map((e) => e.reference)
-                            .toList()),
-                        optionLabels: List<String>.from(dropDownLocationsRecordList
-                            .map((e) => e.locationName)
-                            .toList()),
+                        options: List<DocumentReference<Object?>>.from(
+                            dropDownLocationsRecordList
+                                .map((e) => e.reference)
+                                .toList()),
+                        optionLabels: List<String>.from(
+                            dropDownLocationsRecordList
+                                .map((e) => e.locationName)
+                                .toList()),
                         width: 300.0,
                         height: 56.0,
                         textStyle:
@@ -198,16 +222,18 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                         isMultiSelect: true,
                         onMultiSelectChanged: (val) async {
                           setState(() => _model.dropDownValue1 = val);
-                          
-                          FFAppState().SearchFilterLocations =
-                              _model.dropDownValue1!.toList().cast<DocumentReference>();
-                              widget.atUpdate();
+
+                          FFAppState().SearchFilterLocations = _model
+                              .dropDownValue1!
+                              .toList()
+                              .cast<DocumentReference>();
+                          widget.atUpdate();
                           setState(() {});
                         },
                       );
                     },
                   ),
-                                   ].divide(const SizedBox(height: 10.0)),
+                ].divide(const SizedBox(height: 10.0)),
               ),
             ),
           ],

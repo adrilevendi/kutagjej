@@ -1032,6 +1032,17 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           );
                         }
                         List<PostRecord> rowPostRecordList = snapshot.data!;
+
+                        if (rowPostRecordList.isEmpty) {
+                          return Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                'assets/images/no_data_found_image.jpg',
+                              ),
+                            ),
+                          );
+                        }
                         return SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(

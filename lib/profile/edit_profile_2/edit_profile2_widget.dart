@@ -1,3 +1,12 @@
+import 'package:ku_ta_gjej/backend/backend.dart';
+import 'package:ku_ta_gjej/backend/firebase_storage/storage.dart';
+import 'package:ku_ta_gjej/backend/schema/users_record.dart';
+import 'package:ku_ta_gjej/flutter_flow/flutter_flow_drop_down.dart';
+import 'package:ku_ta_gjej/flutter_flow/flutter_flow_icon_button.dart';
+import 'package:ku_ta_gjej/flutter_flow/flutter_flow_widgets.dart';
+import 'package:ku_ta_gjej/flutter_flow/form_field_controller.dart';
+import 'package:ku_ta_gjej/flutter_flow/upload_data.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -97,6 +106,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        body: SingleChildScrollView(
         body: SingleChildScrollView(
           primary: false,
           child: Column(
