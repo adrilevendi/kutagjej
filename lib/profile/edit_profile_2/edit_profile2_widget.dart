@@ -107,7 +107,6 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SingleChildScrollView(
-        body: SingleChildScrollView(
           primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
