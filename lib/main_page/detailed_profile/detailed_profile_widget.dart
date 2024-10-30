@@ -225,8 +225,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       20.0, 55.0, 20.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -269,10 +270,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        7.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                    7.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                             child: Icon(
                                                               Icons
                                                                   .arrow_back_ios,
@@ -315,12 +316,13 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             children: [
                                                               InkWell(
                                                                 onTap: () {
-                                                                  Share.share('KuTaGjej | ${widget
-                                                                          .userName} ${Uri.base}');
+                                                                  Share.share(
+                                                                      'KuTaGjej | ${widget.userName} ${Uri.base}');
                                                                 },
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           10,
                                                                           0,
                                                                           10,
@@ -348,10 +350,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            9,
-                                                                            0),
+                                                                        5,
+                                                                        0,
+                                                                        9,
+                                                                        0),
                                                                 child:
                                                                     AuthUserStreamWidget(
                                                                   builder:
@@ -470,7 +472,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 1.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -486,8 +489,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 30.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 30.0, 0.0, 0.0),
                                         child: SingleChildScrollView(
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -507,11 +510,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  20.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              .fromSTEB(20.0,
+                                                              0.0, 0.0, 0.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -561,10 +561,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                        3.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                                     child: Icon(
                                                                       Icons
                                                                           .verified_user_rounded,
@@ -590,10 +590,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        20.0,
+                                                                        0.0),
                                                                 child: StreamBuilder<
                                                                     List<
                                                                         ReviewRecord>>(
@@ -675,8 +675,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -704,11 +705,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    20.0,
-                                                                    0.0),
+                                                                .fromSTEB(0.0,
+                                                                0.0, 20.0, 0.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.min,
@@ -844,8 +842,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         20.0, 2.0, 20.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -937,10 +936,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
@@ -1292,8 +1291,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         20.0, 30.0, 0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -1310,8 +1310,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 10.0, 0.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -1321,11 +1322,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    20.0,
-                                                                    0.0,
-                                                                    20.0,
-                                                                    0.0),
+                                                                .fromSTEB(20.0,
+                                                                0.0, 20.0, 0.0),
                                                         child:
                                                             AuthUserStreamWidget(
                                                           builder: (context) =>
@@ -1357,8 +1355,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 0.0, 20.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -1372,11 +1371,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  20.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              .fromSTEB(20.0,
+                                                              0.0, 0.0, 0.0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1525,17 +1521,17 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
                                                               iconPadding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
@@ -1572,18 +1568,20 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 10.0, 20.0, 0.0),
                                                 child: Container(
                                                   width: double.infinity,
                                                   height: 245.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration:
+                                                      const BoxDecoration(),
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
-                                                                0.0, 0.0),
+                                                            0.0, 0.0),
                                                     child: StreamBuilder<
                                                         List<MediaRecord>>(
                                                       stream: queryMediaRecord(
@@ -1776,7 +1774,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(20.0,
-                                                                12.0, 0.0, 0.0),
+                                                            12.0, 0.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1798,8 +1796,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         20.0, 5.0, 0.0, 0.0),
                                                 child: Column(
                                                   mainAxisSize:
@@ -1808,11 +1807,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
+                                                              .fromSTEB(0.0,
+                                                              0.0, 20.0, 0.0),
                                                       child: StreamBuilder<
                                                           List<ReviewRecord>>(
                                                         stream:
@@ -1870,10 +1866,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            12.0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        12.0),
                                                                 child:
                                                                     Container(
                                                                   width: 350.0,
@@ -1918,10 +1914,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            16.0,
-                                                                            12.0,
-                                                                            16.0,
-                                                                            12.0),
+                                                                        16.0,
+                                                                        12.0,
+                                                                        16.0,
+                                                                        12.0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
