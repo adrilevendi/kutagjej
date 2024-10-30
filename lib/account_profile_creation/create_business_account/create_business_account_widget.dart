@@ -198,9 +198,6 @@ class _CreateBusinessAccountWidgetState
                                             ),
                                           );
                                         }
-                                        List<LocationsRecord>
-                                            columnLocationsRecordList =
-                                            snapshot.data!;
                                         return SingleChildScrollView(
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,

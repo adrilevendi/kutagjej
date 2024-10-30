@@ -54,6 +54,7 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
   late Color chat;
+  late BoxShadow navbar;
 
   late Color primaryBtnText;
   late Color lineColor;
@@ -148,6 +149,12 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
   late Color chat = const Color.fromRGBO(224, 252, 197, 1);
+  late BoxShadow navbar = const BoxShadow(
+    color: Colors.black12,
+    spreadRadius: 1,
+    blurRadius: 3,
+    offset: Offset(0, -3),
+  );
 
   late Color primaryBtnText = const Color(0xFFFFFFFF);
   late Color lineColor = const Color(0xFFE0E3E7);
@@ -325,7 +332,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
   late Color chat = const Color.fromARGB(255, 28, 148, 48);
-
+  late BoxShadow navbar = const BoxShadow(
+    color: Color.fromARGB(80, 218, 218, 218),
+    spreadRadius: 1,
+    blurRadius: 3,
+    offset: Offset(0, -3),
+  );
   late Color primaryBtnText = const Color(0xFFFFFFFF);
   late Color lineColor = const Color(0xFF22282F);
   late Color background = const Color(0xFF1A1F24);

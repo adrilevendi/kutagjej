@@ -271,14 +271,7 @@ class _NavBarPageState extends State<NavBarPage> {
         padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
         width: double.infinity,
         elevation: 0.0,
-        boxShadows: const [
-          BoxShadow(
-            color: Colors.black12,
-            spreadRadius: 1,
-            blurRadius: 3,
-            offset: Offset(0, -3),
-          ),
-        ],
+        boxShadows: [ FlutterFlowTheme.of(context).navbar],
         items: [
           FloatingNavbarItem(
             customWidget: Column(

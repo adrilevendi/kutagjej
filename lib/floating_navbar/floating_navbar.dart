@@ -1,5 +1,6 @@
 import 'floating_navbar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:ku_ta_gjej/flutter_flow/flutter_flow_theme.dart';
 
 typedef ItemBuilder = Widget Function(
     BuildContext context, int index, FloatingNavbarItem items);
@@ -72,7 +73,7 @@ class _FloatingNavbarState extends State<FloatingNavbar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.transparent,
+      color: FlutterFlowTheme.of(context).secondaryBackground,
       elevation: widget.elevation,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -81,7 +82,9 @@ class _FloatingNavbarState extends State<FloatingNavbar> {
             padding: widget.padding,
             margin: widget.margin,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(widget.borderRadius),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(widget.borderRadius),
+                  topRight: Radius.circular(widget.borderRadius)),
               color: widget.backgroundColor,
               boxShadow: widget.boxShadows,
             ),
