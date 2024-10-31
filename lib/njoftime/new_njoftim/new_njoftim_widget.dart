@@ -1,4 +1,3 @@
-
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
@@ -90,14 +89,15 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 0.0, 0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -111,8 +111,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                     Align(
                       alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 20.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -159,8 +159,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 35.0, 20.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 35.0, 20.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -246,29 +246,34 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                               color: const Color(0x65101213),
                             ),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Builder(
-                                builder: (context) {
-                                  if (_model.uploadedFileUrl.isEmpty) {
-                                    //
-                                    return const Icon(
+                          child: Builder(
+                            builder: (context) {
+                              if (_model.uploadedFileUrl.isEmpty) {
+                                //
+
+                                return const Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
                                       FFIcons.kplus,
                                       color: Color(0xFFB8B7B7),
                                       size: 70.0,
-                                    );
-                                  }
+                                    )
+                                  ],
+                                );
+                              }
 
-                                  return Image(
+                              return ClipRRect(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  child: Image(
                                     image: NetworkImage(_model.uploadedFileUrl),
                                     fit: BoxFit.cover,
                                     height: 168,
-                                  );
-                                },
-                              ),
-                            ],
+                                    width:
+                                        MediaQuery.sizeOf(context).width - 40,
+                                  ));
+                            },
                           ),
                         ),
                       ),
@@ -578,8 +583,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       ],
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -667,8 +672,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -753,8 +758,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -893,8 +898,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                       ],
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          20.0, 0.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -1187,7 +1192,7 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                     'testCheckout',
                                     queryParameters: {
                                       'post': serializeParam(
-                                       { _model.newPost},
+                                        {_model.newPost},
                                         ParamType.JSON,
                                       ),
                                       'amount': serializeParam(
@@ -1205,7 +1210,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '7kxmfq6z' /* POSTO NJOFTIMIN -  */,
@@ -1228,8 +1234,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(
+                                              0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'p56zvft7' /* ALL */,
@@ -1249,8 +1255,9 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              5.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -1258,7 +1265,8 @@ class _NewNjoftimWidgetState extends State<NewNjoftimWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(
+                                                    0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
                                                 FFAppState().price.toString(),

@@ -238,12 +238,12 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     } else {
                                       return ClipRRect(
                                         borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            BorderRadius.circular(20.0),
                                         child: Image.network(
                                           _model.userPhoto,
                                           width:
                                               MediaQuery.sizeOf(context).width -
-                                                  60,
+                                                  40,
                                           height: 168.0,
                                           fit: BoxFit.cover,
                                         ),

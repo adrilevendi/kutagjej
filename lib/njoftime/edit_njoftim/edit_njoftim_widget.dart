@@ -282,12 +282,12 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                         } else {
                                           return ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(20.0),
                                             child: Image.network(
                                               postToEdit.image,
                                               width: MediaQuery.sizeOf(context)
                                                       .width -
-                                                  60,
+                                                  40,
                                               height: 168.0,
                                               fit: BoxFit.cover,
                                             ),
