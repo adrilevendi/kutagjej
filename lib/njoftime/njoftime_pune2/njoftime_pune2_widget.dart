@@ -1,4 +1,3 @@
-
 import '/backend/backend.dart';
 import '/components/njoftim_tease_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,14 +10,14 @@ import '/search_prof/filter_sidebar/filter_sidebar_widget.dart';
 import 'package:text_search/text_search.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 
-class NjoftimePune2Widget extends StatefulWidget {
-  const NjoftimePune2Widget({super.key});
+class StaffSearchScreen extends StatefulWidget {
+  const StaffSearchScreen({super.key});
 
   @override
-  State<NjoftimePune2Widget> createState() => _NjoftimePune2WidgetState();
+  State<StaffSearchScreen> createState() => _StaffSearchScreenState();
 }
 
-class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
+class _StaffSearchScreenState extends State<StaffSearchScreen> {
   late NjoftimePune2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -66,13 +65,14 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          10.0, 0.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -90,68 +90,67 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
-                          onChanged: (_) =>  EasyDebounce.debounce(
-                                  '_model.textController',
-                                  const Duration(milliseconds: 2000),
-                                  () async {
-                                    await queryPostRecordOnce(
-                                      queryBuilder: (query) {
-                                        var pr = query
+                          onChanged: (_) => EasyDebounce.debounce(
+                            '_model.textController',
+                            const Duration(milliseconds: 2000),
+                            () async {
+                              await queryPostRecordOnce(queryBuilder: (query) {
+                                var pr = query
                                         // .where(
-                                        //   'title', 
+                                        //   'title',
                                         //   isNull: false,
                                         // )
                                         // .limit(100)
-                                        .where('endTime', isGreaterThan: getCurrentTimestamp)
-                                        // .where('category', isNull: false)
-                                        ;
-                                         if (FFAppState().SearchFilterLocations.isNotEmpty ) {
-                                          pr.whereIn('location',  FFAppState().SearchFilterLocations )
-                                        ;
-                                        }
-                                        pr.orderBy('startTime', descending: true);
-                                        return pr;
-                                      }
-                                    )
-                                        .then(
-                                          (records) => _model
-                                              .simpleSearchResults = TextSearch(
-                                            records
-                                                .map(
-                                                  (record) =>
-                                                      TextSearchItem.fromTerms(
-                                                          record, [
-                                                    // record.title!,
-                                                    record.company,
-                                                    record.position!,
-                                                    record.description
-                                                  ]),
-                                                )
-                                                .toList(),
+                                        .where('endTime',
+                                            isGreaterThan: getCurrentTimestamp)
+                                    // .where('category', isNull: false)
+                                    ;
+                                if (FFAppState()
+                                    .SearchFilterLocations
+                                    .isNotEmpty) {
+                                  pr.whereIn('location',
+                                      FFAppState().SearchFilterLocations);
+                                }
+                                pr.orderBy('startTime', descending: true);
+                                return pr;
+                              })
+                                  .then(
+                                    (records) => _model.simpleSearchResults =
+                                        TextSearch(
+                                      records
+                                          .map(
+                                            (record) =>
+                                                TextSearchItem.fromTerms(
+                                                    record, [
+                                              // record.title!,
+                                              record.company,
+                                              record.position!,
+                                              record.description
+                                            ]),
                                           )
-                                              .search(
-                                                  _model.textController.text)
-                                              .map((r) => r.object)
-                                              .take(30)
-                                              .toList(),
-                                        )
-                                        .onError((_, __) =>
-                                            _model.simpleSearchResults = [])
-                                        .whenComplete(() => setState(() {}));
-                                  },
-                                ),
-
+                                          .toList(),
+                                    )
+                                            .search(_model.textController.text)
+                                            .map((r) => r.object)
+                                            .take(30)
+                                            .toList(),
+                                  )
+                                  .onError((_, __) =>
+                                      _model.simpleSearchResults = [])
+                                  .whenComplete(() => setState(() {}));
+                            },
+                          ),
                           autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
                             isDense: true,
-                            contentPadding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
-
+                            contentPadding:
+                                const EdgeInsets.fromLTRB(21, 21, 21, 0),
                             labelText: FFLocalizations.of(context).getText(
                               'n1ogo7bu' /* Search... */,
                             ),
@@ -213,8 +212,8 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     Align(
                       alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -238,8 +237,9 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 2.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 2.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'avzsynyu' /* Posto */,
@@ -273,14 +273,15 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'jdqapd1l' /* Results */,
@@ -291,108 +292,99 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                           ),
                     ),
                   ),
-                 Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 20.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    enableDrag: false,
-                                    context: context,
-                                    builder: (context) {
-                                      return GestureDetector(
-                                        onTap: () => _model
-                                                .unfocusNode.canRequestFocus
-                                            ? FocusScope.of(context)
-                                                .requestFocus(
-                                                    _model.unfocusNode)
-                                            : FocusScope.of(context).unfocus(),
-                                        child: Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: SizedBox(
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.65,
-                                            child: FilterSidebarWidget(
-                                              atUpdate: () {
-                                                
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ).then((value) => safeSetState(() {}));
-                                },
-                                child: Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    border: Border.all(
-                                      color:
-                                          FlutterFlowTheme.of(context).accent3,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
-                                  child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          FFIcons.kfilter,
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent3,
-                                          size: 20.0,
-                                        ),
-                                      ],
+                  Align(
+                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          5.0, 0.0, 20.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            enableDrag: false,
+                            context: context,
+                            builder: (context) {
+                              return GestureDetector(
+                                onTap: () => _model.unfocusNode.canRequestFocus
+                                    ? FocusScope.of(context)
+                                        .requestFocus(_model.unfocusNode)
+                                    : FocusScope.of(context).unfocus(),
+                                child: Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: SizedBox(
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.65,
+                                    child: FilterSidebarWidget(
+                                      atUpdate: () {},
                                     ),
                                   ),
                                 ),
-                              ),
+                              );
+                            },
+                          ).then((value) => safeSetState(() {}));
+                        },
+                        child: Container(
+                          width: 40.0,
+                          height: 40.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).accent3,
+                              width: 2.0,
                             ),
-                          ),                ],
+                          ),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  FFIcons.kfilter,
+                                  color: FlutterFlowTheme.of(context).accent3,
+                                  size: 20.0,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Expanded(
               child: StreamBuilder<List<PostRecord>>(
-                stream: queryPostRecord(
-                   queryBuilder: (postRecord) { 
-                   var pr = postRecord;
-                   
-                    var sl = FFAppState().SearchFilterLocations;
-                        if (sl.isNotEmpty ) {
-                          print("SEARCH STATE LOC not empty");
-                          
-                                          pr.where('location', whereIn:  sl );
-                          print("Query PAram location:");
+                stream: queryPostRecord(queryBuilder: (postRecord) {
+                  var pr = postRecord;
 
-                                          print(pr.parameters);
-                                        }
-                   pr.where(
-                          'paid',
-                          isEqualTo: true,
-                        ).orderBy('endTime');
+                  var sl = FFAppState().SearchFilterLocations;
+                  if (sl.isNotEmpty) {
+                    print("SEARCH STATE LOC not empty");
 
-                       
-                       print("DEBUG APPSTATE SL===========");
-                       print(FFAppState().SearchFilterLocations);
-                                        return pr;
-                   }
-                ),
+                    pr.where('location', whereIn: sl);
+                    print("Query PAram location:");
+
+                    print(pr.parameters);
+                  }
+                  pr
+                      .where(
+                        'paid',
+                        isEqualTo: true,
+                      )
+                      .orderBy('endTime');
+
+                  print("DEBUG APPSTATE SL===========");
+                  print(FFAppState().SearchFilterLocations);
+                  return pr;
+                }),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
@@ -409,18 +401,14 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                     );
                   }
                   List<PostRecord> listViewPostRecordList = snapshot.data!;
-                   if(_model.textController != null  ) {
-                                  if(_model.textController!.value
-                                  
-                                  .text == ''){
-                                _model.simpleSearchResults = listViewPostRecordList;
-                              print("Search bar is empty");
-
-                                } 
-                          }
-                                 final searchResultPost = _model.simpleSearchResults
-                                .map((e) => e)
-                                .toList();
+                  if (_model.textController != null) {
+                    if (_model.textController!.value.text == '') {
+                      _model.simpleSearchResults = listViewPostRecordList;
+                      print("Search bar is empty");
+                    }
+                  }
+                  final searchResultPost =
+                      _model.simpleSearchResults.map((e) => e).toList();
                   return ListView.builder(
                     padding: const EdgeInsets.fromLTRB(
                       0,
@@ -452,12 +440,9 @@ class _NjoftimePune2WidgetState extends State<NjoftimePune2Widget> {
                         },
                         child: wrapWithModel(
                           model: _model.njoftimTeaseModels.getModel(
-                             _model
-                                                .simpleSearchResults[ 
-                                                    listViewIndex]
-                                                .reference
-                                                .id,
-                                            listViewIndex,
+                            _model.simpleSearchResults[listViewIndex].reference
+                                .id,
+                            listViewIndex,
                           ),
                           updateCallback: () => setState(() {}),
                           child: NjoftimTeaseWidget(

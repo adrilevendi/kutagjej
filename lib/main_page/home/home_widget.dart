@@ -1095,7 +1095,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     height: 250.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Color(0xFF005CF6), Color(0xFF25A4FF)],
                         stops: [0.0, 1.0],
                         begin: AlignmentDirectional(1.0, 0.87),

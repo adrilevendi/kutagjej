@@ -16,14 +16,15 @@ import 'search_model.dart';
 
 export 'search_model.dart';
 
-class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
+class SearchProfessionalScreen extends StatefulWidget {
+  const SearchProfessionalScreen({super.key});
 
   @override
-  State<SearchWidget> createState() => _SearchWidgetState();
+  State<SearchProfessionalScreen> createState() =>
+      _SearchProfessionalScreenState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
   late SearchModel _model;
   late List profToShow;
 
@@ -98,8 +99,11 @@ class _SearchWidgetState extends State<SearchWidget> {
                 },
               ).toList(),
             )
-                .search(_model.textController.text)
-                .map((r) {
+                .search(
+                  _model.textController.text,
+                  matchThreshold: 1,
+                )
+                .map((TextSearchResult<UsersRecord> r) {
                   return r.object;
                 })
                 .take(30)
@@ -482,8 +486,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                 ),
                               );
                             }
-                            List<LocationsRecord> containerLocationsRecordList =
-                                snapshot.data!;
+                            // List<LocationsRecord> containerLocationsRecordList =
+                            //     snapshot.data!;
                             return Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Container(
