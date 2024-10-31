@@ -1,3 +1,5 @@
+import 'package:ku_ta_gjej/auth/firebase_auth/auth_util.dart';
+
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -34,7 +36,7 @@ class EditProfile2Model extends FlutterFlowModel<EditProfile2Widget> {
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
-
+  String userPhoto = currentUserPhoto;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   MediaRecord? uploadedMedia;
   bool isDataUploading2 = false;

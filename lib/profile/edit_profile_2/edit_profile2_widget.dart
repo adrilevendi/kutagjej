@@ -8,17 +8,29 @@ import 'package:ku_ta_gjej/flutter_flow/form_field_controller.dart';
 import 'package:ku_ta_gjej/flutter_flow/upload_data.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/backend/firebase_storage/storage.dart';
 
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edit_profile2_model.dart';
 export 'edit_profile2_model.dart';
 
 class EditProfile2Widget extends StatefulWidget {
-  const EditProfile2Widget({super.key});
+  const EditProfile2Widget({super.key, photo});
 
   @override
   State<EditProfile2Widget> createState() => _EditProfile2WidgetState();
@@ -70,8 +82,8 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -122,26 +134,24 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                 buttonSize: 40.0,
                                 icon: Icon(
                                   FFIcons.kchevronLeft,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
                                   size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.safePop();
                                 },
                               ),
-                              // Text(
-                              //   FFLocalizations.of(context).getText(
-                              //     'jmczu8rf' /* Edit Profile */,
-                              //   ),
-                              //   style: FlutterFlowTheme.of(context)
-                              //       .headlineLarge
-                              //       .override(
-                              //           fontFamily: 'Noto Sans',
-                              //           letterSpacing: 0.0,
-                              //           color: FlutterFlowTheme.of(context)
-                              //               .primaryText),
-                              // ),
+                              Text(
+                                "Create Professional Profile",
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                        fontFamily: 'Noto Sans',
+                                        letterSpacing: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText),
+                              ),
                             ],
                           )),
                     ),
@@ -167,149 +177,122 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                         mainAxisSize: MainAxisSize.max,
                         children: [],
                       ),
-                      Container(
-                        // width: 115.0,
-                        height: 200.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          shape: BoxShape.circle,
-                        ),
+                      InkWell(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 0.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              20.0, 35.0, 20.0, 0.0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.85,
-                            // height: 200.0,
-                            clipBehavior: Clip.antiAlias,
+                            width: double.infinity,
+                            height: 170.0,
                             decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
+                              color: FlutterFlowTheme.of(context).accent4,
+                              borderRadius: BorderRadius.circular(20.0),
+                              border: Border.all(
+                                color: const Color(0x65101213),
+                              ),
                             ),
-                            child: Image.network(
-                              currentUserPhoto.isEmpty
-                                  ? 'https://picsum.photos/seed/761/600'
-                                  : currentUserPhoto,
-                              fit: BoxFit.cover,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Builder(
+                                  builder: (context) {
+                                    if (_model.userPhoto == '') {
+                                      return const Icon(
+                                        FFIcons.kplus,
+                                        color: Color(0xFFB8B7B7),
+                                        size: 70.0,
+                                      );
+                                    } else {
+                                      return ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          _model.userPhoto,
+                                          width:
+                                              MediaQuery.sizeOf(context).width -
+                                                  60,
+                                          height: 168.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                final selectedMedia =
-                                    await selectMediaWithSourceBottomSheet(
-                                  context: context,
-                                  maxWidth: 500.00,
-                                  imageQuality: 56,
-                                  allowPhoto: true,
-                                );
-                                if (selectedMedia != null &&
-                                    selectedMedia.every((m) =>
-                                        validateFileFormat(
-                                            m.storagePath, context))) {
-                                  setState(
-                                      () => _model.isDataUploading1 = true);
-                                  var selectedUploadedFiles =
-                                      <FFUploadedFile>[];
+                        onTap: () async {
+                          final selectedMedia =
+                              await selectMediaWithSourceBottomSheet(
+                            context: context,
+                            maxWidth: 500.00,
+                            imageQuality: 56,
+                            allowPhoto: true,
+                          );
+                          if (selectedMedia != null &&
+                              selectedMedia.every((m) =>
+                                  validateFileFormat(m.storagePath, context))) {
+                            setState(() => _model.isDataUploading1 = true);
+                            var selectedUploadedFiles = <FFUploadedFile>[];
 
-                                  List<String> downloadUrls = <String>[];
-                                  try {
-                                    selectedUploadedFiles = selectedMedia
-                                        .map((m) => FFUploadedFile(
-                                              name:
-                                                  m.storagePath.split('/').last,
-                                              bytes: m.bytes,
-                                              height: m.dimensions?.height,
-                                              width: m.dimensions?.width,
-                                              blurHash: m.blurHash,
-                                            ))
-                                        .toList();
+                            var downloadUrls = <String>[];
+                            try {
+                              selectedUploadedFiles = selectedMedia
+                                  .map((m) => FFUploadedFile(
+                                        name: m.storagePath.split('/').last,
+                                        bytes: m.bytes,
+                                        height: m.dimensions?.height,
+                                        width: m.dimensions?.width,
+                                        blurHash: m.blurHash,
+                                      ))
+                                  .toList();
 
-                                    downloadUrls = (await Future.wait(
-                                      selectedMedia.map(
-                                        (m) async => await uploadData(
-                                            m.storagePath, m.bytes),
-                                      ),
-                                    ))
-                                        .where((u) => u != null)
-                                        .map((u) => u!)
-                                        .toList();
-                                  } finally {
-                                    _model.isDataUploading1 = false;
-                                  }
-                                  if (selectedUploadedFiles.length ==
-                                          selectedMedia.length &&
-                                      downloadUrls.length ==
-                                          selectedMedia.length) {
-                                    setState(() {
-                                      _model.uploadedLocalFile1 =
-                                          selectedUploadedFiles.first;
-                                      if (downloadUrls != null &&
-                                          downloadUrls.isNotEmpty) {
-                                        _model.uploadedFileUrl1 =
-                                            downloadUrls.first;
-                                      }
-                                    });
-                                  } else {
-                                    setState(() {});
-                                    return;
-                                  }
-                                }
-
-                                currentUserReference
-                                    ?.update(createUsersRecordData(
-                                  photoUrl: _model.uploadedFileUrl1,
-                                ));
-                                // _model.uploadedMedia =
-                                //     MediaRecord.getDocumentFromData(
-                                //         createMediaRecordData(
-                                //           userName:
-                                //               'dsgrrgre',
-                                //           mediaType:
-                                //               'photo',
-                                //           mediaUrl:
-                                //               _model.uploadedFileUrl1,
-                                //           user: currentUserReference,
-                                //         ),
-                                //         mediaRecordReference);
-
-                                setState(() {});
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'iux3g7s3' /* Edit Photo */,
-                              ),
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).accent3,
-                                  width: 1.0,
+                              downloadUrls = (await Future.wait(
+                                selectedMedia.map(
+                                  (m) async =>
+                                      await uploadData(m.storagePath, m.bytes),
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                            ),
-                          ),
-                        ],
+                              ))
+                                  .where((u) => u != null)
+                                  .map((u) => u!)
+                                  .toList();
+                            } finally {
+                              _model.isDataUploading1 = false;
+                            }
+                            if (selectedUploadedFiles.length ==
+                                    selectedMedia.length &&
+                                downloadUrls.length == selectedMedia.length) {
+                              setState(() {
+                                _model.uploadedLocalFile1 =
+                                    selectedUploadedFiles.first;
+                                _model.uploadedFileUrl1 = downloadUrls.first;
+                              });
+                            } else {
+                              setState(() {});
+                              return;
+                            }
+                          }
+                          _model.userPhoto = _model.uploadedFileUrl1;
+                          currentUserReference?.update(createUsersRecordData(
+                            photoUrl: _model.uploadedFileUrl1,
+                          ));
+                          // _model.uploadedMedia =
+                          //     MediaRecord.getDocumentFromData(
+                          //         createMediaRecordData(
+                          //           userName:
+                          //               'dsgrrgre',
+                          //           mediaType:
+                          //               'photo',
+                          //           mediaUrl:
+                          //               _model.uploadedFileUrl1,
+                          //           user: currentUserReference,
+                          //         ),
+                          //         mediaRecordReference);
+
+                          setState(() {});
+                        },
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -345,7 +328,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 2.0,
+                                        width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(15.0),
                                     ),
@@ -353,7 +336,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        width: 2.0,
+                                        width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(15.0),
                                     ),
@@ -422,7 +405,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .alternate,
-                                      width: 2.0,
+                                      width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
@@ -430,7 +413,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
+                                      width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
@@ -496,7 +479,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 2.0,
+                                        width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(15.0),
                                     ),
@@ -601,8 +584,8 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     elevation: 2.0,
                                     borderColor:
                                         FlutterFlowTheme.of(context).alternate,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
+                                    borderWidth: 1.0,
+                                    borderRadius: 15.0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
@@ -622,12 +605,13 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 12.0, 15.0, 0.0),
+                                  15.0, 20.0, 15.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController4,
                                 focusNode: _model.textFieldFocusNode4,
                                 autofocus: true,
                                 obscureText: false,
+                                maxLines: 8,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
@@ -650,7 +634,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .alternate,
-                                      width: 2.0,
+                                      width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
@@ -658,7 +642,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
+                                      width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
@@ -683,7 +667,6 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       fontFamily: 'Noto Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                maxLines: 3,
                                 validator: _model.textController4Validator
                                     .asValidator(context),
                               ),
@@ -693,7 +676,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            15.0, 20.0, 15.0, 0.0),
+                            15.0, 25.0, 15.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -728,7 +711,7 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: FlutterFlowTheme.of(context).alternate,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -737,11 +720,6 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                             .primaryBtnText,
                                         letterSpacing: 0.0,
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).accent3,
-                                    width: 1.0,
-                                  ),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
                               ),
