@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:ku_ta_gjej/auth/firebase_auth/auth_util.dart';
@@ -44,46 +46,65 @@ class _SearchWidgetState extends State<SearchWidget> {
   }
 
   searchForProf() async {
-    print("DEBUG SEARCH PROF -------------=========");
+    log("DEBUG SEARCH PROF -------------=========");
 
+    // await queryUsersRecordOnce(queryBuilder: (query) {
+    //   var qry = query
+    //           .where(
+    //             'role',
+    //             isEqualTo: 'prof',
+    //           )
+    //           .where('uid', isNotEqualTo: currentUserUid)
+    //       // .orderBy('category')
+    //       ;
+
+    //   log("At Query =========");
+
+    //   if (FFAppState().SearchFilterLocations.isNotEmpty) {
+    //     log("search locations prof is not empty =========");
+    //     qry.where('location', whereIn: FFAppState().SearchFilterLocations);
+    //   }
+    //   // qry.orderBy('displayName', descending: true);
+
+    //   return qry;
+    // })
     await queryUsersRecordOnce(queryBuilder: (query) {
       var qry = query
-              .where(
-                'role',
-                isEqualTo: 'prof',
-              )
-              .where('uid', isNotEqualTo: currentUserUid)
-          // .orderBy('category')
-          ;
-
-      print("At Query =========");
+          .where('role', isEqualTo: 'prof')
+          .where('uid', isNotEqualTo: currentUserUid);
 
       if (FFAppState().SearchFilterLocations.isNotEmpty) {
-        print("search locations prof is not empty =========");
-        qry.where('location', whereIn: FFAppState().SearchFilterLocations);
+        // Split into chunks of 10 locations
+        // final locationChunks = <List<DocumentReference>>[];
+        final locations = FFAppState().SearchFilterLocations;
+
+        qry = qry.where('location', whereIn: locations);
       }
-      // qry.orderBy('displayName', descending: true);
 
       return qry;
     })
         .then(
-          (records) => _model.simpleSearchResults = TextSearch(
-            records
-                .map(
-                  (record) => TextSearchItem.fromTerms(record, [
+          (records) {
+            return _model.simpleSearchResults = TextSearch(
+              records.map(
+                (record) {
+                  return TextSearchItem.fromTerms(record, [
                     // record.title!,
                     record.displayName,
                     record.category!,
                     record.shortDescription,
                     record.email
-                  ]),
-                )
-                .toList(),
-          )
-              .search(_model.textController.text)
-              .map((r) => r.object)
-              .take(30)
-              .toList(),
+                  ]);
+                },
+              ).toList(),
+            )
+                .search(_model.textController.text)
+                .map((r) {
+                  return r.object;
+                })
+                .take(30)
+                .toList();
+          },
         )
         .onError((_, __) => _model.simpleSearchResults = [])
         .whenComplete(() => setState(() {}));
@@ -119,9 +140,11 @@ class _SearchWidgetState extends State<SearchWidget> {
           }
           List<CategoryRecord> searchCategoryRecordList = snapshot.data!;
           return GestureDetector(
-            onTap: () => _model.unfocusNode.canRequestFocus
-                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                : FocusScope.of(context).unfocus(),
+            onTap: () {
+              // _model.unfocusNode.canRequestFocus
+              //   ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              //   : FocusScope.of(context).unfocus();
+            },
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -178,7 +201,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController,
-                                    focusNode: _model.textFieldFocusNode,
+                                    // focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
                                       const Duration(milliseconds: 2000),
@@ -357,13 +380,19 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => _model
-                                                    .unfocusNode.canRequestFocus
-                                                ? FocusScope.of(context)
-                                                    .requestFocus(
-                                                        _model.unfocusNode)
-                                                : FocusScope.of(context)
-                                                    .unfocus(),
+                                            onTap: () {
+                                              try {
+                                                _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus();
+                                              } catch (e) {
+                                                log("Error in search_widget.dart UnFocus Node");
+                                              }
+                                            },
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
