@@ -112,52 +112,84 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
             mainAxisSize: MainAxisSize.max,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 50.0,
-                  child: Container(
-                    // width: 100.0,
-                    height: 50.0,
-                    color: FlutterFlowTheme.of(context).alternate,
-                    child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 0.0, 3.0),
-                          child: Row(
-                            children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 12.0,
-                                borderWidth: 1.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  FFIcons.kchevronLeft,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  context.safePop();
-                                },
-                              ),
-                              Text(
-                                "Create Professional Profile",
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                        fontFamily: 'Noto Sans',
-                                        letterSpacing: 0.0,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText),
-                              ),
-                            ],
-                          )),
-                    ),
+              Container(
+                // width: 450.0,
+                height: 70.0,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      FlutterFlowTheme.of(context).primary,
+                      FlutterFlowTheme.of(context).secondary
+                    ],
+                    stops: const [0.0, 1.0],
+                    begin: const AlignmentDirectional(1.0, 0.98),
+                    end: const AlignmentDirectional(-1.0, -0.98),
                   ),
-                ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation']!),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 0.0, 0.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/wowo2.png',
+                            width: 45.0,
+                            height: 120.0,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.safePop();
+                            },
+                            child: Container(
+                              width: 40.0,
+                              height: 40.0,
+                              decoration: BoxDecoration(
+                                color: const Color(0x2FF6F9F7),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(
+                                      Icons.close_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      size: 24.0,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Align(
                 alignment: AlignmentDirectional(0.0, -1.0),
@@ -549,50 +581,65 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       ),
                                     );
                                   }
+
                                   List<LocationsRecord>
                                       dropDownLocationsRecordList =
                                       snapshot.data!;
-                                  return FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: dropDownLocationsRecordList
-                                        .map((e) => e.locationName)
-                                        .toList(),
-                                    onChanged: (val) => setState(
-                                        () => _model.dropDownValue = val),
-                                    width: 300.0,
-                                    height: 56.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '0akfjt4k' /*  Location */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    borderWidth: 1.0,
-                                    borderRadius: 15.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 4.0, 16.0, 4.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  );
+                                  return StreamBuilder<LocationsRecord>(
+                                      stream: LocationsRecord.getDocument(
+                                          currentUserDocument!.location!),
+                                      builder: (loContext, locSnapshot) {
+                                        final currentLocationsRecord =
+                                            locSnapshot.data!;
+
+                                        return FlutterFlowDropDown<String>(
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<String>(
+                                                      currentLocationsRecord
+                                                          .locationName),
+                                          options: dropDownLocationsRecordList
+                                              .map((e) => e.locationName)
+                                              .toList(),
+                                          onChanged: (val) => setState(
+                                              () => _model.dropDownValue = val),
+                                          width: 300.0,
+                                          height: 56.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            '0akfjt4k' /*  Location */,
+                                          ),
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderWidth: 1.0,
+                                          borderRadius: 15.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isOverButton: true,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        );
+                                      });
                                 },
                               ),
                             ),
@@ -687,12 +734,19 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   // context.pushNamed('EditProfile--2--');
+                                  var location = await queryLocationsRecordOnce(
+                                    queryBuilder: (locationsRecord) =>
+                                        locationsRecord.where(
+                                      'location_name',
+                                      isEqualTo: _model.dropDownValue,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
                                   currentUserReference?.update(
                                       createUsersRecordData(
                                           displayName:
                                               _model.textController1.text,
-                                          location: _model
-                                              .selectedLocation?.reference,
+                                          location: location!.reference,
                                           shortDescription:
                                               _model.textController4?.text,
                                           phoneNumber:
