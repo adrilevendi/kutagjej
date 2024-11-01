@@ -1573,8 +1573,11 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                         .fromSTEB(
                                                         0.0, 10.0, 20.0, 0.0),
                                                 child: Container(
-                                                  width: double.infinity,
-                                                  height: 245.0,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                          .width,
+
+                                                  // height: 245.0,
                                                   decoration:
                                                       const BoxDecoration(),
                                                   child: Padding(
