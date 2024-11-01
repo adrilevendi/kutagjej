@@ -89,19 +89,22 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
             return _model.simpleSearchResults = TextSearch(
               records.map(
                 (record) {
-                  return TextSearchItem.fromTerms(record, [
-                    // record.title!,
-                    record.displayName,
-                    record.category!,
-                    record.shortDescription,
-                    record.email
-                  ]);
+                  return TextSearchItem.fromTerms(
+                    record,
+                    [
+                      record.email,
+                      record.title,
+                      record.displayName,
+                      record.category!,
+                      record.shortDescription,
+                    ],
+                  );
                 },
               ).toList(),
             )
                 .search(
                   _model.textController.text,
-                  matchThreshold: 1,
+                  matchThreshold: 0.9,
                 )
                 .map((TextSearchResult<UsersRecord> r) {
                   return r.object;
@@ -540,65 +543,33 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
                                         .map((e) => e)
                                         .toList();
                                     return ListView.builder(
-                                        padding: EdgeInsets.zero,
-                                        scrollDirection: Axis.vertical,
-                                        itemCount:
-                                            _model.simpleSearchResults.length,
-                                        itemBuilder:
-                                            (context, searchResultProfIndex) {
-                                          final searchResultProfItem =
-                                              _model.simpleSearchResults[
-                                                  searchResultProfIndex];
-                                          return Builder(
-                                            builder: (context) {
-                                              if (searchResultProfItem
-                                                      .verified ==
-                                                  true) {
-                                                return Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          15, 0, 15, 15),
-                                                  child: wrapWithModel(
-                                                      model: _model
-                                                          .profFeaturedTeaseModels
-                                                          .getModel(
-                                                        _model
-                                                            .simpleSearchResults[
-                                                                searchResultProfIndex]
-                                                            .reference
-                                                            .id,
-                                                        searchResultProfIndex,
-                                                      ),
-                                                      updateCallback: () =>
-                                                          setState(() {}),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child:
-                                                            ProfFeaturedTeaseWidget(
-                                                          key: Key(
-                                                            'Keyn7e_${_model.simpleSearchResults[searchResultProfIndex].reference.id}',
-                                                          ),
-                                                          prof:
-                                                              searchResultProfItem,
-                                                          isFavorite: false,
-                                                        ),
-                                                      )),
-                                                );
-                                              } else {
-                                                return Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          10, 0, 0, 0),
-                                                  child: wrapWithModel(
+                                      padding: EdgeInsets.zero,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount:
+                                          _model.simpleSearchResults.length,
+                                      itemBuilder:
+                                          (context, searchResultProfIndex) {
+                                        final searchResultProfItem =
+                                            _model.simpleSearchResults[
+                                                searchResultProfIndex];
+                                        return Builder(
+                                          builder: (context) {
+                                            if (searchResultProfItem.verified ==
+                                                true) {
+                                              return Padding(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        15, 0, 15, 15),
+                                                child: wrapWithModel(
                                                     model: _model
-                                                        .profPageSmallModels
+                                                        .profFeaturedTeaseModels
                                                         .getModel(
-                                                      searchResultProfItem
-                                                          .reference.id,
+                                                      _model
+                                                          .simpleSearchResults[
+                                                              searchResultProfIndex]
+                                                          .reference
+                                                          .id,
                                                       searchResultProfIndex,
                                                     ),
                                                     updateCallback: () =>
@@ -606,25 +577,75 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.only(
-                                                              left: 10,
-                                                              right: 10,
-                                                              top: 10),
+                                                              top: 15),
                                                       child:
-                                                          ProfPageSmallWidget(
+                                                          ProfFeaturedTeaseWidget(
                                                         key: Key(
-                                                          'Keyeef_${searchResultProfItem.reference.id}',
+                                                          'Keyn7e_${_model.simpleSearchResults[searchResultProfIndex].reference.id}',
                                                         ),
-                                                        userRef:
-                                                            searchResultProfItem
-                                                                .reference,
+                                                        prof:
+                                                            searchResultProfItem,
+                                                        isFavorite: false,
+                                                      ),
+                                                    )),
+                                              );
+                                            } else {
+                                              return Column(
+                                                children: [
+                                                  // Text(
+                                                  //   searchResultProfItem.email,
+                                                  //   style: FlutterFlowTheme.of(
+                                                  //           context)
+                                                  //       .bodyText1
+                                                  //       .override(
+                                                  //         fontFamily:
+                                                  //             'Noto Sans',
+                                                  //         color: FlutterFlowTheme
+                                                  //                 .of(context)
+                                                  //             .primaryColor,
+                                                  //       ),
+                                                  // ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            10, 0, 0, 0),
+                                                    child: wrapWithModel(
+                                                      model: _model
+                                                          .profPageSmallModels
+                                                          .getModel(
+                                                        searchResultProfItem
+                                                            .reference.id,
+                                                        searchResultProfIndex,
+                                                      ),
+                                                      updateCallback: () =>
+                                                          setState(() {}),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                left: 10,
+                                                                right: 10,
+                                                                top: 10),
+                                                        child:
+                                                            ProfPageSmallWidget(
+                                                          key: Key(
+                                                            'Keyeef_${searchResultProfItem.reference.id}',
+                                                          ),
+                                                          userRef:
+                                                              searchResultProfItem
+                                                                  .reference,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                );
-                                              }
-                                            },
-                                          );
-                                        });
+                                                ],
+                                              );
+                                            }
+                                          },
+                                        );
+                                      },
+                                    );
                                   },
                                 ),
                               ),
