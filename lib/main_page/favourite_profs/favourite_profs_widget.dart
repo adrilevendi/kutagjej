@@ -94,8 +94,8 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                       //   height: 200,
                       // padding: EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
                       child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        25.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
@@ -147,8 +147,8 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                     ),
                   )),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(19.0, 30.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        19.0, 30.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => StreamBuilder<List<PostRecord>>(
                         stream: queryPostRecord(queryBuilder: (postRecord) {
@@ -158,7 +158,6 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                                 isEqualTo: true,
                               )
                               .orderBy('endTime');
-
                         }),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -207,7 +206,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                                     }.withoutNulls,
                                   );
                                 },
-                                child: NjoftimTeaseWidget(
+                                child: StaffPostWidget(
                                   key: Key(
                                     'Key52w_${listViewPostRecord.reference.id}',
                                   ),

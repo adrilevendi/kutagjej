@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'njoftime_pune2_model.dart';
 export 'njoftime_pune2_model.dart';
 import '/search_prof/filter_sidebar/filter_sidebar_widget.dart';
-
+import 'dart:developer' as dev;
 import 'package:text_search/text_search.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 
@@ -367,12 +367,12 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
 
                   var sl = FFAppState().SearchFilterLocations;
                   if (sl.isNotEmpty) {
-                    print("SEARCH STATE LOC not empty");
+                    dev.log("SEARCH STATE LOC not empty");
 
                     pr.where('location', whereIn: sl);
-                    print("Query PAram location:");
+                    dev.log("Query PAram location:");
 
-                    print(pr.parameters);
+                    dev.log(pr.parameters.toString());
                   }
                   pr
                       .where(
@@ -381,8 +381,8 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                       )
                       .orderBy('endTime');
 
-                  print("DEBUG APPSTATE SL===========");
-                  print(FFAppState().SearchFilterLocations);
+                  dev.log("DEBUG APPSTATE SL===========");
+                  dev.log(FFAppState().SearchFilterLocations.toString());
                   return pr;
                 }),
                 builder: (context, snapshot) {
@@ -404,7 +404,7 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                   if (_model.textController != null) {
                     if (_model.textController!.value.text == '') {
                       _model.simpleSearchResults = listViewPostRecordList;
-                      print("Search bar is empty");
+                      dev.log("Search bar is empty");
                     }
                   }
                   final searchResultPost =
@@ -445,7 +445,7 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                             listViewIndex,
                           ),
                           updateCallback: () => setState(() {}),
-                          child: NjoftimTeaseWidget(
+                          child: StaffPostWidget(
                             key: Key(
                               'Key52w_${listViewPostRecord.reference.id}',
                             ),
