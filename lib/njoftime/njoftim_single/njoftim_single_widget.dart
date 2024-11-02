@@ -276,7 +276,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   Container(
-                                                      width: 85.0,
+                                                      // width: 90.0,
                                                       height: 40.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
