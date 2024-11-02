@@ -198,22 +198,50 @@ class PostRecord extends FirestoreRecord {
   ) =>
       PostRecord._(reference, mapFromFirestore(data));
 
-  static String getTimeLeft(
-    DateTime? endTime,
-  ) {
+  // static String getTimeLeft(
+  //   DateTime? endTime,
+  // ) {
+  //   var d = endTime != null
+  //       ? endTime.difference(getCurrentTimestamp)
+  //       : const Duration(days: 1);
+  //   return "${d.inDays} Day${d.inDays == 1 ? '' : 's'} - ${d.inHours - d.inDays * 24} : ${d.inMinutes - d.inHours * 60} : ${d.inSeconds - d.inMinutes * 60}";
+  // }
+
+  // static int getDaysLeft(
+  //   DateTime? endTime,
+  // ) {
+  //   var d = endTime != null
+  //       ? endTime.difference(getCurrentTimestamp)
+  //       : const Duration(days: 1);
+  //   return d.inDays;
+  // }
+
+  static String getTimeLeft(DateTime? endTime) {
     var d = endTime != null
         ? endTime.difference(getCurrentTimestamp)
         : const Duration(days: 1);
-    return "${d.inDays} Day${d.inDays == 1 ? '' : 's'} - ${d.inHours - d.inDays * 24} : ${d.inMinutes - d.inHours * 60} : ${d.inSeconds - d.inMinutes * 60}";
+
+    // Calculate components
+    final days = d.inDays;
+    final hours = (d.inHours % 24); // Get remaining hours after days
+    final minutes = (d.inMinutes % 60); // Get remaining minutes after hours
+    final seconds = (d.inSeconds % 60); // Get remaining seconds after minutes
+
+    return "$days Day${days == 1 ? '' : 's'} - $hours:$minutes:$seconds";
   }
 
-  static int getDaysLeft(
-    DateTime? endTime,
-  ) {
+  static int getDaysLeft(DateTime? endTime) {
     var d = endTime != null
         ? endTime.difference(getCurrentTimestamp)
         : const Duration(days: 1);
     return d.inDays;
+  }
+
+// Stream that emits updated time string every second
+  static Stream<String> getTimeLeftStream(DateTime? endTime) {
+    return Stream.periodic(const Duration(seconds: 1), (_) {
+      return getTimeLeft(endTime);
+    });
   }
 
   bool isOnLastDay(DateTime? param) =>
