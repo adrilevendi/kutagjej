@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '/backend/backend.dart';
 import '/components/post_tease_widget.dart';
 import '/components/prof_page_small_widget.dart';
@@ -825,8 +827,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 250.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -867,6 +870,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(12.0),
                                           child: InkWell(
                                             child: Container(
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 5),
                                               decoration: const BoxDecoration(
                                                   color: Color.fromARGB(
                                                       255, 10, 10, 10)),
@@ -896,22 +902,41 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 10, 10, 10)),
-                                  child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/reales.jpeg'), //Instagram
-                                    fit: BoxFit.contain,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(22.0),
+                                  child: Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 5),
+                                    decoration: const BoxDecoration(
+                                        color: Color.fromARGB(255, 10, 10, 10)),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/reales.jpeg'), //Instagram
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 10, 10, 10)),
-                                  child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/cs.jpeg'), //Instagram
-                                    fit: BoxFit.cover,
+                                // SizedBox(width: 10),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(22.0),
+                                  child: Container(
+                                    // margin: const EdgeInsets.symmetric(
+                                    // horizontal: 5),
+                                    decoration: BoxDecoration(
+                                      // color: Color.fromARGB(255, 10, 10, 10)
+                                      borderRadius: BorderRadius.circular(22.0),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/cs.jpeg'), //Instagram
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
                                 )
                               ],
