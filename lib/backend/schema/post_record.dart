@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:collection/collection.dart';
+import 'package:ku_ta_gjej/backend/backend.dart';
 
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
@@ -111,7 +113,7 @@ class PostRecord extends FirestoreRecord {
   DateTime? get startTime => _startTime;
   bool hasStartTime() => _startTime != null;
 
-   // "startTime" field.
+  // "startTime" field.
   DateTime? _endTime;
   DateTime? get endTime => _endTime;
   bool hasEndTime() => _endTime != null;
@@ -119,7 +121,12 @@ class PostRecord extends FirestoreRecord {
   // "position" field.
   String? _position;
   String? get position => _position;
-  bool hasposition() => _position != null;
+  bool hasPosition() => _position != null;
+
+  // add UserModel or User Collection to PostRecord to do Search Baased on email
+  UsersRecord? _userRecord;
+  UsersRecord? get userRecord => _userRecord;
+  bool hasUserModel() => _userRecord != null;
 
   void _initializeFields() {
     _title = snapshotData['title'] as String?;
@@ -148,16 +155,42 @@ class PostRecord extends FirestoreRecord {
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('post');
 
-  static Stream<PostRecord> getDocument(DocumentReference ref) =>
-      ref.snapshots().map((s) => PostRecord.fromSnapshot(s));
+  static Stream<PostRecord> getDocument(DocumentReference ref) {
+    return ref.snapshots().map((s) {
+      return PostRecord.fromSnapshot(s);
+    });
+  }
 
-  static Future<PostRecord> getDocumentOnce(DocumentReference ref) =>
-      ref.get().then((s) => PostRecord.fromSnapshot(s));
+  static Future<PostRecord> getDocumentOnce(DocumentReference ref) {
+    return ref.get().then((s) async {
+      // get user model as well and make it a part of the PostRecord
+
+      var postRecord = PostRecord.fromSnapshot(s);
+
+      await postRecord.loadUserModelFromFirebase();
+      return postRecord;
+    });
+  }
 
   static PostRecord fromSnapshot(DocumentSnapshot snapshot) => PostRecord._(
         snapshot.reference,
         mapFromFirestore(snapshot.data() as Map<String, dynamic>),
       );
+
+  // load User Model from backend firebase
+  Future<void> loadUserModelFromFirebase() async {
+    try {
+      if (userRef != null) {
+        final userRecord = await userRef!.get();
+        if (userRecord.exists) {
+          _userRecord = UsersRecord.fromSnapshot(userRecord);
+        }
+      }
+    } catch (error, stackTrace) {
+      log('Error loading UserModel: $error');
+      log('Stack Trace: $stackTrace');
+    }
+  }
 
   static PostRecord getDocumentFromData(
     Map<String, dynamic> data,
@@ -165,21 +198,25 @@ class PostRecord extends FirestoreRecord {
   ) =>
       PostRecord._(reference, mapFromFirestore(data));
 
-   static String getTimeLeft(
+  static String getTimeLeft(
     DateTime? endTime,
   ) {
-    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : const Duration(days: 1);
-      return "${d.inDays} Day${d.inDays==1?'':'s'} - ${d.inHours - d.inDays *24} : ${d.inMinutes - d.inHours*60} : ${d.inSeconds - d.inMinutes * 60}";
+    var d = endTime != null
+        ? endTime.difference(getCurrentTimestamp)
+        : const Duration(days: 1);
+    return "${d.inDays} Day${d.inDays == 1 ? '' : 's'} - ${d.inHours - d.inDays * 24} : ${d.inMinutes - d.inHours * 60} : ${d.inSeconds - d.inMinutes * 60}";
   }
 
   static int getDaysLeft(
     DateTime? endTime,
   ) {
-    var d = endTime != null ? endTime.difference(getCurrentTimestamp) : const Duration(days: 1);
-      return d.inDays;
+    var d = endTime != null
+        ? endTime.difference(getCurrentTimestamp)
+        : const Duration(days: 1);
+    return d.inDays;
   }
 
-   bool isOnLastDay (DateTime? param) =>
+  bool isOnLastDay(DateTime? param) =>
       param!.difference(getCurrentTimestamp).inDays < 31;
 
   @override

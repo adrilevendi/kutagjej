@@ -99,17 +99,10 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                             '_model.textController',
                             const Duration(milliseconds: 2000),
                             () async {
-                              await queryPostRecordOnce(queryBuilder: (query) {
-                                var pr = query
-                                        // .where(
-                                        //   'title',
-                                        //   isNull: false,
-                                        // )
-                                        // .limit(100)
-                                        .where('endTime',
-                                            isGreaterThan: getCurrentTimestamp)
-                                    // .where('category', isNull: false)
-                                    ;
+                              await queryPostRecordOnce(
+                                      queryBuilder: (Query<Object?> query) {
+                                Query<Object?> pr = query.where('endTime',
+                                    isGreaterThan: getCurrentTimestamp);
                                 if (FFAppState()
                                     .SearchFilterLocations
                                     .isNotEmpty) {
@@ -120,25 +113,30 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                                 return pr;
                               })
                                   .then(
-                                    (records) => _model.simpleSearchResults =
-                                        TextSearch(
-                                      records
-                                          .map(
-                                            (record) =>
-                                                TextSearchItem.fromTerms(
-                                                    record, [
+                                    (List<PostRecord> records) {
+                                      return _model
+                                          .simpleSearchResults = TextSearch(
+                                        records.map(
+                                          (PostRecord record) {
+                                            return TextSearchItem.fromTerms(
+                                                record, <String>[
                                               // record.title!,
                                               record.company,
+
                                               record.position!,
-                                              record.description
-                                            ]),
-                                          )
-                                          .toList(),
-                                    )
-                                            .search(_model.textController.text)
-                                            .map((r) => r.object)
-                                            .take(30)
-                                            .toList(),
+                                              record.description,
+                                              if (record.userRecord?.email !=
+                                                  null)
+                                                record.userRecord!.email,
+                                            ]);
+                                          },
+                                        ).toList(),
+                                      )
+                                          .search(_model.textController.text)
+                                          .map((r) => r.object)
+                                          .take(30)
+                                          .toList();
+                                    },
                                   )
                                   .onError((_, __) =>
                                       _model.simpleSearchResults = [])
