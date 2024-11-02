@@ -844,53 +844,56 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   PageController(initialPage: 0),
                               scrollDirection: Axis.horizontal,
                               children: [
-                                Container(
-                                  width: 100.0,
-                                  // height: 100.0,
-                                  decoration: const BoxDecoration(
-                                    // boxShadow: [
-                                    //   BoxShadow(
-                                    //     // blurRadius: 4.0,
-                                    //     color: Color(0x33000000),
-                                    //     offset: Offset(
-                                    //       0.0,
-                                    //       0.0,
-                                    //     ),
-                                    //   )
-                                    // ],
-                                    color: Colors.black,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  child: Container(
+                                    width: 100.0,
+                                    // height: 100.0,
+                                    decoration: const BoxDecoration(
+                                      color: Colors.black,
 
-                                    // borderRadius: BorderRadius.only(
-                                    //   bottomLeft: Radius.circular(0.0),
-                                    //   bottomRight: Radius.circular(25.0),
-                                    //   topLeft: Radius.circular(0.0),
-                                    //   topRight: Radius.circular(25.0),
-                                    // ),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      InkWell(
-                                        child: Container(
-                                          decoration: const BoxDecoration(
-                                              color: Color.fromARGB(
-                                                  255, 10, 10, 10)),
-                                          child: const Image(
-                                            image: AssetImage(
-                                                'assets/images/banner.jpg'), //Instagram
-                                            fit: BoxFit.cover,
+                                      // borderRadius: BorderRadius.only(
+                                      //   bottomLeft: Radius.circular(0.0),
+                                      //   bottomRight: Radius.circular(25.0),
+                                      //   topLeft: Radius.circular(0.0),
+                                      //   topRight: Radius.circular(25.0),
+                                      // ),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: InkWell(
+                                            child: Container(
+                                              decoration: const BoxDecoration(
+                                                  color: Color.fromARGB(
+                                                      255, 10, 10, 10)),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(22.0),
+                                                child: Image.asset(
+                                                  // image: AssetImage(
+                                                  'assets/images/banner.jpg',
+                                                  // ), //Instagram
+                                                  fit: BoxFit.cover,
+                                                  // height: 100,
+                                                ),
+                                              ),
+                                            ),
+                                            onTap: () async {
+                                              final Uri url = Uri.parse(
+                                                  'https://instagram.com/redtocila');
+                                              if (!await launchUrl(url)) {
+                                                throw Exception(
+                                                    'Could not launch url');
+                                              }
+                                            },
                                           ),
-                                        ),
-                                        onTap: () async {
-                                          final Uri url = Uri.parse(
-                                              'https://instagram.com/redtocila');
-                                          if (!await launchUrl(url)) {
-                                            throw Exception(
-                                                'Could not launch url');
-                                          }
-                                        },
-                                      )
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -1084,94 +1087,99 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Container(
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 250.0,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF005CF6), Color(0xFF25A4FF)],
-                      stops: [0.0, 1.0],
-                      begin: AlignmentDirectional(1.0, 0.87),
-                      end: AlignmentDirectional(-1.0, -0.87),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 250.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF005CF6), Color(0xFF25A4FF)],
+                        stops: [0.0, 1.0],
+                        begin: AlignmentDirectional(1.0, 0.87),
+                        end: AlignmentDirectional(-1.0, -0.87),
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(
-                              child: Align(
-                                alignment:
-                                    const AlignmentDirectional(0.0, -1.0),
-                                child: InkWell(
-                                  onTap: () {
-                                    context.pushNamed("Plans");
-                                  },
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 25.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'x971qhtz' /* "TRUSTED" 
-Professional */
-                                        ,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Expanded(
+                                child: Align(
+                                  alignment:
+                                      const AlignmentDirectional(0.0, -1.0),
+                                  child: InkWell(
+                                    onTap: () {
+                                      context.pushNamed("Plans");
+                                    },
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 25.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'x971qhtz' /* "TRUSTED" 
+                                      Professional */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Noto Sans',
+                                              color: const Color(0xFFFFDF15),
+                                              fontSize: 30.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w900,
+                                            ),
                                       ),
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily: 'Noto Sans',
-                                            color: const Color(0xFFFFDF15),
-                                            fontSize: 30.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w900,
-                                          ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 10.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ufpy02fc' /* Become a professional
-where pe... */
-                                    ,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ufpy02fc' /* Become a professional
+                                      where pe... */
+                                      ,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Noto Sans',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBtnText,
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Noto Sans',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        letterSpacing: 0.0,
-                                      ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
-                        child: Icon(
-                          Icons.verified_user_rounded,
-                          color: FlutterFlowTheme.of(context).warning,
-                          size: 150.0,
+                        Align(
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: Icon(
+                            Icons.verified_user_rounded,
+                            color: FlutterFlowTheme.of(context).warning,
+                            size: 150.0,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Padding(

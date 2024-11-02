@@ -24,7 +24,8 @@ class FavouriteProfsWidget extends StatefulWidget {
   State<FavouriteProfsWidget> createState() => _FavouriteProfsWidgetState();
 }
 
-class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
+class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
+    with SingleTickerProviderStateMixin {
   late FavouriteProfsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -33,6 +34,11 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FavouriteProfsModel());
+    _model.tabBarController = TabController(
+      vsync: this,
+      length: 1,
+      initialIndex: 0,
+    )..addListener(() => setState(() {}));
   }
 
   @override
@@ -47,183 +53,172 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
     if (!loggedIn) {
       return const Login1Widget();
     } else {
-      return GestureDetector(
-        onTap: () => _model.unfocusNode.canRequestFocus
-            ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-            : FocusScope.of(context).unfocus(),
-        child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              automaticallyImplyLeading: false,
-              // leading: FlutterFlowIconButton(
-              //   borderColor: Colors.transparent,
-              //   borderRadius: 30.0,
-              //   borderWidth: 1.0,
-              //   buttonSize: 60.0,
-              //   icon: Icon(
-              //     Icons.arrow_back_rounded,
-              //     color: Colors.white,
-              //     size: 30.0,
-              //   ),
-              //   onPressed: () async {
-              //     context.pop();
-              //   },
-              // ),
-              title: Text(
-                FFLocalizations.of(context).getText(
-                  'w39t4lm1' /* Favourites */,
+      return DefaultTabController(
+          initialIndex: 0, //optional, starts from 0, select the tab by default
+          length: 2,
+          child: Scaffold(
+              appBar: AppBar(
+                title: Text(
+                  "Favorites",
+                  style: TextStyle(color: Colors.black),
                 ),
-                style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily: 'Noto Sans',
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      letterSpacing: 0.0,
-                    ),
-              ),
-              actions: const [],
-              centerTitle: false,
-              elevation: 0,
-            ),
-            body: Padding(
-              padding: const EdgeInsets.all(0),
-              child: Column(
-                children: [
-                  Expanded(
-                      //   width: MediaQuery.sizeOf(context).width,
-                      //   height: 200,
-                      // padding: EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
-                      child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 0.0, 0.0),
-                    child: AuthUserStreamWidget(
-                      builder: (context) => StreamBuilder<List<UsersRecord>>(
-                        stream: queryUsersRecord(
-                          queryBuilder: (usersRecord) => usersRecord.whereIn(
-                              'uid',
-                              currentUserDocument?.favorites
-                                  .toList()
-                                  .map((e) => e.id)
-                                  .toList()),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<UsersRecord> listViewUsersRecordList = snapshot
-                              .data!
-                              .where((u) => u.role == 'prof')
-                              .toList();
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewUsersRecordList.length,
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewUsersRecord =
-                                  listViewUsersRecordList[listViewIndex];
-                              return Padding(
-                                padding: const EdgeInsets.only(bottom: 15.0),
-                                child: ProfPageSmallWidget(
-                                  key: Key(
-                                      'Key5zo_${listViewIndex}_of_${listViewUsersRecordList.length}'),
-                                  userRef: listViewUsersRecord.reference,
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                  )),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(19.0, 30.0, 0.0, 0.0),
-                    child: AuthUserStreamWidget(
-                      builder: (context) => StreamBuilder<List<PostRecord>>(
-                        stream: queryPostRecord(queryBuilder: (postRecord) {
-                          return postRecord
-                              .where(
-                                'featured',
-                                isEqualTo: true,
-                              )
-                              .orderBy('endTime');
-
-                        }),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<PostRecord> listViewPostRecordList =
-                              snapshot.data!;
-                          listViewPostRecordList.map((e) => e).toList();
-                          return ListView.builder(
-                            padding: const EdgeInsets.fromLTRB(
-                              0,
-                              0,
-                              0,
-                              50.0,
+                backgroundColor: Colors.white,
+                bottom: TabBar(
+                    isScrollable: true,
+                    labelColor: FlutterFlowTheme.of(context).primaryText,
+                    unselectedLabelColor:
+                        FlutterFlowTheme.of(context).secondaryText,
+                    labelPadding: const EdgeInsetsDirectional.fromSTEB(
+                        32.0, 0.0, 32.0, 0.0),
+                    labelStyle:
+                        FlutterFlowTheme.of(context).titleMedium.override(
+                              fontFamily: 'Noto Sans',
+                              letterSpacing: 0.0,
                             ),
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewPostRecordList.length,
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewPostRecord =
-                                  listViewPostRecordList[listViewIndex];
-                              return InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'NjoftimSingle',
-                                    queryParameters: {
-                                      'postRef': serializeParam(
-                                        listViewPostRecord.reference,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                  );
-                                },
-                                child: NjoftimTeaseWidget(
-                                  key: Key(
-                                    'Key52w_${listViewPostRecord.reference.id}',
-                                  ),
-                                  post: listViewPostRecord,
-                                ),
-                              );
-                            },
-                          );
-                        },
+                    unselectedLabelStyle:
+                        FlutterFlowTheme.of(context).titleMedium.override(
+                              fontFamily: 'Noto Sans',
+                              letterSpacing: 0.0,
+                            ),
+                    indicatorColor: FlutterFlowTheme.of(context).primary,
+                    indicatorWeight: 3.0,
+                    tabs: [
+                      Tab(
+                        text: "Professionals",
                       ),
+                      Tab(
+                        text: "Staff",
+                      ),
+                    ]),
+              ),
+              body: TabBarView(children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      25.0, 30.0, 0.0, 0.0),
+                  child: AuthUserStreamWidget(
+                    builder: (context) => StreamBuilder<List<UsersRecord>>(
+                      stream: queryUsersRecord(
+                        queryBuilder: (usersRecord) => usersRecord.whereIn(
+                            'uid',
+                            currentUserDocument?.favorites
+                                .toList()
+                                .map((e) => e.id)
+                                .toList()),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<UsersRecord> listViewUsersRecordList = snapshot
+                            .data!
+                            .where((u) => u.role == 'prof')
+                            .toList();
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewUsersRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewUsersRecord =
+                                listViewUsersRecordList[listViewIndex];
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 15.0),
+                              child: ProfPageSmallWidget(
+                                key: Key(
+                                    'Key5zo_${listViewIndex}_of_${listViewUsersRecordList.length}'),
+                                userRef: listViewUsersRecord.reference,
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
                   ),
-                ],
-              ),
-            )),
-      );
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      19.0, 30.0, 0.0, 0.0),
+                  child: AuthUserStreamWidget(
+                    builder: (context) => StreamBuilder<List<PostRecord>>(
+                      stream: queryPostRecord(queryBuilder: (postRecord) {
+                        return postRecord
+                            .where(
+                              'featured',
+                              isEqualTo: true,
+                            )
+                            .orderBy('endTime');
+                      }),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<PostRecord> listViewPostRecordList =
+                            snapshot.data!;
+                        listViewPostRecordList.map((e) => e).toList();
+                        return ListView.builder(
+                          padding: const EdgeInsets.fromLTRB(
+                            0,
+                            0,
+                            0,
+                            50.0,
+                          ),
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewPostRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewPostRecord =
+                                listViewPostRecordList[listViewIndex];
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'NjoftimSingle',
+                                  queryParameters: {
+                                    'postRef': serializeParam(
+                                      listViewPostRecord.reference,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              },
+                              child: NjoftimTeaseWidget(
+                                key: Key(
+                                  'Key52w_${listViewPostRecord.reference.id}',
+                                ),
+                                post: listViewPostRecord,
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ])));
     }
   }
 }
