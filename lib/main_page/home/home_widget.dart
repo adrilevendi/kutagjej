@@ -847,68 +847,47 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   PageController(initialPage: 0),
                               scrollDirection: Axis.horizontal,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                  child: Container(
-                                    width: 100.0,
-                                    // height: 100.0,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.black,
-
-                                      // borderRadius: BorderRadius.only(
-                                      //   bottomLeft: Radius.circular(0.0),
-                                      //   bottomRight: Radius.circular(25.0),
-                                      //   topLeft: Radius.circular(0.0),
-                                      //   topRight: Radius.circular(25.0),
-                                      // ),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          child: InkWell(
-                                            child: Container(
-                                              margin:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 5),
-                                              decoration: const BoxDecoration(
-                                                  color: Color.fromARGB(
-                                                      255, 10, 10, 10)),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(22.0),
-                                                child: Image.asset(
-                                                  // image: AssetImage(
-                                                  'assets/images/banner.jpg',
-                                                  // ), //Instagram
-                                                  fit: BoxFit.cover,
-                                                  // height: 100,
-                                                ),
-                                              ),
-                                            ),
-                                            onTap: () async {
-                                              final Uri url = Uri.parse(
-                                                  'https://instagram.com/redtocila');
-                                              if (!await launchUrl(url)) {
-                                                throw Exception(
-                                                    'Could not launch url');
-                                              }
-                                            },
-                                          ),
-                                        )
-                                      ],
+                                Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 10, 10, 10),
+                                    borderRadius: BorderRadius.circular(22.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        final Uri url = Uri.parse(
+                                            'https://instagram.com/redtocila');
+                                        if (!await launchUrl(url)) {
+                                          throw Exception(
+                                              'Could not launch url');
+                                        }
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(22.0),
+                                        child: Image.asset(
+                                          // image: AssetImage(
+                                          'assets/images/banner.jpg',
+                                          // ), //Instagram
+                                          fit: BoxFit.cover,
+                                          // height: 100,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(22.0),
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 5),
-                                    decoration: const BoxDecoration(
-                                        color: Color.fromARGB(255, 10, 10, 10)),
+                                Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      color: const Color.fromARGB(
+                                          255, 10, 10, 10)),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(22.0),
                                       child: const Image(
@@ -920,15 +899,15 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 // SizedBox(width: 10),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(22.0),
-                                  child: Container(
-                                    // margin: const EdgeInsets.symmetric(
-                                    // horizontal: 5),
-                                    decoration: BoxDecoration(
-                                      // color: Color.fromARGB(255, 10, 10, 10)
-                                      borderRadius: BorderRadius.circular(22.0),
-                                    ),
+                                Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                    // color: Color.fromARGB(255, 10, 10, 10)
+                                    borderRadius: BorderRadius.circular(22.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(22.0),
                                       child: const Image(
