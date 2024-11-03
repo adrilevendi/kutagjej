@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ku_ta_gjej/backend/backend.dart';
 import 'package:ku_ta_gjej/backend/firebase_storage/storage.dart';
 import 'package:ku_ta_gjej/backend/schema/users_record.dart';
@@ -207,8 +208,8 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                       return ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          _model.userPhoto,
+                                        child: CachedNetworkImage(
+                                          imageUrl: _model.userPhoto,
                                           width:
                                               MediaQuery.sizeOf(context).width -
                                                   60,

@@ -1,5 +1,6 @@
 // import 'dart:ui_web';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:share_plus/share_plus.dart';
@@ -201,8 +202,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Image.network(
-                                              valueOrDefault<String>(
+                                            CachedNetworkImage(
+                                              imageUrl: valueOrDefault<String>(
                                                 njoftimSinglePostRecord.image,
                                                 'https://static.vecteezy.com/system/resources/previews/001/829/092/large_2x/light-green-pattern-with-lines-vector.jpg',
                                               ),

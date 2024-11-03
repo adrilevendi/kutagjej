@@ -62,8 +62,8 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
               elevation: 0,
             ),
           ),
-          body: SafeArea(
-            top: true,
+          body: SizedBox(
+            height: MediaQuery.of(context).size.height,
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,57 +161,54 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                         ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      StreamBuilder<List<ChatsRecord>>(
-                        stream: queryChatsRecord(
-                          queryBuilder: (chatsRecord) =>
-                              chatsRecord.where(Filter.or(
-                            Filter(
-                              'recipient',
-                              isEqualTo: currentUserReference,
-                            ),
-                            Filter(
-                              'sender',
-                              isEqualTo: currentUserReference,
-                            ),
-                          )),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50,
-                                height: 50,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
+                      Expanded(
+                        child: StreamBuilder<List<ChatsRecord>>(
+                          stream: queryChatsRecord(
+                            queryBuilder: (chatsRecord) =>
+                                chatsRecord.where(Filter.or(
+                              Filter(
+                                'recipient',
+                                isEqualTo: currentUserReference,
+                              ),
+                              Filter(
+                                'sender',
+                                isEqualTo: currentUserReference,
+                              ),
+                            )),
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50,
+                                  height: 50,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
-                          }
-                          List<ChatsRecord> listViewChatsRecordList =
-                              snapshot.data!;
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewChatsRecordList.length,
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewChatsRecord =
-                                  listViewChatsRecordList[listViewIndex];
-                              // print( listViewChatsRecordList[listViewIndex]);
-                              // print( listViewChatsRecord);
+                              );
+                            }
+                            List<ChatsRecord> listViewChatsRecordList =
+                                snapshot.data!;
+                            return ListView.builder(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: listViewChatsRecordList.length,
+                              itemBuilder: (context, listViewIndex) {
+                                final listViewChatsRecord =
+                                    listViewChatsRecordList[listViewIndex];
+                                // print( listViewChatsRecordList[listViewIndex]);
+                                // print( listViewChatsRecord);
 
-                              return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0, 1, 0, 0),
-                                child: StreamBuilder<UsersRecord>(
+                                return StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
                                       listViewChatsRecord.recipient ==
                                               currentUserReference
@@ -557,7 +554,12 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
                                                                                                   child: Icon(
                                                                                                     Icons.check,
-                                                                                                    color: textMessageCount == 0 ? Colors.green : FlutterFlowTheme.of(context).accent2,
+                                                                                                    // color:
+                                                                                                    color: valueOrDefault<Color>(
+                                                                                                      (columnMessageRecord?.read ?? false) ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                      FlutterFlowTheme.of(context).success,
+                                                                                                    ),
+                                                                                                    // textMessageCount == 0 ? Colors.green : FlutterFlowTheme.of(context).accent2,
                                                                                                     size: 21,
                                                                                                   ),
                                                                                                 ),
@@ -712,11 +714,11 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                       ),
                                     );
                                   },
-                                ),
-                              );
-                            },
-                          );
-                        },
+                                );
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),

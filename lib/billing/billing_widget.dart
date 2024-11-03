@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/empty_list_widget.dart';
@@ -56,8 +58,8 @@ class _BillingWidgetState extends State<BillingWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 24.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -99,8 +101,8 @@ class _BillingWidgetState extends State<BillingWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 0.0, 20.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -171,8 +173,8 @@ class _BillingWidgetState extends State<BillingWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 12.0, 0.0, 0.0),
                       child: StreamBuilder<List<CreditCardRecord>>(
                         stream: queryCreditCardRecord(
                           queryBuilder: (creditCardRecord) =>
@@ -232,8 +234,9 @@ class _BillingWidgetState extends State<BillingWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 8.0, 8.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -245,8 +248,9 @@ class _BillingWidgetState extends State<BillingWidget> {
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1613243555988-441166d4d6fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxjcmVkaXQlMjBjYXJkfGVufDB8fHx8MTcxODI2NDk3NXww&ixlib=rb-4.0.3&q=80&w=1080',
+                                            child: CachedNetworkImage(
+                                              imageUrl:
+                                                  'https://images.unsplash.com/photo-1613243555988-441166d4d6fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxjcmVkaXQlMjBjYXJkfGVufDB8fHx8MTcxODI2NDk3NXww&ixlib=rb-4.0.3&q=80&w=1080',
                                               width: 80.0,
                                               height: 80.0,
                                               fit: BoxFit.fitWidth,
@@ -254,9 +258,8 @@ class _BillingWidgetState extends State<BillingWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -265,8 +268,9 @@ class _BillingWidgetState extends State<BillingWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 0.0, 0.0, 8.0),
                                                 child: Text(
                                                   listViewCreditCardRecord
@@ -297,8 +301,9 @@ class _BillingWidgetState extends State<BillingWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(

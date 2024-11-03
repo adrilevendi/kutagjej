@@ -1210,8 +1210,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      20.0, 10.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1237,79 +1239,82 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                    child: StreamBuilder<List<UsersRecord>>(
-                      stream: queryUsersRecord(
-                        queryBuilder: (usersRecord) => usersRecord.where(
-                          'role',
-                          isEqualTo: 'prof',
-                        ),
+                Container(
+                  // width: MediaQuery.sizeOf(context).width,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                  child: StreamBuilder<List<UsersRecord>>(
+                    stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'role',
+                        isEqualTo: 'prof',
                       ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
                               ),
                             ),
-                          );
-                        }
-                        List<UsersRecord> listViewUsersRecordList =
-                            snapshot.data!;
-                        // print(snapshot.data);
-                        return ListView.builder(
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: listViewUsersRecordList.length,
-                          itemBuilder: (context, listViewIndex) {
-                            final listViewUsersRecord =
-                                listViewUsersRecordList[listViewIndex];
-                            return Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 0, 0, 20),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'DetailedProfile',
-                                    queryParameters: {
-                                      'userRef': serializeParam(
-                                        listViewUsersRecord.reference,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                  );
-                                },
+                          ),
+                        );
+                      }
+                      List<UsersRecord> listViewUsersRecordList =
+                          snapshot.data!;
+                      // print(snapshot.data);
+                      return ListView.builder(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: listViewUsersRecordList.length,
+                        itemBuilder: (context, listViewIndex) {
+                          final listViewUsersRecord =
+                              listViewUsersRecordList[listViewIndex];
+                          return Center(
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'DetailedProfile',
+                                  queryParameters: {
+                                    'userRef': serializeParam(
+                                      listViewUsersRecord.reference,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              },
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                  20,
+                                  0,
+                                  20,
+                                  10,
+                                ),
                                 child: ProfPageSmallWidget(
                                   key: Key(
                                       'Keydqr_${listViewIndex}_of_${listViewUsersRecordList.length}'),
                                   userRef: listViewUsersRecord.reference,
                                 ),
                               ),
-                            );
-                          },
-                        ).animateOnPageLoad(
-                            animationsMap['listViewOnPageLoadAnimation']!);
-                      },
-                    ),
+                            ),
+                          );
+                        },
+                      ).animateOnPageLoad(
+                          animationsMap['listViewOnPageLoadAnimation']!);
+                    },
                   ),
                 ),
               ],

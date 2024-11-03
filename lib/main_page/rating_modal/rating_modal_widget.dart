@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
@@ -95,7 +96,8 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: 50.0,
                     height: 4.0,
@@ -112,14 +114,14 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                   ),
-                  child: Image.network(
-                    optionsUsersRecord.photoUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: optionsUsersRecord.photoUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 10.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 10.0, 16.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -175,8 +177,8 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                   }
                 }),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      25.0, 10.0, 25.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 135.0,
@@ -188,8 +190,8 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          12.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         key: const ValueKey('ratingcommentinput'),
                         controller: _model.textController,
@@ -227,7 +229,8 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await ReviewRecord.collection.doc().set(
@@ -258,10 +261,10 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                     options: FFButtonOptions(
                       width: 300.0,
                       height: 40.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 0.0, 24.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(

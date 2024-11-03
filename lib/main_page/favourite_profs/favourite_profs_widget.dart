@@ -133,7 +133,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget> {
                               final listViewUsersRecord =
                                   listViewUsersRecordList[listViewIndex];
                               return Padding(
-                                padding: const EdgeInsets.only(bottom: 15.0),
+                                padding: const EdgeInsets.only(bottom: 20.0),
                                 child: ProfPageSmallWidget(
                                   key: Key(
                                       'Key5zo_${listViewIndex}_of_${listViewUsersRecordList.length}'),

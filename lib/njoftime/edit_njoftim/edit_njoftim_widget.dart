@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -283,8 +285,8 @@ class _EditNjoftimWidgetState extends State<EditNjoftimWidget> {
                                           return ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              postToEdit.image,
+                                            child: CachedNetworkImage(
+                                              imageUrl: postToEdit.image,
                                               width: MediaQuery.sizeOf(context)
                                                       .width -
                                                   60,

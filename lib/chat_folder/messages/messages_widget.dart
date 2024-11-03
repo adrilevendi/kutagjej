@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -70,7 +72,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'zdy2fqhf' /* Below are messages with profes... */,
@@ -82,13 +85,14 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 1.0, 0.0, 0.0),
                       child: StreamBuilder<UsersRecord>(
                         stream:
                             UsersRecord.getDocument(widget.users!.reference),
@@ -187,12 +191,14 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(2.0),
+                                              padding:
+                                                  const EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(40.0),
-                                                child: Image.network(
-                                                  containerUsersRecord.photoUrl,
+                                                child: CachedNetworkImage(
+                                                  imageUrl: containerUsersRecord
+                                                      .photoUrl,
                                                   width: 44.0,
                                                   height: 44.0,
                                                   fit: BoxFit.cover,
@@ -204,9 +210,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -265,8 +270,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -292,8 +298,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 4.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                            0.0, 4.0, 0.0, 0.0),
                                                     child: Text(
                                                       dateTimeFormat(
                                                         'jm',
@@ -353,8 +359,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                       color: FlutterFlowTheme.of(context).secondary,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 0.0,
@@ -390,8 +396,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        'https://source.unsplash.com/random/1280x720?user&2',
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            'https://source.unsplash.com/random/1280x720?user&2',
                                         width: 44.0,
                                         height: 44.0,
                                         fit: BoxFit.cover,
@@ -401,8 +408,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -421,9 +429,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'rgu0twsr' /* This was really great, i'm so ... */,
@@ -443,8 +450,10 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -488,8 +497,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                       color: FlutterFlowTheme.of(context).secondary,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 0.0,
@@ -525,8 +534,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        'https://source.unsplash.com/random/1280x720?user&2',
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            'https://source.unsplash.com/random/1280x720?user&2',
                                         width: 44.0,
                                         height: 44.0,
                                         fit: BoxFit.cover,
@@ -536,8 +546,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -556,9 +567,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '3papcqtj' /* This was really great, i'm so ... */,
@@ -578,8 +588,10 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -597,8 +609,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       0.0, 0.0, 10.0, 5.0),
                                               child: badges.Badge(
                                                 badgeContent: Text(
@@ -626,7 +639,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 elevation: 0.0,
-                                                padding: const EdgeInsets.all(6.0),
+                                                padding:
+                                                    const EdgeInsets.all(6.0),
                                                 position: badges.BadgePosition
                                                     .topEnd(),
                                                 animationType: badges
@@ -664,8 +678,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                       color: FlutterFlowTheme.of(context).secondary,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 1.0, 0.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 1.0,
@@ -701,8 +715,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                     padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        'https://source.unsplash.com/random/1280x720?user&2',
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            'https://source.unsplash.com/random/1280x720?user&2',
                                         width: 44.0,
                                         height: 44.0,
                                         fit: BoxFit.cover,
@@ -712,8 +727,9 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -732,9 +748,8 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '47nxmpld' /* This was really great, i'm so ... */,
@@ -754,8 +769,10 @@ class _MessagesWidgetState extends State<MessagesWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(

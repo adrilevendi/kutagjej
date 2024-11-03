@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -134,8 +136,8 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.network(
-                              'https://picsum.photos/seed/879/600',
+                            child: CachedNetworkImage(
+                              imageUrl: 'https://picsum.photos/seed/879/600',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -172,7 +174,8 @@ class _IncomingCallWidgetState extends State<IncomingCallWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 270.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 270.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
