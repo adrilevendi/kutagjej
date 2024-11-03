@@ -33,7 +33,13 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
 
   @override
   void dispose() {
-    _model.dispose();
+    // try {
+    //   _model.textController?.dispose();
+    //   _model.textFieldFocusNode?.dispose();
+    //   // _model.dispose();
+    // } catch (e) {
+    //   dev.log('Error disposing textController or textFieldFocusNode $e');
+    // }
 
     super.dispose();
   }
@@ -41,9 +47,9 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      // onTap: () => _model.unfocusNode.canRequestFocus
+      //     ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+      //     : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
