@@ -235,15 +235,25 @@ class _StaffPostWidgetState extends State<StaffPostWidget> {
                 ),
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    PostRecord.getTimeLeft(widget.post?.endTime),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Roboto Slab',
-                          color: FlutterFlowTheme.of(context).primaryBtnText,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
+                  child: StreamBuilder<String?>(
+                      stream:
+                          PostRecord.getTimeLeftStream(widget.post?.endTime),
+                      builder: (context, timeLeftSnapshot) {
+                        return Text(
+                          timeLeftSnapshot.hasData
+                              ? (timeLeftSnapshot.data ?? '')
+                              : PostRecord.getTimeLeft(widget.post?.endTime),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Roboto Slab',
+                                color:
+                                    FlutterFlowTheme.of(context).primaryBtnText,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                        );
+                      }),
                 ),
               ),
             ),

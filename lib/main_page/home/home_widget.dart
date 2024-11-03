@@ -1012,7 +1012,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                   child: Container(
                     // width: 393,
-                    height: 190,
+                    // height: 190,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -1041,13 +1041,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         List<PostRecord> rowPostRecordList = snapshot.data!;
 
                         if (rowPostRecordList.isEmpty) {
-                          return Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image.asset(
-                                'assets/images/no_data_found_image.jpg',
+                          return Column(
+                            children: [
+                              Center(
+                                child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    // child: Image.asset(
+                                    //   'assets/images/no_data_found_image.jpg',
+                                    // ),
+                                    child: Image.asset(
+                                      'assets/images/no-data-variant-no-text.png',
+                                      width: 240,
+                                      height: 160,
+                                      fit: BoxFit.cover,
+                                    )),
                               ),
-                            ),
+                              Text(
+                                'No Announcement Found',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      color:
+                                          FlutterFlowTheme.of(context).accent2,
+                                      fontSize: 15,
+                                      letterSpacing: 0,
+                                      // decoration: TextDecoration.underline,
+                                    ),
+                              ),
+                              const SizedBox(height: 30),
+                            ],
                           );
                         }
                         return SingleChildScrollView(
