@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,7 +14,7 @@ export 'filter_sidebar_model.dart';
 class FilterSidebarWidget extends StatefulWidget {
   const FilterSidebarWidget({super.key, required this.atUpdate});
 
-  final Function() atUpdate;
+  final VoidCallback atUpdate;
   @override
   State<FilterSidebarWidget> createState() => _FilterSidebarWidgetState();
 }
@@ -29,7 +31,9 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FilterSidebarModel());
+    _model = createModel(context, () {
+      return FilterSidebarModel();
+    });
   }
 
   @override
@@ -118,7 +122,7 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                             .cast<DocumentReference>();
                         setState(() {});
                       } catch (e) {
-                        print(e.toString());
+                        log(e.toString());
                       }
                     },
                     text: FFLocalizations.of(context).getText(
@@ -180,19 +184,20 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                         multiSelectController:
                             _model.dropDownValueController1 ??=
                                 FormListFieldController<DocumentReference>(
-                                    _model.dropDownValue1 ??=
-                                        List<DocumentReference>.from(
-                          FFAppState().SearchFilterLocations ?? [],
-                        )),
+                          _model.dropDownValue1 ??=
+                              List<DocumentReference>.from(
+                            FFAppState().SearchFilterLocations,
+                          ),
+                        ),
                         options: List<DocumentReference<Object?>>.from(
                             dropDownLocationsRecordList
                                 .map((e) => e.reference)
                                 .toList()),
                         optionLabels: List<String>.from(
-                            dropDownLocationsRecordList
-                                .map((e) => e.locationName)
-                                .toList()),
-                        width: 300.0,
+                            dropDownLocationsRecordList.map((e) {
+                          return e.locationName;
+                        }).toList()),
+                        width: MediaQuery.of(context).size.width * 0.8,
                         height: 56.0,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
@@ -220,14 +225,19 @@ class _FilterSidebarWidgetState extends State<FilterSidebarWidget> {
                         isOverButton: true,
                         isSearchable: false,
                         isMultiSelect: true,
-                        onMultiSelectChanged: (val) async {
-                          setState(() => _model.dropDownValue1 = val);
+                        onMultiSelectChanged:
+                            (List<DocumentReference<Object?>>? val) async {
+                          setState(() {
+                            _model.dropDownValue1 = val;
+                          });
+
+                          log('Selected locations: ${val.toString()}');
 
                           FFAppState().SearchFilterLocations = _model
                               .dropDownValue1!
                               .toList()
                               .cast<DocumentReference>();
-                          widget.atUpdate();
+                          widget.atUpdate.call();
                           setState(() {});
                         },
                       );

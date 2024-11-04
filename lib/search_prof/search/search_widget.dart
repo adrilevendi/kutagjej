@@ -83,38 +83,39 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
       }
 
       return qry;
-    })
-        .then(
-          (records) {
-            return _model.simpleSearchResults = TextSearch(
-              records.map(
-                (record) {
-                  return TextSearchItem.fromTerms(
-                    record,
-                    [
-                      record.email,
-                      record.title,
-                      record.displayName,
-                      record.category!,
-                      record.shortDescription,
-                    ],
-                  );
-                },
-              ).toList(),
-            )
-                .search(
-                  _model.textController.text,
-                  matchThreshold: 0.9,
-                )
-                .map((TextSearchResult<UsersRecord> r) {
-                  return r.object;
-                })
-                .take(30)
-                .toList();
-          },
+    }).then(
+      (records) {
+        return _model.simpleSearchResults = TextSearch(
+          records.map(
+            (record) {
+              return TextSearchItem.fromTerms(
+                record,
+                [
+                  record.email,
+                  record.title,
+                  record.displayName,
+                  record.category!,
+                  record.shortDescription,
+                ],
+              );
+            },
+          ).toList(),
         )
-        .onError((_, __) => _model.simpleSearchResults = [])
-        .whenComplete(() => setState(() {}));
+            .search(
+              _model.textController.text,
+              matchThreshold: 0.9,
+            )
+            .map((TextSearchResult<UsersRecord> r) {
+              return r.object;
+            })
+            .take(30)
+            .toList();
+      },
+    ).onError((_, __) {
+      return _model.simpleSearchResults = [];
+    }).whenComplete(() {
+      setState(() {});
+    });
   }
 
   @override
@@ -124,8 +125,12 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
     return SafeArea(
       child: StreamBuilder<List<CategoryRecord>>(
         stream: queryCategoryRecord(
-          queryBuilder: (categoryRecord) =>
-              categoryRecord.whereIn('qualification', FFAppState().f),
+          queryBuilder: (categoryRecord) {
+            return categoryRecord.whereIn(
+              'qualification',
+              FFAppState().f,
+            );
+          },
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
@@ -148,9 +153,9 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
           List<CategoryRecord> searchCategoryRecordList = snapshot.data!;
           return GestureDetector(
             onTap: () {
-              // _model.unfocusNode.canRequestFocus
-              //   ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              //   : FocusScope.of(context).unfocus();
+              _model.unfocusNode.canRequestFocus
+                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                  : FocusScope.of(context).unfocus();
             },
             child: Scaffold(
               key: scaffoldKey,
@@ -386,39 +391,40 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              try {
-                                                _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
-                                                        .unfocus();
-                                              } catch (e) {
-                                                log("Error in search_widget.dart UnFocus Node");
-                                              }
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: SizedBox(
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        0.65,
-                                                child: FilterSidebarWidget(
-                                                    atUpdate: () {
-                                                  print(
-                                                      "filtSidWig update 369");
-                                                  searchForProf();
-                                                }),
-                                              ),
+                                          //  onTap: () {
+                                          //     try {
+                                          //       _model.unfocusNode
+                                          //               .canRequestFocus
+                                          //           ? FocusScope.of(context)
+                                          //               .requestFocus(
+                                          //                   _model.unfocusNode)
+                                          //           : FocusScope.of(context)
+                                          //               .unfocus();
+                                          //     } catch (e) {
+                                          //       log("Error in search_widget.dart UnFocus Node");
+                                          //     }
+                                          //   },
+                                          return Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: SizedBox(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.65,
+                                              child: FilterSidebarWidget(
+                                                  atUpdate: () {
+                                                log("filter update 369");
+
+                                                searchForProf();
+                                              }),
                                             ),
                                           );
                                         },
-                                      ).then((value) => safeSetState(() {}));
+                                      ).then((value) {
+                                        safeSetState(() {});
+                                      }).catchError((e) {
+                                        log("Error in search_widget.dart Filter Sidebar");
+                                      });
                                     },
                                     child: Container(
                                       width: 40.0,

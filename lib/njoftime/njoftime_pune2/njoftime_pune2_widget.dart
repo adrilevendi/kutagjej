@@ -33,13 +33,13 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
 
   @override
   void dispose() {
-    // try {
-    //   _model.textController?.dispose();
-    //   _model.textFieldFocusNode?.dispose();
-    //   // _model.dispose();
-    // } catch (e) {
-    //   dev.log('Error disposing textController or textFieldFocusNode $e');
-    // }
+    try {
+      _model.textController?.dispose();
+      _model.textFieldFocusNode?.dispose();
+      // _model.dispose();
+    } catch (e) {
+      dev.log('Error disposing textController or textFieldFocusNode $e');
+    }
 
     super.dispose();
   }
@@ -47,9 +47,9 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () => _model.unfocusNode.canRequestFocus
-      //     ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-      //     : FocusScope.of(context).unfocus(),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -126,9 +126,9 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                                           (PostRecord record) {
                                             return TextSearchItem.fromTerms(
                                                 record, <String>[
-                                              // record.title!,
+                                              record.title,
                                               record.company,
-
+                                              record.employerName,
                                               record.position!,
                                               record.description,
                                               if (record.userRecord?.email !=
@@ -324,7 +324,9 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
                                     height: MediaQuery.sizeOf(context).height *
                                         0.65,
                                     child: FilterSidebarWidget(
-                                      atUpdate: () {},
+                                      atUpdate: () {
+                                        setState(() {});
+                                      },
                                     ),
                                   ),
                                 ),
@@ -367,13 +369,14 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
             Expanded(
               child: StreamBuilder<List<PostRecord>>(
                 stream: queryPostRecord(queryBuilder: (postRecord) {
-                  var pr = postRecord;
+                  Query<Object?> pr = postRecord;
 
-                  var sl = FFAppState().SearchFilterLocations;
+                  List<DocumentReference<Object?>> sl =
+                      FFAppState().SearchFilterLocations;
                   if (sl.isNotEmpty) {
                     dev.log("SEARCH STATE LOC not empty");
 
-                    pr.where('location', whereIn: sl);
+                    pr = pr.where('location', whereIn: sl);
                     dev.log("Query PAram location:");
 
                     dev.log(pr.parameters.toString());
