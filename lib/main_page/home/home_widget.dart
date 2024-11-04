@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '/backend/backend.dart';
 import '/components/post_tease_widget.dart';
 import '/components/prof_page_small_widget.dart';
@@ -825,8 +827,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 250.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -844,74 +847,75 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   PageController(initialPage: 0),
                               scrollDirection: Axis.horizontal,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                  child: Container(
-                                    width: 100.0,
-                                    // height: 100.0,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.black,
-
-                                      // borderRadius: BorderRadius.only(
-                                      //   bottomLeft: Radius.circular(0.0),
-                                      //   bottomRight: Radius.circular(25.0),
-                                      //   topLeft: Radius.circular(0.0),
-                                      //   topRight: Radius.circular(25.0),
-                                      // ),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          child: InkWell(
-                                            child: Container(
-                                              decoration: const BoxDecoration(
-                                                  color: Color.fromARGB(
-                                                      255, 10, 10, 10)),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(22.0),
-                                                child: Image.asset(
-                                                  // image: AssetImage(
-                                                  'assets/images/banner.jpg',
-                                                  // ), //Instagram
-                                                  fit: BoxFit.cover,
-                                                  // height: 100,
-                                                ),
-                                              ),
-                                            ),
-                                            onTap: () async {
-                                              final Uri url = Uri.parse(
-                                                  'https://instagram.com/redtocila');
-                                              if (!await launchUrl(url)) {
-                                                throw Exception(
-                                                    'Could not launch url');
-                                              }
-                                            },
-                                          ),
-                                        )
-                                      ],
+                                Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 10, 10, 10),
+                                    borderRadius: BorderRadius.circular(22.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        final Uri url = Uri.parse(
+                                            'https://instagram.com/redtocila');
+                                        if (!await launchUrl(url)) {
+                                          throw Exception(
+                                              'Could not launch url');
+                                        }
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(22.0),
+                                        child: Image.asset(
+                                          // image: AssetImage(
+                                          'assets/images/banner.jpg',
+                                          // ), //Instagram
+                                          fit: BoxFit.cover,
+                                          // height: 100,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 10, 10, 10)),
-                                  child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/reales.jpeg'), //Instagram
-                                    fit: BoxFit.contain,
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      color: const Color.fromARGB(
+                                          255, 10, 10, 10)),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/reales.jpeg'), //Instagram
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
                                   ),
                                 ),
+                                // SizedBox(width: 10),
                                 Container(
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 10, 10, 10)),
-                                  child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/cs.jpeg'), //Instagram
-                                    fit: BoxFit.cover,
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  decoration: BoxDecoration(
+                                    // color: Color.fromARGB(255, 10, 10, 10)
+                                    borderRadius: BorderRadius.circular(22.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(22.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(22.0),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/cs.jpeg'), //Instagram
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
                                 )
                               ],
@@ -1008,7 +1012,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                   child: Container(
                     // width: 393,
-                    height: 190,
+                    // height: 190,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -1037,13 +1041,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         List<PostRecord> rowPostRecordList = snapshot.data!;
 
                         if (rowPostRecordList.isEmpty) {
-                          return Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image.asset(
-                                'assets/images/no_data_found_image.jpg',
+                          return Column(
+                            children: [
+                              Center(
+                                child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    // child: Image.asset(
+                                    //   'assets/images/no_data_found_image.jpg',
+                                    // ),
+                                    child: Image.asset(
+                                      'assets/images/no-data-variant-no-text.png',
+                                      width: 240,
+                                      height: 160,
+                                      fit: BoxFit.cover,
+                                    )),
                               ),
-                            ),
+                              Text(
+                                'No Announcement Found',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      color:
+                                          FlutterFlowTheme.of(context).accent2,
+                                      fontSize: 15,
+                                      letterSpacing: 0,
+                                      // decoration: TextDecoration.underline,
+                                    ),
+                              ),
+                              const SizedBox(height: 30),
+                            ],
                           );
                         }
                         return SingleChildScrollView(
@@ -1183,8 +1210,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      20.0, 10.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1210,79 +1239,82 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                    child: StreamBuilder<List<UsersRecord>>(
-                      stream: queryUsersRecord(
-                        queryBuilder: (usersRecord) => usersRecord.where(
-                          'role',
-                          isEqualTo: 'prof',
-                        ),
+                Container(
+                  // width: MediaQuery.sizeOf(context).width,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                  child: StreamBuilder<List<UsersRecord>>(
+                    stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'role',
+                        isEqualTo: 'prof',
                       ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
                               ),
                             ),
-                          );
-                        }
-                        List<UsersRecord> listViewUsersRecordList =
-                            snapshot.data!;
-                        // print(snapshot.data);
-                        return ListView.builder(
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: listViewUsersRecordList.length,
-                          itemBuilder: (context, listViewIndex) {
-                            final listViewUsersRecord =
-                                listViewUsersRecordList[listViewIndex];
-                            return Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 0, 0, 20),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'DetailedProfile',
-                                    queryParameters: {
-                                      'userRef': serializeParam(
-                                        listViewUsersRecord.reference,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                  );
-                                },
+                          ),
+                        );
+                      }
+                      List<UsersRecord> listViewUsersRecordList =
+                          snapshot.data!;
+                      // print(snapshot.data);
+                      return ListView.builder(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: listViewUsersRecordList.length,
+                        itemBuilder: (context, listViewIndex) {
+                          final listViewUsersRecord =
+                              listViewUsersRecordList[listViewIndex];
+                          return Center(
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'DetailedProfile',
+                                  queryParameters: {
+                                    'userRef': serializeParam(
+                                      listViewUsersRecord.reference,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              },
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                  20,
+                                  0,
+                                  20,
+                                  10,
+                                ),
                                 child: ProfPageSmallWidget(
                                   key: Key(
                                       'Keydqr_${listViewIndex}_of_${listViewUsersRecordList.length}'),
                                   userRef: listViewUsersRecord.reference,
                                 ),
                               ),
-                            );
-                          },
-                        ).animateOnPageLoad(
-                            animationsMap['listViewOnPageLoadAnimation']!);
-                      },
-                    ),
+                            ),
+                          );
+                        },
+                      ).animateOnPageLoad(
+                          animationsMap['listViewOnPageLoadAnimation']!);
+                    },
                   ),
                 ),
               ],
