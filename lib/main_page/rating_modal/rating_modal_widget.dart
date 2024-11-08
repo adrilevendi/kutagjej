@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-
+import 'dart:math';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_pannable_rating_bar/flutter_pannable_rating_bar.dart';
 import 'package:flutter_pannable_rating_bar/src/pannable_rating_bar.dart' as RW;
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
+
 import 'rating_modal_model.dart';
 export 'rating_modal_model.dart';
 
@@ -137,7 +139,7 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                   ),
                 ),
                 Builder(builder: (context) {
-                  if (true) {
+                  if (!kIsWeb) {
                     return RatingBar.builder(
                       onRatingUpdate: (newValue) {
                         print(newValue);
@@ -155,24 +157,31 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                       glowColor: FlutterFlowTheme.of(context).tertiary,
                     );
                   } else {
-                    return PannableRatingBar(
-                      rate: 2,
-                      onChanged: (val) {
-                        print(val);
-                      },
-                      spacing: 20,
-                      items: List.generate(
-                        5,
-                        (index) => const RW.RatingWidget(
-                          selectedColor: Colors.yellow,
-                          unSelectedColor: Colors.grey,
-                          child: Icon(
-                            Icons.star,
-                            size: 48,
+                    double rating = _model.ratingBarValue ??= 4.0;
+
+                    return Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          5,
+                          (index) => InkWell(
+                            onTap: () async {
+                              setState(() =>
+                                  _model.ratingBarValue = 1 + index.toDouble());
+                              print(_model.ratingBarValue);
+                              print(_model.ratingBarValue! >= index.toDouble()
+                                  ? true
+                                  : false);
+                            },
+                            child: Icon(
+                              Icons.star_rounded,
+                              color:
+                                  _model.ratingBarValue! >= index.toDouble() + 1
+                                      ? FlutterFlowTheme.of(context).secondary
+                                      : FlutterFlowTheme.of(context).accent2,
+                              size: 48.0,
+                            ),
                           ),
-                        ),
-                      ),
-                    );
+                        ));
                   }
                 }),
                 Padding(
