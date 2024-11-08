@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 import 'show_phone_number_model.dart';
 export 'show_phone_number_model.dart';
@@ -104,10 +104,10 @@ class _ShowPhoneNumberWidgetState extends State<ShowPhoneNumberWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        await launchUrl(Uri(
-                          scheme: 'tel',
-                          path: widget.number!,
-                        ));
+                        // await launchUrl(Uri(
+                        //   scheme: 'tel',
+                        //   path: widget.number!,
+                        // ));
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,

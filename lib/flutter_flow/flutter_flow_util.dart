@@ -10,7 +10,7 @@ import 'dart:math' show pow, pi, sin;
 import 'package:intl/intl.dart';
 import 'package:json_path/json_path.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 import '../main.dart';
 
@@ -201,7 +201,7 @@ Theme wrapInMaterialTimePickerTheme(
 Future launchURL(String url) async {
   var uri = Uri.parse(url);
   try {
-    await launchUrl(uri);
+    // await launchUrl(uri);
   } catch (e) {
     throw 'Could not launch $uri: $e';
   }

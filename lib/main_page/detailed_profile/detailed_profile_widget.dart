@@ -1576,8 +1576,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                           .width,
-
-                                                  // height: 245.0,
+                                                  height: 245.0,
                                                   decoration:
                                                       const BoxDecoration(),
                                                   child: Padding(
@@ -1622,149 +1621,106 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                             gridViewMediaRecordList =
                                                             snapshot.data!;
                                                         return InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          // onTap: () async {
-                                                          //   final selectedMedia =
-                                                          //       await selectMediaWithSourceBottomSheet(
-                                                          //     context: context,
-                                                          //     allowPhoto: true,
-                                                          //   );
-                                                          //   if (selectedMedia !=
-                                                          //           null &&
-                                                          //       selectedMedia.every((m) =>
-                                                          //           validateFileFormat(
-                                                          //               m.storagePath,
-                                                          //               context))) {
-                                                          //     setState(() =>
-                                                          //         _model.isDataUploading2 =
-                                                          //             true);
-                                                          //     var selectedUploadedFiles =
-                                                          //         <FFUploadedFile>[];
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            // onTap: () async {
+                                                            //   final selectedMedia =
+                                                            //       await selectMediaWithSourceBottomSheet(
+                                                            //     context: context,
+                                                            //     allowPhoto: true,
+                                                            //   );
+                                                            //   if (selectedMedia !=
+                                                            //           null &&
+                                                            //       selectedMedia.every((m) =>
+                                                            //           validateFileFormat(
+                                                            //               m.storagePath,
+                                                            //               context))) {
+                                                            //     setState(() =>
+                                                            //         _model.isDataUploading2 =
+                                                            //             true);
+                                                            //     var selectedUploadedFiles =
+                                                            //         <FFUploadedFile>[];
 
-                                                          //     var downloadUrls =
-                                                          //         <String>[];
-                                                          //     try {
-                                                          //       selectedUploadedFiles =
-                                                          //           selectedMedia
-                                                          //               .map((m) =>
-                                                          //                   FFUploadedFile(
-                                                          //                     name: m.storagePath.split('/').last,
-                                                          //                     bytes: m.bytes,
-                                                          //                     height: m.dimensions?.height,
-                                                          //                     width: m.dimensions?.width,
-                                                          //                     blurHash: m.blurHash,
-                                                          //                   ))
-                                                          //               .toList();
+                                                            //     var downloadUrls =
+                                                            //         <String>[];
+                                                            //     try {
+                                                            //       selectedUploadedFiles =
+                                                            //           selectedMedia
+                                                            //               .map((m) =>
+                                                            //                   FFUploadedFile(
+                                                            //                     name: m.storagePath.split('/').last,
+                                                            //                     bytes: m.bytes,
+                                                            //                     height: m.dimensions?.height,
+                                                            //                     width: m.dimensions?.width,
+                                                            //                     blurHash: m.blurHash,
+                                                            //                   ))
+                                                            //               .toList();
 
-                                                          //       downloadUrls = (await Future
-                                                          //               .wait(
-                                                          //         selectedMedia
-                                                          //             .map(
-                                                          //           (m) async =>
-                                                          //               await uploadData(
-                                                          //                   m.storagePath,
-                                                          //                   m.bytes),
-                                                          //         ),
-                                                          //       ))
-                                                          //           .where((u) =>
-                                                          //               u !=
-                                                          //               null)
-                                                          //           .map((u) =>
-                                                          //               u!)
-                                                          //           .toList();
-                                                          //     } finally {
-                                                          //       _model.isDataUploading2 =
-                                                          //           false;
-                                                          //     }
-                                                          //     if (selectedUploadedFiles
-                                                          //                 .length ==
-                                                          //             selectedMedia
-                                                          //                 .length &&
-                                                          //         downloadUrls
-                                                          //                 .length ==
-                                                          //             selectedMedia
-                                                          //                 .length) {
-                                                          //       setState(() {
-                                                          //         _model.uploadedLocalFile2 =
-                                                          //             selectedUploadedFiles
-                                                          //                 .first;
-                                                          //         _model.uploadedFileUrl2 =
-                                                          //             downloadUrls
-                                                          //                 .first;
-                                                          //       });
-                                                          //     } else {
-                                                          //       setState(() {});
-                                                          //       return;
-                                                          //     }
-                                                          //   }
+                                                            //       downloadUrls = (await Future
+                                                            //               .wait(
+                                                            //         selectedMedia
+                                                            //             .map(
+                                                            //           (m) async =>
+                                                            //               await uploadData(
+                                                            //                   m.storagePath,
+                                                            //                   m.bytes),
+                                                            //         ),
+                                                            //       ))
+                                                            //           .where((u) =>
+                                                            //               u !=
+                                                            //               null)
+                                                            //           .map((u) =>
+                                                            //               u!)
+                                                            //           .toList();
+                                                            //     } finally {
+                                                            //       _model.isDataUploading2 =
+                                                            //           false;
+                                                            //     }
+                                                            //     if (selectedUploadedFiles
+                                                            //                 .length ==
+                                                            //             selectedMedia
+                                                            //                 .length &&
+                                                            //         downloadUrls
+                                                            //                 .length ==
+                                                            //             selectedMedia
+                                                            //                 .length) {
+                                                            //       setState(() {
+                                                            //         _model.uploadedLocalFile2 =
+                                                            //             selectedUploadedFiles
+                                                            //                 .first;
+                                                            //         _model.uploadedFileUrl2 =
+                                                            //             downloadUrls
+                                                            //                 .first;
+                                                            //       });
+                                                            //     } else {
+                                                            //       setState(() {});
+                                                            //       return;
+                                                            //     }
+                                                            //   }
 
-                                                          //   await MediaRecord
-                                                          //       .collection
-                                                          //       .doc()
-                                                          //       .set(
-                                                          //           createMediaRecordData(
-                                                          //         userName: '',
-                                                          //         mediaType:
-                                                          //             'photo',
-                                                          //         mediaUrl: _model
-                                                          //             .uploadedFileUrl2,
-                                                          //         user:
-                                                          //             currentUserReference,
-                                                          //       ));
-                                                          // },
-                                                          child:
-                                                              GridView.builder(
-                                                            padding:
-                                                                EdgeInsets.zero,
-                                                            gridDelegate:
-                                                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                                              crossAxisCount: 3,
-                                                              crossAxisSpacing:
-                                                                  10.0,
-                                                              mainAxisSpacing:
-                                                                  10.0,
-                                                              childAspectRatio:
-                                                                  1.0,
-                                                            ),
-                                                            scrollDirection:
-                                                                Axis.vertical,
-                                                            itemCount:
-                                                                gridViewMediaRecordList
-                                                                    .length,
-                                                            itemBuilder: (context,
-                                                                gridViewIndex) {
-                                                              final gridViewMediaRecord =
-                                                                  gridViewMediaRecordList[
-                                                                      gridViewIndex];
-                                                              return ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    gridViewMediaRecord
-                                                                        .mediaUrl,
-                                                                    'https://picsum.photos/seed/480/600',
-                                                                  ),
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .cover,
-                                                                ),
-                                                              );
-                                                            },
-                                                          ),
-                                                        );
+                                                            //   await MediaRecord
+                                                            //       .collection
+                                                            //       .doc()
+                                                            //       .set(
+                                                            //           createMediaRecordData(
+                                                            //         userName: '',
+                                                            //         mediaType:
+                                                            //             'photo',
+                                                            //         mediaUrl: _model
+                                                            //             .uploadedFileUrl2,
+                                                            //         user:
+                                                            //             currentUserReference,
+                                                            //       ));
+                                                            // },
+                                                            child: Text(
+                                                                "No Images."));
                                                       },
                                                     ),
                                                   ),
