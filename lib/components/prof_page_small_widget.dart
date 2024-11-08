@@ -49,7 +49,7 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 355,
+          width: MediaQuery.sizeOf(context).width - 40,
           height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
