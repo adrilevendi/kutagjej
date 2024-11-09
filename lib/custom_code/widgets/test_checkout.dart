@@ -44,7 +44,7 @@ class TestCheckout extends StatefulWidget {
 }
 
 class _TestCheckoutState extends State<TestCheckout>
-    implements TwoCheckoutFlutterEvents {
+     {
   late final _twoCheckoutFlutterPlugin;
   late final _paymentComplete;
 
@@ -54,8 +54,7 @@ class _TestCheckoutState extends State<TestCheckout>
 
     _paymentComplete = false;
 
-    _twoCheckoutFlutterPlugin =
-        TwoCheckoutFlutterEventsImpl(twoCheckoutFlutterEvents: this);
+ 
 
     /// Set 2Checkout credentials
     _twoCheckoutFlutterPlugin.setTwoCheckoutCredentials(
@@ -331,25 +330,4 @@ class _TestCheckoutState extends State<TestCheckout>
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-  @override
-  void paymentFailedWithError(String message) {
-    showMyDialog("Error", message);
-    print("-------------Error------------- ");
-    print(message);
-  }
-
-  @override
-  void paymentFormWillClose() {
-    // TODO: implement paymentFormWillClose
-  }
-
-  @override
-  void paymentFormWillShow() {
-    // TODO: implement paymentFormWillShow
-  }
-
-  @override
-  void paymentMethodSelected(PaymentMethodType paymentMethod) {
-    // TODO: implement paymentMethodSelected
-  }
-}
+    }

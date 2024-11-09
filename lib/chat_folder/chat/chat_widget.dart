@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ku_ta_gjej/login1/login1_widget.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
@@ -527,8 +528,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                                                                           child:
                                                                               FlutterFlowExpandedImageView(
                                                                             image:
-                                                                                Image.network(
-                                                                              imageMediaRecord.mediaUrl,
+                                                                                CachedNetworkImage(
+                                                                              imageUrl: imageMediaRecord.mediaUrl,
                                                                               fit: BoxFit.contain,
                                                                             ),
                                                                             allowRotation:

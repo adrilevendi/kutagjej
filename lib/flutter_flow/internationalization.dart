@@ -210,13 +210,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // paymentConfirm
   {
     "ye6ejsp1": {"en": "Payment Confirmed!", "sq": "Pagesa e Konfirmuar!"},
-
     '7vtpypja': {
       'en': '\$425.24',
       'sq': '',
     },
-    "v8gyntzr": {"en": "Your payment has been confirmed, it may take 1-2 hours in order for your payment to go through and show up in your transaction list.", "sq": "Pagesa juaj është konfirmuar, mund të marrë 1-2 orë për t'u procesuar dhe për t'u shfaqur në listën e transaksioneve."},
-
+    "v8gyntzr": {
+      "en":
+          "Your payment has been confirmed, it may take 1-2 hours in order for your payment to go through and show up in your transaction list.",
+      "sq":
+          "Pagesa juaj është konfirmuar, mund të marrë 1-2 orë për t'u procesuar dhe për t'u shfaqur në listën e transaksioneve."
+    },
     'd7yawxn1': {
       'en': 'Mastercard Ending in 4021',
       'sq': '',
@@ -359,16 +362,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$230.20',
       'sq': '',
     },
-     "b8pbibzh": {"en": "Pay w/ Credit Card", "sq": "Paguaj me Kartë Krediti"},
-  "tfgnw40i": {"en": "Or use an option below", "sq": "Ose përdorni një mundësi më poshtë"},
-  "z8ri0881": {"en": "Pay w/Paypal", "sq": "Paguaj me Paypal"},
+    "b8pbibzh": {"en": "Pay w/ Credit Card", "sq": "Paguaj me Kartë Krediti"},
+    "tfgnw40i": {
+      "en": "Or use an option below",
+      "sq": "Ose përdorni një mundësi më poshtë"
+    },
+    "z8ri0881": {"en": "Pay w/Paypal", "sq": "Paguaj me Paypal"},
   },
   // Messages
   {
     'zdy2fqhf': {
       'en': 'Below are messages with professionals.',
-           'sq': "Më poshtë janë mesazhe me profesionistët.",
-
+      'sq': "Më poshtë janë mesazhe me profesionistët.",
     },
     '69n8aq43': {
       'en': 'Randy Mcdonald',
@@ -525,10 +530,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'My Posts',
       'sq': 'Njoftimet e mia',
     },
-    'lpzil045': {
-      'en': 'Financat',
-      'sq': 'Billing'
-    },
+    'lpzil045': {'en': 'Financat', 'sq': 'Billing'},
     'v8jxp2vh': {
       'en': 'Change Password',
       'sq': 'Ndrysho fjalekalimin',
@@ -1149,140 +1151,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Choose city',
       'sq': 'Zgjidh qytetin',
     },
-    
-  'oe1rqbjg': {
-    'en': 'Search for an item...',
-    'sq': 'Kërko një artikull...'
-  },
-  'ol6bm9dp': {
-    'en': '1 hour',
-    'sq': '1 orë'
-  },
-  'ndmblibi': {
-    'en': '2 hours',
-    'sq': '2 orë'
-  },
-  '2as2hwwy': {
-    'en': '3 hours',
-    'sq': '3 orë'
-  },
-  '19f60eme': {
-    'en': '4 hours',
-    'sq': '4 orë'
-  },
-  '7r25220u': {
-    'en': '5 hours',
-    'sq': '5 orë'
-  },
-  '1kv0i49u': {
-    'en': '6 hours',
-    'sq': '6 orë'
-  },
-  'taxt61pp': {
-    'en': '7 hours',
-    'sq': '7 orë'
-  },
-  '15t2g73u': {
-    'en': '8 hours',
-    'sq': '8 orë'
-  },
-  'eiugurpe': {
-    'en': '9 hours',
-    'sq': '9 orë'
-  },
-  '91fzsoxp': {
-    'en': '10 hours',
-    'sq': '10 orë'
-  },
-  'bd1ayh9d': {
-    'en': 'Shift hours',
-    'sq': 'Orët e turnit'
-  },
-  'c4kvx2oi': {
-    'en': 'Search for an item...',
-    'sq': 'Kërko një artikull...'
-  },
-  'ae3kkkvs': {
-    'en': 'Turn 1',
-    'sq': 'Turni 1'
-  },
-  '6q5bvlch': {
-    'en': 'Turn 2',
-    'sq': 'Turni 2'
-  },
-  'l6o5ky5f': {
-    'en': 'Turn 3',
-    'sq': 'Turni 3'
-  },
-  'y8u1jmb5': {
-    'en': 'Shift',
-    'sq': 'Turn'
-  },
-  'jai5smje': {
-    'en': 'Search for an item...',
-    'sq': 'Kërko një artikull...'
-  },
-  '628hi321': {
-    'en': 'Description',
-    'sq': 'Përshkrimi'
-  },
-  'zk1cxpx2': {
-    'en': '1 day',
-    'sq': '1 ditë'
-  },
-  'myvy3b4n': {
-    'en': '2 days',
-    'sq': '2 ditë'
-  },
-  'igu1a2ju': {
-    'en': '3 days',
-    'sq': '3 ditë'
-  },
-  '5qckw1ow': {
-    'en': '4 days',
-    'sq': '4 ditë'
-  },
-  'kype3e97': {
-    'en': '5 days',
-    'sq': '5 ditë'
-  },
-  '89vj2tz5': {
-    'en': '6 days',
-    'sq': '6 ditë'
-  },
-  '6by13azy': {
-    'en': '7 days',
-    'sq': '7 ditë'
-  },
-  'aphz3j6k': {
-    'en': '8 days',
-    'sq': '8 ditë'
-  },
-  '35p5c63t': {
-    'en': '9 days',
-    'sq': '9 ditë'
-  },
-  'qd6bm0ka': {
-    'en': 'Duration of the notification',
-    'sq': 'Kohëzgjatja e njoftimit'
-  },
-  'uuksmoik': {
-    'en': 'Search for an item...',
-    'sq': 'Kërko një artikull...'
-  },
-  '7kxmfq6z': {
-    'en': 'POST THE NOTIFICATION - ',
-    'sq': 'POSTO NJOFTIMIN - '
-  },
-  'p56zvft7': {
-    'en': 'ALL',
-    'sq': 'TË GJITHA'
-  },
-  '124v5pi6': {
-    'en': 'Home',
-    'sq': 'Shtëpia'
-  }
-
+    'oe1rqbjg': {'en': 'Search for an item...', 'sq': 'Kërko një artikull...'},
+    'ol6bm9dp': {'en': '1 hour', 'sq': '1 orë'},
+    'ndmblibi': {'en': '2 hours', 'sq': '2 orë'},
+    '2as2hwwy': {'en': '3 hours', 'sq': '3 orë'},
+    '19f60eme': {'en': '4 hours', 'sq': '4 orë'},
+    '7r25220u': {'en': '5 hours', 'sq': '5 orë'},
+    '1kv0i49u': {'en': '6 hours', 'sq': '6 orë'},
+    'taxt61pp': {'en': '7 hours', 'sq': '7 orë'},
+    '15t2g73u': {'en': '8 hours', 'sq': '8 orë'},
+    'eiugurpe': {'en': '9 hours', 'sq': '9 orë'},
+    '91fzsoxp': {'en': '10 hours', 'sq': '10 orë'},
+    'bd1ayh9d': {'en': 'Shift hours', 'sq': 'Orët e turnit'},
+    'c4kvx2oi': {'en': 'Search for an item...', 'sq': 'Kërko një artikull...'},
+    'ae3kkkvs': {'en': 'Turn 1', 'sq': 'Turni 1'},
+    '6q5bvlch': {'en': 'Turn 2', 'sq': 'Turni 2'},
+    'l6o5ky5f': {'en': 'Turn 3', 'sq': 'Turni 3'},
+    'y8u1jmb5': {'en': 'Shift', 'sq': 'Turn'},
+    'jai5smje': {'en': 'Search for an item...', 'sq': 'Kërko një artikull...'},
+    '628hi321': {'en': 'Description', 'sq': 'Përshkrimi'},
+    'zk1cxpx2': {'en': '1 day', 'sq': '1 ditë'},
+    'myvy3b4n': {'en': '2 days', 'sq': '2 ditë'},
+    'igu1a2ju': {'en': '3 days', 'sq': '3 ditë'},
+    '5qckw1ow': {'en': '4 days', 'sq': '4 ditë'},
+    'kype3e97': {'en': '5 days', 'sq': '5 ditë'},
+    '89vj2tz5': {'en': '6 days', 'sq': '6 ditë'},
+    '6by13azy': {'en': '7 days', 'sq': '7 ditë'},
+    'aphz3j6k': {'en': '8 days', 'sq': '8 ditë'},
+    '35p5c63t': {'en': '9 days', 'sq': '9 ditë'},
+    'qd6bm0ka': {
+      'en': 'Duration of the notification',
+      'sq': 'Kohëzgjatja e njoftimit'
+    },
+    'uuksmoik': {'en': 'Search for an item...', 'sq': 'Kërko një artikull...'},
+    '7kxmfq6z': {'en': 'POST THE NOTIFICATION - ', 'sq': 'POSTO NJOFTIMIN - '},
+    'p56zvft7': {'en': 'ALL', 'sq': 'TË GJITHA'},
+    '124v5pi6': {'en': 'Home', 'sq': 'Shtëpia'}
   },
   // Affiliate
   {
@@ -2176,24 +2080,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'sq': '',
     },
-    'tukx3olp': {
-      'en': 'COMING SOON',
-      'sq': 'Se shpejti...'
-    },
-    'zlkfywcf': {
-      'en': 'Closing Announcements',  
-      'sq': 'Njoftimet ne mbarim'
-    },
-    'mxcw8tl7': {
-      'en': 'See all',
-      'sq': 'Te gjitha'
-    }
-    
+    'tukx3olp': {'en': 'COMING SOON', 'sq': 'Se shpejti...'},
+    'zlkfywcf': {'en': 'Closing Announcements', 'sq': 'Njoftimet ne mbarim'},
+    'mxcw8tl7': {'en': 'See all', 'sq': 'Te gjitha'}
   },
   {
     'e6sermra': {
       'en': 'KU TA GJEJ',
-      'sq': '', 
+      'sq': '',
     },
     'qil5wfmt': {
       'en': 'Create Business account.',
@@ -2231,47 +2125,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
       'sq': '',
     },
-    '4v101yfv': {
-      'en': "Phone Number",
-      'sq': "Numri i telefonit"
-    },
-    '3emfzyuu': {
-      'en': "Subscription",
-      'sq': "Subscription"
-    },
-'to2qy1sm': {
+    '4v101yfv': {'en': "Phone Number", 'sq': "Numri i telefonit"},
+    '3emfzyuu': {'en': "Subscription", 'sq': "Subscription"},
+    'to2qy1sm': {
       'en': "Professional - ALL 962 / MONTH",
       'sq': "Professional - ALL 962 / Muaj"
     },
-'z1kqub8q': {
+    'z1kqub8q': {
       'en': "Access category list",
       'sq': "Access ne listen e kategorise se profesionisteve"
     },
-'ol4t0yb1': {
-      'en': "Ftoni miq per te fituar ulje te paketes (1 mik - 20%)  5 miq eshte maksimumi qe mund te ftoni.",
-      'sq': "Ftoni miq per te fituar ulje te paketes (1 mik - 20%)  5 miq eshte maksimumi qe mund te ftoni."
+    'ol4t0yb1': {
+      'en':
+          "Ftoni miq per te fituar ulje te paketes (1 mik - 20%)  5 miq eshte maksimumi qe mund te ftoni.",
+      'sq':
+          "Ftoni miq per te fituar ulje te paketes (1 mik - 20%)  5 miq eshte maksimumi qe mund te ftoni."
     },
-'spqliimi': {
-      'en': "Cancel",
-      'sq': "Anulloje"
-    },
-'hhwuypv8': {
+    'spqliimi': {'en': "Cancel", 'sq': "Anulloje"},
+    'myizsbnl': {'en': "Delete", 'sq': "Fshije"},
+    'drvcqvox': {'en': "Are you sure?", 'sq': "Jeni i sigurt?"},
+    'hhwuypv8': {
       'en': "Get ProBadge - ALL 12866",
       'sq': "Merr ProBadge - ALL 12866"
     },
-'l4qi61ea': {
-      'en': "Me ProBadge do fitoni Iconen  tek emri juaj bashke me nje Carte shkelqyese dhe 2x me e  madhe, si ne figure. - Kjo pakete eshte pa limit. E blini vetem njehere dhe do ta  keni pergjithmone!",
-      'sq': " - Me ProBadge do fitoni Iconen  tek emri juaj bashke me nje Carte shkelqyese dhe 2x me e  madhe, si ne figure. - Kjo pakete eshte pa limit. E blini vetem njehere dhe do ta  keni pergjithmone!"
+    'l4qi61ea': {
+      'en':
+          "Me ProBadge do fitoni Iconen  tek emri juaj bashke me nje Carte shkelqyese dhe 2x me e  madhe, si ne figure. - Kjo pakete eshte pa limit. E blini vetem njehere dhe do ta  keni pergjithmone!",
+      'sq':
+          " - Me ProBadge do fitoni Iconen  tek emri juaj bashke me nje Carte shkelqyese dhe 2x me e  madhe, si ne figure. - Kjo pakete eshte pa limit. E blini vetem njehere dhe do ta  keni pergjithmone!"
     },
-'s60i3a0x': {
+    's60i3a0x': {
       'en': "Name Name Description Descrip..",
       'sq': "Name Name Description Descrip.."
     },
-'39l3slho': {
-      'en': "Name Name",
-      'sq': "Name Name"
-    },
-
+    '39l3slho': {'en': "Name Name", 'sq': "Name Name"},
     'hoedqemy': {
       'en': "Description Description Descrip..",
       'sq': "Description Description Descrip.."
@@ -2280,8 +2167,5 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': "Name Name Description Descrip..",
       'sq': "Name Name Description Descrip.."
     },
-   
-
   },
-
 ].reduce((a, b) => a..addAll(b));

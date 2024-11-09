@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth/firebase_auth/auth_util.dart';
@@ -393,14 +395,20 @@ Future<List<PostRecord>> queryPostRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      PostRecord.collection,
-      PostRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
+}) {
+  return queryCollectionOnce(
+    PostRecord.collection,
+    PostRecord.fromSnapshot,
+    queryBuilder: queryBuilder,
+    limit: limit,
+    singleRecord: singleRecord,
+  ).then((value) async {
+    for (var post in value) {
+      await post.loadUserModelFromFirebase();
+    }
+    return value;
+  });
+}
 
 /// Functions to query AccountTypeRecords (as a Stream and as a Future).
 Future<int> queryAccountTypeRecordCount({
@@ -789,16 +797,20 @@ Future<List<T>> queryCollectionOnce<T>(
   if (limit > 0 || singleRecord) {
     query = query.limit(singleRecord ? 1 : limit);
   }
-  return query.get().then((s) => s.docs
-      .map(
-        (d) => safeGet(
-          () => recordBuilder(d),
-          (e) => print('Error serializing doc ${d.reference.path}:\n$e'),
-        ),
-      )
-      .where((d) => d != null)
-      .map((d) => d!)
-      .toList());
+  return query.get().then((s) {
+    return s.docs
+        .map(
+          (d) => safeGet(
+            () => recordBuilder(d),
+            (e) {
+              log('Error serializing doc ${d.reference.path}:\n$e');
+            },
+          ),
+        )
+        .where((d) => d != null)
+        .map((d) => d!)
+        .toList();
+  });
 }
 
 Filter filterIn(String field, List? list) => (list?.isEmpty ?? true)

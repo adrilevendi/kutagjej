@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -236,8 +238,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   topLeft: Radius.circular(0.0),
                                   topRight: Radius.circular(16.0),
                                 ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHx3b3JrfGVufDB8fHx8MTcxOTM5MDYwNHww&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHx3b3JrfGVufDB8fHx8MTcxOTM5MDYwNHww&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 120.0,
                                   height: 120.0,
                                   fit: BoxFit.cover,
@@ -245,8 +248,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1634586621169-93e12e0bd604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxyZW5vdmF0aW9ufGVufDB8fHx8MTcxOTM5MDYzM3ww&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1634586621169-93e12e0bd604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxyZW5vdmF0aW9ufGVufDB8fHx8MTcxOTM5MDYzM3ww&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 120.0,
                                   height: 160.0,
                                   fit: BoxFit.cover,
@@ -259,8 +263,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   topLeft: Radius.circular(0.0),
                                   topRight: Radius.circular(16.0),
                                 ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8Y29uc3RydWNpb258ZW58MHx8fHwxNzE5MzkwNjYyfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8Y29uc3RydWNpb258ZW58MHx8fHwxNzE5MzkwNjYyfDA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 100.0,
                                   height: 0.0,
                                   fit: BoxFit.cover,
@@ -273,8 +278,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   topLeft: Radius.circular(16.0),
                                   topRight: Radius.circular(0.0),
                                 ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8Y29uc3RydWNpb258ZW58MHx8fHwxNzE5MzkwNjYyfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8Y29uc3RydWNpb258ZW58MHx8fHwxNzE5MzkwNjYyfDA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 80.0,
                                   height: 180.0,
                                   fit: BoxFit.cover,
@@ -282,8 +288,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1522322512347-a0e57fd1744c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxzdGVlbHxlbnwwfHx8fDE3MTkzOTA3MDh8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1522322512347-a0e57fd1744c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxzdGVlbHxlbnwwfHx8fDE3MTkzOTA3MDh8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 120.0,
                                   height: 160.0,
                                   fit: BoxFit.cover,
@@ -291,8 +298,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1560264280-88b68371db39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxjYWxsJTIwY2VudGVyfGVufDB8fHx8MTcxOTM5MDczNXww&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1560264280-88b68371db39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxjYWxsJTIwY2VudGVyfGVufDB8fHx8MTcxOTM5MDczNXww&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 120.0,
                                   height: 180.0,
                                   fit: BoxFit.cover,
@@ -305,8 +313,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   topLeft: Radius.circular(16.0),
                                   topRight: Radius.circular(0.0),
                                 ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxwYWludHxlbnwwfHx8fDE3MTkzOTA3Nzh8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxwYWludHxlbnwwfHx8fDE3MTkzOTA3Nzh8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 120.0,
                                   height: 190.0,
                                   fit: BoxFit.cover,
@@ -314,8 +323,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
                                   width: 120.0,
                                   height: 160.0,
                                   fit: BoxFit.cover,
@@ -323,8 +333,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
                                   width: 120.0,
                                   height: 180.0,
                                   fit: BoxFit.cover,
@@ -337,8 +348,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   topLeft: Radius.circular(16.0),
                                   topRight: Radius.circular(0.0),
                                 ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1614597396930-cd6760b99f7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1614597396930-cd6760b99f7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
                                   width: 120.0,
                                   height: 190.0,
                                   fit: BoxFit.cover,
@@ -346,8 +358,8 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                               ),
                           () => ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://picsum.photos/seed/32/600',
+                                child: CachedNetworkImage(
+                                  imageUrl: 'https://picsum.photos/seed/32/600',
                                   width: 120.0,
                                   height: 160.0,
                                   fit: BoxFit.cover,
@@ -394,8 +406,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                   scrollDirection: Axis.horizontal,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          48.0, 0.0, 48.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              48.0, 0.0, 48.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -416,9 +429,8 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                           ).animateOnPageLoad(animationsMap[
                                               'textOnPageLoadAnimation1']!),
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 16.0, 0.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 16.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -439,8 +451,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          42.0, 0.0, 42.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              42.0, 0.0, 42.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -464,8 +477,9 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          48.0, 0.0, 48.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              48.0, 0.0, 48.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -486,9 +500,8 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                           ).animateOnPageLoad(animationsMap[
                                               'textOnPageLoadAnimation4']!),
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 16.0, 0.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 16.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -526,7 +539,8 @@ class _WelcomeScreen1WidgetState extends State<WelcomeScreen1Widget>
                                       await _model.pageViewController!
                                           .animateToPage(
                                         i,
-                                        duration: const Duration(milliseconds: 500),
+                                        duration:
+                                            const Duration(milliseconds: 500),
                                         curve: Curves.ease,
                                       );
                                       setState(() {});

@@ -1,5 +1,6 @@
 // import 'dart:ui_web';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:share_plus/share_plus.dart';
@@ -201,8 +202,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Image.network(
-                                              valueOrDefault<String>(
+                                            CachedNetworkImage(
+                                              imageUrl: valueOrDefault<String>(
                                                 njoftimSinglePostRecord.image,
                                                 'https://static.vecteezy.com/system/resources/previews/001/829/092/large_2x/light-green-pattern-with-lines-vector.jpg',
                                               ),
@@ -218,9 +219,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                           ],
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 55.0, 20.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(20.0, 55.0, 20.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -241,8 +241,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      context
-                                                          .safePop();
+                                                      context.safePop();
                                                     },
                                                     child: Container(
                                                       width: 40.0,
@@ -258,11 +257,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    7.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(7.0,
+                                                                0.0, 0.0, 0.0),
                                                         child: Icon(
                                                           Icons.arrow_back_ios,
                                                           color: FlutterFlowTheme
@@ -281,81 +277,87 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   Container(
-                                                    width: 85.0,
-                                                    height: 40.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15.0),
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        Padding(padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 10, 0),
-                                                        child: InkWell(
-                                                          onTap: () {
-                                                            
-                                                        Share.share('KuTaGjej | ${njoftimSinglePostRecord.title} ${Uri.base}');
-
-                                                          },
-                                                          child: Icon(
-                                                           FFIcons.kshareSquare,
-                                                          color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
+                                                      // width: 90.0,
+                                                      height: 40.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(15.0),
+                                                      ),
+                                                      child: Row(
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                    12,
+                                                                    0,
+                                                                    10,
+                                                                    0),
+                                                            child: InkWell(
+                                                              onTap: () {
+                                                                Share.share(
+                                                                    'KuTaGjej | ${njoftimSinglePostRecord.title} ${Uri.base}');
+                                                              },
+                                                              child: Icon(
+                                                                FFIcons
+                                                                    .kshareSquare,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent2,
                                                                 size: 20,
-                                                              
-                                                        ),
-                                                        ),
-                                                        ),
-                                                        VerticalDivider(
-                                                          color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent3,
-                                                                thickness: 1,
-                                                                width: 1,
-                                                                indent: 7,
-                                                                endIndent: 7,
-                                                        ),
-                                                        ToggleIcon(
-                                                      onPressed: () async {
-                                                        await njoftimSinglePostRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'featured':
-                                                                  !njoftimSinglePostRecord
-                                                                      .featured,
-                                                            },
+                                                              ),
+                                                            ),
                                                           ),
-                                                        });
-                                                      },
-                                                      value:
-                                                          njoftimSinglePostRecord
-                                                              .featured,
-                                                      onIcon: Icon(
-                                                        Icons.bookmark_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        size: 25.0,
-                                                      ),
-                                                      offIcon: Icon(
-                                                        Icons.bookmark_border,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
-                                                        size: 25.0,
-                                                      ),
-                                                    ),
-
-                                                      ],
-                                                    )                                                  ),
+                                                          VerticalDivider(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .accent3,
+                                                            thickness: 1,
+                                                            width: 1,
+                                                            indent: 7,
+                                                            endIndent: 7,
+                                                          ),
+                                                          ToggleIcon(
+                                                            onPressed:
+                                                                () async {
+                                                              await njoftimSinglePostRecord
+                                                                  .reference
+                                                                  .update({
+                                                                ...mapToFirestore(
+                                                                  {
+                                                                    'featured':
+                                                                        !njoftimSinglePostRecord
+                                                                            .featured,
+                                                                  },
+                                                                ),
+                                                              });
+                                                            },
+                                                            value:
+                                                                njoftimSinglePostRecord
+                                                                    .featured,
+                                                            onIcon: Icon(
+                                                              Icons
+                                                                  .bookmark_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondary,
+                                                              size: 25.0,
+                                                            ),
+                                                            offIcon: Icon(
+                                                              Icons
+                                                                  .bookmark_border,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent2,
+                                                              size: 25.0,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      )),
                                                 ],
                                               ),
                                             ],
@@ -416,37 +418,58 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  2.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              .fromSTEB(0.0,
+                                                              2.0, 0.0, 0.0),
                                                       child: AnimatedContainer(
-                                                        duration: const Duration(
-                                                            milliseconds: 100),
+                                                        duration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    100),
                                                         curve:
                                                             Curves.elasticOut,
                                                         width: double.infinity,
                                                         height: 55.0,
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: njoftimSinglePostRecord.endTime!.difference(getCurrentTimestamp).inDays < 2 ? 
-                                                          FlutterFlowTheme.of(context).error : 
-                                                          FlutterFlowTheme.of(context).warning ,
-                                                          boxShadow:  [
+                                                          color: njoftimSinglePostRecord
+                                                                      .endTime!
+                                                                      .difference(
+                                                                          getCurrentTimestamp)
+                                                                      .inDays <
+                                                                  2
+                                                              ? FlutterFlowTheme
+                                                                      .of(
+                                                                          context)
+                                                                  .error
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .warning,
+                                                          boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 4.0,
-                                                              color: njoftimSinglePostRecord.endTime!.difference(getCurrentTimestamp).inDays < 2 ? 
-                                                         const Color(
-                                                                  0xFFF66980) : 
-                                                          const Color.fromARGB(255, 237, 246, 105) ,
-                                                              offset: const Offset(
-                                                                  0.0, 0.0),
+                                                              color: njoftimSinglePostRecord
+                                                                          .endTime!
+                                                                          .difference(
+                                                                              getCurrentTimestamp)
+                                                                          .inDays <
+                                                                      2
+                                                                  ? const Color(
+                                                                      0xFFF66980)
+                                                                  : const Color
+                                                                      .fromARGB(
+                                                                      255,
+                                                                      237,
+                                                                      246,
+                                                                      105),
+                                                              offset:
+                                                                  const Offset(
+                                                                      0.0, 0.0),
                                                               spreadRadius: 3.0,
                                                             )
                                                           ],
                                                           borderRadius:
-                                                              const BorderRadius.only(
+                                                              const BorderRadius
+                                                                  .only(
                                                             bottomLeft:
                                                                 Radius.circular(
                                                                     0.0),
@@ -461,10 +484,20 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                     30.0),
                                                           ),
                                                           border: Border.all(
-                                                            color: njoftimSinglePostRecord.endTime!.difference(getCurrentTimestamp).inDays < 2 ? 
-                                                            const Color(
-                                                                0xFFF3677D):
-                                                                const Color.fromARGB(255, 243, 229, 103),
+                                                            color: njoftimSinglePostRecord
+                                                                        .endTime!
+                                                                        .difference(
+                                                                            getCurrentTimestamp)
+                                                                        .inDays <
+                                                                    2
+                                                                ? const Color(
+                                                                    0xFFF3677D)
+                                                                : const Color
+                                                                    .fromARGB(
+                                                                    255,
+                                                                    243,
+                                                                    229,
+                                                                    103),
                                                             width: 2.0,
                                                           ),
                                                         ),
@@ -479,26 +512,38 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                               alignment:
                                                                   const AlignmentDirectional(
                                                                       0.0, 0.0),
-                                                              child: Text(PostRecord.getTimeLeft(njoftimSinglePostRecord.endTime),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .displaySmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Roboto Slab',
-                                                                      color: FlutterFlowTheme.of(
+                                                              child: StreamBuilder<
+                                                                      String>(
+                                                                  stream: PostRecord
+                                                                      .getTimeLeftStream(
+                                                                          njoftimSinglePostRecord
+                                                                              .endTime),
+                                                                  builder: (BuildContext
+                                                                          context,
+                                                                      AsyncSnapshot<
+                                                                              String>
+                                                                          snapshot) {
+                                                                    return Text(
+                                                                      snapshot.data ??
+                                                                          '',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primaryBtnText,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    ),
-                                                              ),
+                                                                          .displaySmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Roboto Slab',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBtnText,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    );
+                                                                  }),
                                                             ),
                                                           ],
                                                         ),
@@ -515,12 +560,11 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ],
                                       ),
                                       Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 1.0),
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 1.0),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 5.0, 0.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(20.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
                                               njoftimSinglePostRecord.title,
@@ -538,8 +582,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 20.0, 20.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 20.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -547,14 +591,16 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                           children: [
                                             Icon(
                                               Icons.euro,
-                                              color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent2,
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(7.0, 0.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 njoftimSinglePostRecord.minPay
                                                     .toString(),
@@ -572,8 +618,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -581,14 +627,16 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                           children: [
                                             Icon(
                                               FFIcons.klocation,
-                                              color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent2,
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(7.0, 0.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      7.0, 0.0, 0.0, 0.0),
                                               child: StreamBuilder<
                                                   LocationsRecord>(
                                                 stream:
@@ -636,8 +684,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -645,14 +693,16 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                           children: [
                                             Icon(
                                               Icons.access_time_rounded,
-                                              color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent2,
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(7.0, 0.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 '${njoftimSinglePostRecord.shiftHours.toString()} Orë',
                                                 style:
@@ -669,8 +719,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -678,14 +728,16 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                           children: [
                                             Icon(
                                               Icons.shuffle,
-                                              color: FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent2,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent2,
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(7.0, 0.0, 0.0, 0.0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                      7.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'Turni ${njoftimSinglePostRecord.shift.toString()}',
                                                 style:
@@ -702,8 +754,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 30.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 30.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '4wtml42f' /* Description */,
@@ -720,8 +772,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(20.0, 10.0, 20.0, 0.0),
                                         child: Text(
                                           njoftimSinglePostRecord.description,
                                           style: FlutterFlowTheme.of(context)
@@ -742,9 +794,8 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                       ),
                                       Flexible(
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 20.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(20.0, 0.0, 20.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -763,10 +814,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      20.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  0.0,
+                                                                  20.0,
+                                                                  0.0,
+                                                                  0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -778,12 +829,13 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                               var shouldSetState =
-                                                                      false;
-                                                             if (loggedIn) {
-                                                                    _model.existingChat =
-                                                                        await queryChatsRecordOnce(
-                                                                      queryBuilder: (chatsRecord) => chatsRecord
+                                                              var shouldSetState =
+                                                                  false;
+                                                              if (loggedIn) {
+                                                                _model.existingChat =
+                                                                    await queryChatsRecordOnce(
+                                                                  queryBuilder: (chatsRecord) =>
+                                                                      chatsRecord
                                                                           .where(
                                                                             'recipient',
                                                                             isEqualTo:
@@ -794,45 +846,50 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                             isEqualTo:
                                                                                 currentUserReference,
                                                                           ),
-                                                                      singleRecord:
-                                                                          true,
-                                                                    ).then((s) =>
-                                                                            s.firstOrNull);
-                                                                    shouldSetState =
-                                                                        true;
-                                                                    if (_model
-                                                                            .existingChat !=
-                                                                        null) {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'CHAT',
-                                                                        queryParameters:
-                                                                            {
-                                                                          'chat':
-                                                                              serializeParam(
-                                                                            _model.existingChat,
-                                                                            ParamType.Document,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          'chat':
-                                                                              _model.existingChat,
-                                                                        },
-                                                                      );
-                                                                    } else {
-                                                                      var chatsRecordReference = ChatsRecord
+                                                                  singleRecord:
+                                                                      true,
+                                                                ).then((s) => s
+                                                                        .firstOrNull);
+                                                                shouldSetState =
+                                                                    true;
+                                                                if (_model
+                                                                        .existingChat !=
+                                                                    null) {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'CHAT',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'chat':
+                                                                          serializeParam(
+                                                                        _model
+                                                                            .existingChat,
+                                                                        ParamType
+                                                                            .Document,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      'chat': _model
+                                                                          .existingChat,
+                                                                    },
+                                                                  );
+                                                                } else {
+                                                                  var chatsRecordReference =
+                                                                      ChatsRecord
                                                                           .collection
                                                                           .doc();
-                                                                      await chatsRecordReference
-                                                                          .set(
-                                                                              createChatsRecordData(
-                                                                        recipient:
-                                                                            njoftimSinglePostRecord.userRef,
-                                                                        sender:
-                                                                            currentUserReference,
-                                                                      ));
-                                                                      _model.createdChat = ChatsRecord.getDocumentFromData(
+                                                                  await chatsRecordReference
+                                                                      .set(
+                                                                          createChatsRecordData(
+                                                                    recipient:
+                                                                        njoftimSinglePostRecord
+                                                                            .userRef,
+                                                                    sender:
+                                                                        currentUserReference,
+                                                                  ));
+                                                                  _model.createdChat =
+                                                                      ChatsRecord.getDocumentFromData(
                                                                           createChatsRecordData(
                                                                             recipient:
                                                                                 njoftimSinglePostRecord.userRef,
@@ -840,44 +897,46 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                                 currentUserReference,
                                                                           ),
                                                                           chatsRecordReference);
-                                                                      shouldSetState =
-                                                                          true;
+                                                                  shouldSetState =
+                                                                      true;
 
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'CHAT',
-                                                                        queryParameters:
-                                                                            {
-                                                                          'chat':
-                                                                              serializeParam(
-                                                                            _model.createdChat,
-                                                                            ParamType.Document,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          'chat':
-                                                                              _model.createdChat,
-                                                                        },
-                                                                      );
-                                                                    }
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'CHAT',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'chat':
+                                                                          serializeParam(
+                                                                        _model
+                                                                            .createdChat,
+                                                                        ParamType
+                                                                            .Document,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      'chat': _model
+                                                                          .createdChat,
+                                                                    },
+                                                                  );
+                                                                }
 
-                                                                    if (shouldSetState) {
-                                                                      setState(
-                                                                          () {});
-                                                                    }
-                                                                    return;
-                                                                  } else {
-                                                                    context.pushNamed(
-                                                                        'Login1');
-                                                                  }
-
+                                                                if (shouldSetState) {
+                                                                  setState(
+                                                                      () {});
+                                                                }
+                                                                return;
+                                                              } else {
+                                                                context.pushNamed(
+                                                                    'Login1');
+                                                              }
                                                             },
                                                             child:
                                                                 AnimatedContainer(
-                                                              duration: const Duration(
-                                                                  milliseconds:
-                                                                      100),
+                                                              duration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          100),
                                                               curve: Curves
                                                                   .elasticOut,
                                                               width: MediaQuery
@@ -965,10 +1024,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      20.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  0.0,
+                                                                  20.0,
+                                                                  0.0,
+                                                                  0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -985,9 +1044,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                             },
                                                             child:
                                                                 AnimatedContainer(
-                                                              duration: const Duration(
-                                                                  milliseconds:
-                                                                      100),
+                                                              duration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          100),
                                                               curve: Curves
                                                                   .elasticOut,
                                                               width: MediaQuery
@@ -1103,10 +1163,10 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                                                   Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                        0.0,
+                                                                        20.0,
+                                                                        0.0,
+                                                                        0.0),
                                                                     child:
                                                                         InkWell(
                                                                       splashColor:

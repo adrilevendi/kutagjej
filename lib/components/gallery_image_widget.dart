@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'gallery_image_model.dart';
@@ -36,8 +38,8 @@ class _GalleryImageWidgetState extends State<GalleryImageWidget> {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
-      child: Image.network(
-        'https://picsum.photos/seed/480/600',
+      child: CachedNetworkImage(
+        imageUrl: 'https://picsum.photos/seed/480/600',
         width: 300.0,
         height: 200.0,
         fit: BoxFit.cover,

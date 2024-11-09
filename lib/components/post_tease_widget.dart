@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '/backend/backend.dart';
@@ -50,7 +51,8 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
           Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
               child: Container(
                 width: 250.0,
                 height: 160.0,
@@ -68,136 +70,137 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
                   padding: const EdgeInsets.all(12.0),
                   child: SingleChildScrollView(
                     child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-                          width: double.infinity,
-                          height: 75.0,
-                          fit: BoxFit.cover,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: CachedNetworkImage(
+                            imageUrl:
+                                'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+                            width: double.infinity,
+                            height: 75.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                        child: Row(
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                valueOrDefault<String>(
+                                  widget.post?.company,
+                                  'VERGANO',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '45xrvosa' /*  -  */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  'Bojaxhi',
+                                  'Saldator',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              valueOrDefault<String>(
-                                widget.post?.company,
-                                'VERGANO',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w900,
-                                  ),
+                            Icon(
+                              Icons.payments_outlined,
+                              color: FlutterFlowTheme.of(context).alternate,
+                              size: 21.0,
                             ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                '45xrvosa' /*  -  */,
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 30.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  widget.post?.minPay.toInt().toString(),
+                                  '400',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
                             ),
-                            Text(
-                              valueOrDefault<String>(
-                                'Bojaxhi',
-                                'Saldator',
+                            Icon(
+                              FFIcons.klocation,
+                              color: FlutterFlowTheme.of(context).alternate,
+                              size: 21.0,
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 30.0, 0.0),
+                              child: StreamBuilder<LocationsRecord>(
+                                stream: LocationsRecord.getDocument(
+                                    widget.post!.location!),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final textLocationsRecord = snapshot.data!;
+                                  return Text(
+                                    valueOrDefault<String>(
+                                      textLocationsRecord.locationName,
+                                      'No location',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  );
+                                },
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
                           ],
                         ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.payments_outlined,
-                            color: FlutterFlowTheme.of(context).alternate,
-                            size: 21.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 30.0, 0.0),
-                            child: Text(
-                               valueOrDefault<String>(
-                                widget.post?.minPay.toInt().toString(),
-                                '400',
-                              ),
-                             
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Icon(
-                            FFIcons.klocation,
-                            color: FlutterFlowTheme.of(context).alternate,
-                            size: 21.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 30.0, 0.0),
-                            child: StreamBuilder<LocationsRecord>(
-                              stream: LocationsRecord.getDocument(
-                                  widget.post!.location!),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }
-                                final textLocationsRecord = snapshot.data!;
-                                return Text(
-                                  valueOrDefault<String>(
-                                    textLocationsRecord.locationName,
-                                    'No location',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Noto Sans',
-                                        letterSpacing: 0.0,
-                                      ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -206,12 +209,15 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
           Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(170.0, 0.0, 0.0, 120.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(170.0, 0.0, 0.0, 120.0),
               child: Container(
                 width: 80.0,
                 height: 40.0,
                 decoration: BoxDecoration(
-                  color: PostRecord.getDaysLeft(widget.post?.endTime) > 2 ? FlutterFlowTheme.of(context).warning:FlutterFlowTheme.of(context).error,
+                  color: PostRecord.getDaysLeft(widget.post?.endTime) > 2
+                      ? FlutterFlowTheme.of(context).warning
+                      : FlutterFlowTheme.of(context).error,
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(15.0),
                     bottomRight: Radius.circular(0.0),
@@ -222,8 +228,7 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
-                    "${PostRecord.getDaysLeft(widget.post?.endTime)} Day${PostRecord.getDaysLeft(widget.post?.endTime) > 1 ? "s":""}",
-                    
+                    "${PostRecord.getDaysLeft(widget.post?.endTime)} Day${PostRecord.getDaysLeft(widget.post?.endTime) > 1 ? "s" : ""}",
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Roboto Slab',
                           color: FlutterFlowTheme.of(context).primaryBtnText,

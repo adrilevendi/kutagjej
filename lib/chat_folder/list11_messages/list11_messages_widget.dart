@@ -62,8 +62,8 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
               elevation: 0,
             ),
           ),
-          body: SafeArea(
-            top: true,
+          body: SizedBox(
+            height: MediaQuery.of(context).size.height,
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,57 +161,54 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                         ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      StreamBuilder<List<ChatsRecord>>(
-                        stream: queryChatsRecord(
-                          queryBuilder: (chatsRecord) =>
-                              chatsRecord.where(Filter.or(
-                            Filter(
-                              'recipient',
-                              isEqualTo: currentUserReference,
-                            ),
-                            Filter(
-                              'sender',
-                              isEqualTo: currentUserReference,
-                            ),
-                          )),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50,
-                                height: 50,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
+                      Expanded(
+                        child: StreamBuilder<List<ChatsRecord>>(
+                          stream: queryChatsRecord(
+                            queryBuilder: (chatsRecord) =>
+                                chatsRecord.where(Filter.or(
+                              Filter(
+                                'recipient',
+                                isEqualTo: currentUserReference,
+                              ),
+                              Filter(
+                                'sender',
+                                isEqualTo: currentUserReference,
+                              ),
+                            )),
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50,
+                                  height: 50,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
-                          }
-                          List<ChatsRecord> listViewChatsRecordList =
-                              snapshot.data!;
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewChatsRecordList.length,
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewChatsRecord =
-                                  listViewChatsRecordList[listViewIndex];
-                              // print( listViewChatsRecordList[listViewIndex]);
-                              // print( listViewChatsRecord);
+                              );
+                            }
+                            List<ChatsRecord> listViewChatsRecordList =
+                                snapshot.data!;
+                            return ListView.builder(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: listViewChatsRecordList.length,
+                              itemBuilder: (context, listViewIndex) {
+                                final listViewChatsRecord =
+                                    listViewChatsRecordList[listViewIndex];
+                                // print( listViewChatsRecordList[listViewIndex]);
+                                // print( listViewChatsRecord);
 
-                              return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0, 1, 0, 0),
-                                child: StreamBuilder<UsersRecord>(
+                                return StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
                                       listViewChatsRecord.recipient ==
                                               currentUserReference
@@ -519,32 +516,71 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                 Builder(
                                                                                   builder: (context) {
                                                                                     if (columnMessageRecord?.sender == currentUserReference) {
-                                                                                      return Stack(
-                                                                                        children: [
-                                                                                          Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
-                                                                                            child: Icon(
-                                                                                              Icons.check,
-                                                                                              color: FlutterFlowTheme.of(context).accent2,
-                                                                                              size: 21,
-                                                                                            ),
+                                                                                      return FutureBuilder<int>(
+                                                                                          // stream: getUnreadMessageCountStream(reference: listViewChatsRecord.reference, userId: currentUserUid),
+                                                                                          future: queryMessageRecordCount(
+                                                                                            parent: listViewChatsRecord.reference,
+                                                                                            queryBuilder: (Query<Object?> messageRecord) {
+                                                                                              return messageRecord
+                                                                                                  .where(
+                                                                                                    'sender',
+                                                                                                    isEqualTo: currentUserReference,
+                                                                                                  )
+                                                                                                  .where(
+                                                                                                    'read',
+                                                                                                    isEqualTo: false,
+                                                                                                  );
+                                                                                            },
                                                                                           ),
-                                                                                          Align(
-                                                                                            alignment: const AlignmentDirectional(0, 0),
-                                                                                            child: Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
-                                                                                              child: Icon(
-                                                                                                Icons.check,
-                                                                                                color: valueOrDefault<Color>(
-                                                                                                  columnMessageRecord!.read ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  FlutterFlowTheme.of(context).success,
+                                                                                          builder: (context, snapshot) {
+                                                                                            if (!snapshot.hasData) {
+                                                                                              return Center(
+                                                                                                child: SizedBox(
+                                                                                                  width: 20,
+                                                                                                  height: 20,
+                                                                                                  child: CircularProgressIndicator(
+                                                                                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                      FlutterFlowTheme.of(context).primary,
+                                                                                                    ),
+                                                                                                  ),
                                                                                                 ),
-                                                                                                size: 21,
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      );
+                                                                                              );
+                                                                                            }
+
+                                                                                            final textMessageCount = snapshot.data!;
+                                                                                            return Stack(
+                                                                                              children: [
+                                                                                                Padding(
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
+                                                                                                  child: Icon(
+                                                                                                    Icons.check,
+                                                                                                    // color:
+                                                                                                    color: valueOrDefault<Color>(
+                                                                                                      (columnMessageRecord?.read ?? false) ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                      FlutterFlowTheme.of(context).success,
+                                                                                                    ),
+                                                                                                    // textMessageCount == 0 ? Colors.green : FlutterFlowTheme.of(context).accent2,
+                                                                                                    size: 21,
+                                                                                                  ),
+                                                                                                ),
+                                                                                                // Text('${textMessageCount}'),
+                                                                                                Align(
+                                                                                                  alignment: const AlignmentDirectional(0, 0),
+                                                                                                  child: Padding(
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
+                                                                                                    child: Icon(
+                                                                                                      Icons.check,
+                                                                                                      color: valueOrDefault<Color>(
+                                                                                                        (columnMessageRecord?.read ?? false) ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        FlutterFlowTheme.of(context).success,
+                                                                                                      ),
+                                                                                                      size: 21,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            );
+                                                                                          });
                                                                                     } else {
                                                                                       log('Chat Reference : ${listViewChatsRecord.reference.path}');
 
@@ -584,6 +620,10 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                                               );
                                                                                             }
                                                                                             int textFieldCount = snapshot.data!;
+
+                                                                                            if (textFieldCount == 0) {
+                                                                                              return Container();
+                                                                                            }
 
                                                                                             return Padding(
                                                                                               padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 5),
@@ -674,11 +714,11 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                       ),
                                     );
                                   },
-                                ),
-                              );
-                            },
-                          );
-                        },
+                                );
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),

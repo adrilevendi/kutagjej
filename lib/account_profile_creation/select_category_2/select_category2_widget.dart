@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -74,7 +76,8 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 30.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 30.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +96,8 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -125,8 +129,8 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        20.0, 0.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'yg2c0erp' /* Select Category: */,
@@ -142,7 +146,8 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -183,8 +188,9 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                                   0.0, 5.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1611021061285-16c871740efa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxjYXJwZW50ZXJ8ZW58MHx8fHwxNzE4MDk3Nzk4fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1611021061285-16c871740efa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxjYXJwZW50ZXJ8ZW58MHx8fHwxNzE4MDk3Nzk4fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 165.0,
                                   height: 190.0,
                                   fit: BoxFit.cover,
@@ -249,8 +255,9 @@ class _SelectCategory2WidgetState extends State<SelectCategory2Widget> {
                                   0.0, 5.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHx0YWxlbnR8ZW58MHx8fHwxNzE4MDk3ODMzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHx0YWxlbnR8ZW58MHx8fHwxNzE4MDk3ODMzfDA&ixlib=rb-4.0.3&q=80&w=1080',
                                   width: 165.0,
                                   height: 190.0,
                                   fit: BoxFit.cover,

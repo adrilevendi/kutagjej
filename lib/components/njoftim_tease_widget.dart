@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -5,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'njoftim_tease_model.dart';
 export 'njoftim_tease_model.dart';
 
-class NjoftimTeaseWidget extends StatefulWidget {
-  const NjoftimTeaseWidget({
+class StaffPostWidget extends StatefulWidget {
+  const StaffPostWidget({
     super.key,
     required this.post,
   });
@@ -14,10 +16,10 @@ class NjoftimTeaseWidget extends StatefulWidget {
   final PostRecord? post;
 
   @override
-  State<NjoftimTeaseWidget> createState() => _NjoftimTeaseWidgetState();
+  State<StaffPostWidget> createState() => _StaffPostWidgetState();
 }
 
-class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
+class _StaffPostWidgetState extends State<StaffPostWidget> {
   late NjoftimTeaseModel _model;
 
   @override
@@ -48,7 +50,8 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
           Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -72,27 +75,26 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
                           width: double.infinity,
                           height: 75.0,
                           fit: BoxFit.cover,
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                        child: Text(
-                                  '${widget.post?.company} - ${widget.post?.position}',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        fontFamily: 'Noto Sans',
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                )
-                      ),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 8.0),
+                          child: Text(
+                            '${widget.post?.company} - ${widget.post?.position}',
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      fontFamily: 'Noto Sans',
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                          )),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -179,8 +181,8 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                         ],
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 7.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -220,7 +222,8 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
           Align(
             alignment: const AlignmentDirectional(1.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 168.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 168.0, 16.0, 0.0),
               child: Container(
                 width: 150.0,
                 height: 30.0,
@@ -235,18 +238,29 @@ class _NjoftimTeaseWidgetState extends State<NjoftimTeaseWidget> {
                 ),
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Text(PostRecord.getTimeLeft(widget.post?.endTime),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Roboto Slab',
-                          color: FlutterFlowTheme.of(context).primaryBtnText,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
+                  child: StreamBuilder<String?>(
+                      stream:
+                          PostRecord.getTimeLeftStream(widget.post?.endTime),
+                      builder: (context, timeLeftSnapshot) {
+                        return Text(
+                          timeLeftSnapshot.hasData
+                              ? (timeLeftSnapshot.data ?? '')
+                              : PostRecord.getTimeLeft(widget.post?.endTime),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Roboto Slab',
+                                color:
+                                    FlutterFlowTheme.of(context).primaryBtnText,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                        );
+                      }),
                 ),
               ),
             ),
-          ),  
+          ),
         ],
       ),
     );

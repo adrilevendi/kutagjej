@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
@@ -197,13 +199,13 @@ class _CreateProfile4WidgetState extends State<CreateProfile4Widget>
                                 decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                 ),
-                                child: Image.network(
-                                  valueOrDefault<String>(
+                                child: CachedNetworkImage(
+                                  imageUrl: valueOrDefault<String>(
                                     currentUserPhoto,
                                     'https://firebasestorage.googleapis.com/v0/b/kutagjej.appspot.com/o/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg?alt=media&token=4b55816a-41eb-433b-9798-959b77b943dd',
                                   ),
                                   fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) =>
+                                  errorWidget: (context, error, stackTrace) =>
                                       Image.asset(
                                     'assets/images/error_image.webp',
                                     fit: BoxFit.cover,
@@ -292,8 +294,9 @@ class _CreateProfile4WidgetState extends State<CreateProfile4Widget>
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -562,8 +565,9 @@ class _CreateProfile4WidgetState extends State<CreateProfile4Widget>
                                   height: 50.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
