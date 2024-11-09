@@ -72,14 +72,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : const WelcomeScreen1Widget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? NavBarPage()
+          : const WelcomeScreen1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : const WelcomeScreen1Widget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? NavBarPage()
+              : const WelcomeScreen1Widget(),
           routes: [
             FFRoute(
               name: 'DetailedProfile',
@@ -131,7 +133,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               // builder: (context, params) => params.isEmpty
               //     ? NavBarPage(initialPage: 'Search')
               //     : SearchWidget(),
-              builder: (context, params) => const SearchWidget(),
+              builder: (context, params) => const SearchProfessionalScreen(),
             ),
             FFRoute(
               name: 'Motivation--5--',
@@ -229,7 +231,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CreateProfessionalAcc-3-',
               path: 'createProfessionalAcc3',
-              builder: (context, params) => const CreateProfessionalAcc3Widget(),
+              builder: (context, params) =>
+                  const CreateProfessionalAcc3Widget(),
             ),
             FFRoute(
               name: 'CreateBusinessAccount',
@@ -249,7 +252,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'ForgotPasswordConfirmation',
               path: 'forgotPasswordConfirmation',
-              builder: (context, params) => const ForgotPasswordConfirmationWidget(),
+              builder: (context, params) =>
+                  const ForgotPasswordConfirmationWidget(),
             ),
             FFRoute(
               name: 'Home',
@@ -266,7 +270,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'NjoftimePune2',
               path: 'njoftimePune2',
-              builder: (context, params) => const NjoftimePune2Widget(),
+              builder: (context, params) => const StaffSearchScreen(),
             ),
             FFRoute(
               name: 'NjoftimSingle',
@@ -640,7 +644,8 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() =>
+      const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

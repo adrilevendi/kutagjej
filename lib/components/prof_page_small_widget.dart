@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -49,7 +51,8 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 355,
+          width: MediaQuery.of(context).size.width - 40,
+          // width: 355,
           height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -117,8 +120,8 @@ class _ProfPageSmallWidgetState extends State<ProfPageSmallWidget> {
                                     topLeft: Radius.circular(15),
                                     topRight: Radius.circular(0),
                                   ),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
+                                  child: CachedNetworkImage(
+                                    imageUrl: valueOrDefault<String>(
                                       rowUsersRecord.photoUrl,
                                       'https://images.unsplash.com/photo-1567784177951-6fa58317e16b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNnx8bWFufGVufDB8fHx8MTcxODA1NTgzM3ww&ixlib=rb-4.0.3&q=80&w=1080',
                                     ),

@@ -3,7 +3,7 @@ export '/main_page/detailed_profile/detailed_profile_widget.dart'
     show DetailedProfileWidget;
 export '/main_page/favourite_profs/favourite_profs_widget.dart'
     show FavouriteProfsWidget;
-export '/search_prof/search/search_widget.dart' show SearchWidget;
+export '/search_prof/search/search_widget.dart' show SearchProfessionalScreen;
 export '/account_profile_creation/motivation_5/motivation5_widget.dart'
     show Motivation5Widget;
 export '/profile/payment_confirm/payment_confirm_widget.dart'
@@ -26,7 +26,7 @@ export '/profile/edit_profile_2/edit_profile2_widget.dart'
 export '/account_profile_creation/create_professional_acc_3/create_professional_acc3_widget.dart'
     show CreateProfessionalAcc3Widget;
 export '/account_profile_creation/create_business_account/create_business_account_widget.dart'
-show CreateBusinessAccountWidget;
+    show CreateBusinessAccountWidget;
 export '/account_profile_creation/select_category_2/select_category2_widget.dart'
     show SelectCategory2Widget;
 export '/account_profile_creation/welcome_screen_1/welcome_screen1_widget.dart'
@@ -37,7 +37,7 @@ export '/main_page/home/home_widget.dart' show HomeWidget;
 export '/test_create_user_page/test_create_user_page_widget.dart'
     show TestCreateUserPageWidget;
 export '/njoftime/njoftime_pune2/njoftime_pune2_widget.dart'
-    show NjoftimePune2Widget;
+    show StaffSearchScreen;
 export '/njoftime/njoftim_single/njoftim_single_widget.dart'
     show NjoftimSingleWidget;
 export '/plans/plans_widget.dart' show PlansWidget;
@@ -63,4 +63,3 @@ export '/account_profile_creation/free_trial/free_trial_widget.dart'
     show FreeTrialWidget;
 export '/store/store_widget.dart' show StoreWidget;
 export '/real_estate/real_estate_widget.dart' show RealEstateWidget;
-

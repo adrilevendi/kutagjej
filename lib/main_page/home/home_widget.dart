@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '/backend/backend.dart';
 import '/components/post_tease_widget.dart';
 import '/components/prof_page_small_widget.dart';

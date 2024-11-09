@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:math';
 import '/auth/firebase_auth/auth_util.dart';
@@ -115,8 +116,8 @@ class _RatingModalWidgetState extends State<RatingModalWidget> {
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                   ),
-                  child: Image.network(
-                    optionsUsersRecord.photoUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: optionsUsersRecord.photoUrl,
                     fit: BoxFit.cover,
                   ),
                 ),

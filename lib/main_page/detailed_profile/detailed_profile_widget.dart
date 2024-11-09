@@ -207,8 +207,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Image.network(
-                                                  valueOrDefault<String>(
+                                                CachedNetworkImage(
+                                                  imageUrl:
+                                                      valueOrDefault<String>(
                                                     detailedProfileUsersRecord
                                                         .photoUrl,
                                                     'https://stablepoint.com/assets/uploads/images/blog/make-your-website-load-faster.jpg',

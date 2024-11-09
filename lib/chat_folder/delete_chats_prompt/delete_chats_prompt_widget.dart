@@ -127,7 +127,7 @@ class _DeleteChatsPromptWidgetState extends State<DeleteChatsPromptWidget> {
                           Navigator.pop(context);
                         },
                         text: FFLocalizations.of(context).getText(
-                          'ob7apj6m' /* Cancel */,
+                          'spqliimi' /* Cancel */,
                         ),
                         options: FFButtonOptions(
                           width: 150.0,

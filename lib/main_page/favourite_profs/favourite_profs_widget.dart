@@ -205,7 +205,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
                                   }.withoutNulls,
                                 );
                               },
-                              child: NjoftimTeaseWidget(
+                              child: StaffPostWidget(
                                 key: Key(
                                   'Key52w_${listViewPostRecord.reference.id}',
                                 ),

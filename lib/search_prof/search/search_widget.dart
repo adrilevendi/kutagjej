@@ -16,14 +16,15 @@ import 'search_model.dart';
 
 export 'search_model.dart';
 
-class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
+class SearchProfessionalScreen extends StatefulWidget {
+  const SearchProfessionalScreen({super.key});
 
   @override
-  State<SearchWidget> createState() => _SearchWidgetState();
+  State<SearchProfessionalScreen> createState() =>
+      _SearchProfessionalScreenState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
   late SearchModel _model;
   late List profToShow;
 
@@ -82,32 +83,39 @@ class _SearchWidgetState extends State<SearchWidget> {
       }
 
       return qry;
-    })
-        .then(
-          (records) {
-            return _model.simpleSearchResults = TextSearch(
-              records.map(
-                (record) {
-                  return TextSearchItem.fromTerms(record, [
-                    // record.title!,
-                    record.displayName,
-                    record.category!,
-                    record.shortDescription,
-                    record.email
-                  ]);
-                },
-              ).toList(),
-            )
-                .search(_model.textController.text)
-                .map((r) {
-                  return r.object;
-                })
-                .take(30)
-                .toList();
-          },
+    }).then(
+      (records) {
+        return _model.simpleSearchResults = TextSearch(
+          records.map(
+            (record) {
+              return TextSearchItem.fromTerms(
+                record,
+                [
+                  record.email,
+                  record.title,
+                  record.displayName,
+                  record.category!,
+                  record.shortDescription,
+                ],
+              );
+            },
+          ).toList(),
         )
-        .onError((_, __) => _model.simpleSearchResults = [])
-        .whenComplete(() => setState(() {}));
+            .search(
+              _model.textController.text,
+              matchThreshold: 0.9,
+            )
+            .map((TextSearchResult<UsersRecord> r) {
+              return r.object;
+            })
+            .take(30)
+            .toList();
+      },
+    ).onError((_, __) {
+      return _model.simpleSearchResults = [];
+    }).whenComplete(() {
+      setState(() {});
+    });
   }
 
   @override
@@ -117,8 +125,12 @@ class _SearchWidgetState extends State<SearchWidget> {
     return SafeArea(
       child: StreamBuilder<List<CategoryRecord>>(
         stream: queryCategoryRecord(
-          queryBuilder: (categoryRecord) =>
-              categoryRecord.whereIn('qualification', FFAppState().f),
+          queryBuilder: (categoryRecord) {
+            return categoryRecord.whereIn(
+              'qualification',
+              FFAppState().f,
+            );
+          },
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
@@ -141,9 +153,9 @@ class _SearchWidgetState extends State<SearchWidget> {
           List<CategoryRecord> searchCategoryRecordList = snapshot.data!;
           return GestureDetector(
             onTap: () {
-              // _model.unfocusNode.canRequestFocus
-              //   ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              //   : FocusScope.of(context).unfocus();
+              _model.unfocusNode.canRequestFocus
+                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                  : FocusScope.of(context).unfocus();
             },
             child: Scaffold(
               key: scaffoldKey,
@@ -379,39 +391,40 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              try {
-                                                _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
-                                                        .unfocus();
-                                              } catch (e) {
-                                                log("Error in search_widget.dart UnFocus Node");
-                                              }
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: SizedBox(
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        0.65,
-                                                child: FilterSidebarWidget(
-                                                    atUpdate: () {
-                                                  print(
-                                                      "filtSidWig update 369");
-                                                  searchForProf();
-                                                }),
-                                              ),
+                                          //  onTap: () {
+                                          //     try {
+                                          //       _model.unfocusNode
+                                          //               .canRequestFocus
+                                          //           ? FocusScope.of(context)
+                                          //               .requestFocus(
+                                          //                   _model.unfocusNode)
+                                          //           : FocusScope.of(context)
+                                          //               .unfocus();
+                                          //     } catch (e) {
+                                          //       log("Error in search_widget.dart UnFocus Node");
+                                          //     }
+                                          //   },
+                                          return Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: SizedBox(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.65,
+                                              child: FilterSidebarWidget(
+                                                  atUpdate: () {
+                                                log("filter update 369");
+
+                                                searchForProf();
+                                              }),
                                             ),
                                           );
                                         },
-                                      ).then((value) => safeSetState(() {}));
+                                      ).then((value) {
+                                        safeSetState(() {});
+                                      }).catchError((e) {
+                                        log("Error in search_widget.dart Filter Sidebar");
+                                      });
                                     },
                                     child: Container(
                                       width: 40.0,
@@ -482,8 +495,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                 ),
                               );
                             }
-                            List<LocationsRecord> containerLocationsRecordList =
-                                snapshot.data!;
+                            // List<LocationsRecord> containerLocationsRecordList =
+                            //     snapshot.data!;
                             return Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Container(
@@ -536,65 +549,33 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         .map((e) => e)
                                         .toList();
                                     return ListView.builder(
-                                        padding: EdgeInsets.zero,
-                                        scrollDirection: Axis.vertical,
-                                        itemCount:
-                                            _model.simpleSearchResults.length,
-                                        itemBuilder:
-                                            (context, searchResultProfIndex) {
-                                          final searchResultProfItem =
-                                              _model.simpleSearchResults[
-                                                  searchResultProfIndex];
-                                          return Builder(
-                                            builder: (context) {
-                                              if (searchResultProfItem
-                                                      .verified ==
-                                                  true) {
-                                                return Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          15, 0, 15, 15),
-                                                  child: wrapWithModel(
-                                                      model: _model
-                                                          .profFeaturedTeaseModels
-                                                          .getModel(
-                                                        _model
-                                                            .simpleSearchResults[
-                                                                searchResultProfIndex]
-                                                            .reference
-                                                            .id,
-                                                        searchResultProfIndex,
-                                                      ),
-                                                      updateCallback: () =>
-                                                          setState(() {}),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child:
-                                                            ProfFeaturedTeaseWidget(
-                                                          key: Key(
-                                                            'Keyn7e_${_model.simpleSearchResults[searchResultProfIndex].reference.id}',
-                                                          ),
-                                                          prof:
-                                                              searchResultProfItem,
-                                                          isFavorite: false,
-                                                        ),
-                                                      )),
-                                                );
-                                              } else {
-                                                return Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          10, 0, 0, 0),
-                                                  child: wrapWithModel(
+                                      padding: EdgeInsets.zero,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount:
+                                          _model.simpleSearchResults.length,
+                                      itemBuilder:
+                                          (context, searchResultProfIndex) {
+                                        final searchResultProfItem =
+                                            _model.simpleSearchResults[
+                                                searchResultProfIndex];
+                                        return Builder(
+                                          builder: (context) {
+                                            if (searchResultProfItem.verified ==
+                                                true) {
+                                              return Padding(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        15, 0, 15, 15),
+                                                child: wrapWithModel(
                                                     model: _model
-                                                        .profPageSmallModels
+                                                        .profFeaturedTeaseModels
                                                         .getModel(
-                                                      searchResultProfItem
-                                                          .reference.id,
+                                                      _model
+                                                          .simpleSearchResults[
+                                                              searchResultProfIndex]
+                                                          .reference
+                                                          .id,
                                                       searchResultProfIndex,
                                                     ),
                                                     updateCallback: () =>
@@ -602,25 +583,75 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.only(
-                                                              left: 10,
-                                                              right: 10,
-                                                              top: 10),
+                                                              top: 15),
                                                       child:
-                                                          ProfPageSmallWidget(
+                                                          ProfFeaturedTeaseWidget(
                                                         key: Key(
-                                                          'Keyeef_${searchResultProfItem.reference.id}',
+                                                          'Keyn7e_${_model.simpleSearchResults[searchResultProfIndex].reference.id}',
                                                         ),
-                                                        userRef:
-                                                            searchResultProfItem
-                                                                .reference,
+                                                        prof:
+                                                            searchResultProfItem,
+                                                        isFavorite: false,
+                                                      ),
+                                                    )),
+                                              );
+                                            } else {
+                                              return Column(
+                                                children: [
+                                                  // Text(
+                                                  //   searchResultProfItem.email,
+                                                  //   style: FlutterFlowTheme.of(
+                                                  //           context)
+                                                  //       .bodyText1
+                                                  //       .override(
+                                                  //         fontFamily:
+                                                  //             'Noto Sans',
+                                                  //         color: FlutterFlowTheme
+                                                  //                 .of(context)
+                                                  //             .primaryColor,
+                                                  //       ),
+                                                  // ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            10, 0, 0, 0),
+                                                    child: wrapWithModel(
+                                                      model: _model
+                                                          .profPageSmallModels
+                                                          .getModel(
+                                                        searchResultProfItem
+                                                            .reference.id,
+                                                        searchResultProfIndex,
+                                                      ),
+                                                      updateCallback: () =>
+                                                          setState(() {}),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                left: 10,
+                                                                right: 10,
+                                                                top: 10),
+                                                        child:
+                                                            ProfPageSmallWidget(
+                                                          key: Key(
+                                                            'Keyeef_${searchResultProfItem.reference.id}',
+                                                          ),
+                                                          userRef:
+                                                              searchResultProfItem
+                                                                  .reference,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                );
-                                              }
-                                            },
-                                          );
-                                        });
+                                                ],
+                                              );
+                                            }
+                                          },
+                                        );
+                                      },
+                                    );
                                   },
                                 ),
                               ),
