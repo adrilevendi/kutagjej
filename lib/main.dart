@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -89,6 +92,12 @@ void main() async {
   // TODO: Set up background message handler
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      // systemNavigationBarColor:  // navigation bar color
+      statusBarColor: Color.fromARGB(255, 65, 185, 95), // status bar color
+    ));
+  }
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
     child: MyApp(),
@@ -271,7 +280,7 @@ class _NavBarPageState extends State<NavBarPage> {
         padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
         width: double.infinity,
         elevation: 0.0,
-        boxShadows: [ FlutterFlowTheme.of(context).navbar],
+        boxShadows: [FlutterFlowTheme.of(context).navbar],
         items: [
           FloatingNavbarItem(
             customWidget: Column(
