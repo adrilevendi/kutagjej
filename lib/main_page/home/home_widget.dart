@@ -893,10 +893,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           onTap: () async {
                                             final Uri url = Uri.parse(
                                                 'https://instagram.com/redtocila');
-                                            if (!await launchUrl(url)) {
-                                              throw Exception(
-                                                  'Could not launch url');
-                                            }
+                                            // if (!await launchUrl(url)) {
+                                            //   throw Exception(
+                                            //       'Could not launch url');
+                                            // }
                                           },
                                           child: ClipRRect(
                                             borderRadius:
