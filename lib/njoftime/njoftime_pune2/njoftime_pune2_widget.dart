@@ -392,7 +392,7 @@ class _StaffSearchScreenState extends State<StaffSearchScreen> {
 
                         dev.log(pr.parameters.toString());
                       }
-                      pr
+                      pr = pr
                           .where(
                             'paid',
                             isEqualTo: true,

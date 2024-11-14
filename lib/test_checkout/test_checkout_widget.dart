@@ -154,9 +154,9 @@ class _TestCheckoutWidgetState extends State<TestCheckoutWidget> {
                               0.0, 30.0, 0.0, 30.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              final response = await http.get(
-                                  Uri.parse('http://127.0.0.1:3000/api/order'));
-                              print(response.body);
+                              // final response = await http.get(
+                              //     Uri.parse('http://127.0.0.1:3000/api/order'));
+                              // print(response.body);
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,

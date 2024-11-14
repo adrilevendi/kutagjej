@@ -92,7 +92,9 @@ void main() async {
   // TODO: Set up background message handler
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  if (Platform.isAndroid) {
+  if (kIsWeb) {
+    // Some web specific code there
+  } else if (Platform.isAndroid) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       // systemNavigationBarColor:  // navigation bar color
       statusBarColor: Color.fromARGB(255, 65, 185, 95), // status bar color
