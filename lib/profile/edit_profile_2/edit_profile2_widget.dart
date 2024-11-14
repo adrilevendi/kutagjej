@@ -598,14 +598,18 @@ class _EditProfile2WidgetState extends State<EditProfile2Widget>
                                               currentUserDocument!.location!),
                                           builder: (loContext, locSnapshot) {
                                             final currentLocationsRecord =
-                                                locSnapshot.data!;
+                                                locSnapshot.data
+                                                            ?.locationName !=
+                                                        null
+                                                    ? locSnapshot
+                                                        .data?.locationName
+                                                    : 'Tirane';
 
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
-                                                      currentLocationsRecord
-                                                          .locationName),
+                                                      currentLocationsRecord),
                                               options:
                                                   dropDownLocationsRecordList
                                                       .map(
