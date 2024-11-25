@@ -57,17 +57,19 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
           initialIndex: 0, //optional, starts from 0, select the tab by default
           length: 2,
           child: Scaffold(
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               appBar: AppBar(
                 title: Text(
                   "Favorites",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(
+                      color: FlutterFlowTheme.of(context).primaryText),
                 ),
-                backgroundColor: Colors.white,
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 bottom: TabBar(
                     isScrollable: true,
                     labelColor: FlutterFlowTheme.of(context).primaryText,
                     unselectedLabelColor:
-                        FlutterFlowTheme.of(context).secondaryText,
+                        FlutterFlowTheme.of(context).primaryText,
                     labelPadding: const EdgeInsetsDirectional.fromSTEB(
                         32.0, 0.0, 32.0, 0.0),
                     labelStyle:
@@ -80,7 +82,8 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
                               fontFamily: 'Noto Sans',
                               letterSpacing: 0.0,
                             ),
-                    indicatorColor: FlutterFlowTheme.of(context).primary,
+                    indicatorColor:
+                        FlutterFlowTheme.of(context).secondaryBackground,
                     indicatorWeight: 3.0,
                     tabs: [
                       Tab(
@@ -94,7 +97,7 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
               body: TabBarView(children: [
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(
-                      25.0, 30.0, 0.0, 0.0),
+                      20.0, 30.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => StreamBuilder<List<UsersRecord>>(
                       stream: queryUsersRecord(
@@ -146,8 +149,8 @@ class _FavouriteProfsWidgetState extends State<FavouriteProfsWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      19.0, 30.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => StreamBuilder<List<PostRecord>>(
                       stream: queryPostRecord(queryBuilder: (postRecord) {

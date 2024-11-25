@@ -378,7 +378,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                               alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 400.0,
+                                // height: 400.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -795,7 +795,7 @@ class _NjoftimSingleWidgetState extends State<NjoftimSingleWidget>
                                       Flexible(
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(20.0, 0.0, 20.0, 0.0),
+                                              .fromSTEB(20.0, 0.0, 20.0, 20.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:

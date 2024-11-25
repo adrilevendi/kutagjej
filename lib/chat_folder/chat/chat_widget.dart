@@ -104,7 +104,8 @@ class _ChatWidgetState extends State<ChatWidget> {
     if (!loggedIn) {
       return const Login1Widget();
     } else {
-      return GestureDetector(
+      return SafeArea(
+          child: GestureDetector(
         onTap: () => _model.unfocusNode.canRequestFocus
             ? FocusScope.of(context).requestFocus(_model.unfocusNode)
             : FocusScope.of(context).unfocus(),
@@ -149,7 +150,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                               0.0, 10.0, 10.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -777,7 +778,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                           width: 300,
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                5.0, 10.0, 5.0, 0.0),
+                                5.0, 5.0, 5.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
@@ -797,9 +798,10 @@ class _ChatWidgetState extends State<ChatWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Color(0x9696EE89),
-                                    width: 2.0,
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
@@ -898,7 +900,7 @@ class _ChatWidgetState extends State<ChatWidget> {
             ],
           ),
         ),
-      );
+      ));
     }
   }
 }

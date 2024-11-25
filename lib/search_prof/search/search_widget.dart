@@ -304,9 +304,17 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      // if (!loggedIn)
-                                      context.pushNamed('freeTrial');
-                                      // else context.pushNamed('EditProfile--2--');
+                                      if (!loggedIn) {
+                                        context.pushNamed('freeTrial');
+                                      } else {
+                                        if (currentUserDocument!
+                                            .hasSubscription()) {
+                                          context.pushNamed('Plans');
+                                        } else {
+                                          context.pushNamed('freeTrial');
+                                        }
+                                        // context.pushNamed('EditProfile--2--');
+                                      }
                                     },
                                     child: Container(
                                       width: 42.0,
