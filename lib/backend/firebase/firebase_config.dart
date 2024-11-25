@@ -15,11 +15,6 @@ Future initFirebase() async {
             measurementId: "G-LPEWP1X0K3"));
   } else {
     await Firebase.initializeApp(
-        options: FirebaseOptions(
-      apiKey: 'AIzaSyBJGjaAlslIN3NFxhx4lmJvG4tgYBiOyk8',
-      appId: '1:862406504590:android:03cd0d9b207498274b59df',
-      messagingSenderId: '862406504590',
-      projectId: 'kutagjej',
-    ));
+       );
   }
 }
