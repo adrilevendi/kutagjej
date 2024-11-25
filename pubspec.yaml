@@ -133,6 +133,8 @@ dependencies:
     sdk: flutter
 flutter_icons:
   image_path: "kutagjej_logo.png"
+  adaptive_icon_background: "assets/icons/adaptive-bg.png"
+  adaptive_icon_foreground: "assets/icons/adaptive-fg.png"
   android: true
   ios: true
 dependency_overrides:
