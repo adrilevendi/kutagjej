@@ -48,7 +48,7 @@ class _Createreferal2WidgetState extends State<Createreferal2Widget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
@@ -177,23 +177,23 @@ class _Createreferal2WidgetState extends State<Createreferal2Widget> {
                           //   sharePositionOrigin: getWidgetBoundingBox(context),
                           // );
 
-                           await Clipboard.setData(ClipboardData(
-                                      text: _model.textController.text,));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'Kodi u kopjua.',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: const Duration(milliseconds: 4000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
-                                    ),
-                                  );
+                          await Clipboard.setData(ClipboardData(
+                            text: _model.textController.text,
+                          ));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Kodi u kopjua.',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
                           'pdguazml' /* Shperndaje kodin */,
@@ -231,8 +231,8 @@ class _Createreferal2WidgetState extends State<Createreferal2Widget> {
                   ),
                   decoration: const BoxDecoration(),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await ReferalRecord.collection
@@ -252,8 +252,8 @@ class _Createreferal2WidgetState extends State<Createreferal2Widget> {
                         height: 48.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(

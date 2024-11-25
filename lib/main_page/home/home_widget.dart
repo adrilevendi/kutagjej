@@ -1065,10 +1065,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         ),
                         child: StreamBuilder<List<PostRecord>>(
                           stream: queryPostRecord(
-                            queryBuilder: (postRecord) => postRecord.where(
-                              'paid',
-                              isEqualTo: true,
-                            ),
+                            queryBuilder: (postRecord) => postRecord
+                                .where(
+                                  'paid',
+                                  isEqualTo: true,
+                                )
+                                .where('endTime',
+                                    isLessThanOrEqualTo: getCurrentTimestamp
+                                        .add(Duration(days: 3)))
+                                .where('endTime',
+                                    isGreaterThan: getCurrentTimestamp),
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.

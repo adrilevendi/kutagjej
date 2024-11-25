@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
@@ -11,6 +13,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/main_page/rating_modal/rating_modal_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -478,7 +482,9 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                       alignment:
                                           const AlignmentDirectional(0.0, 1.0),
                                       child: Container(
-                                        height: 450,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.7,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -667,6 +673,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                               itemCount: 5,
                                                                               itemSize: 25.0,
                                                                               glowColor: FlutterFlowTheme.of(context).secondary,
+                                                                              ignoreGestures: true,
                                                                             );
                                                                           }
                                                                         },
@@ -884,7 +891,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(0.0,
-                                                              10.0, 20.0, 0.0),
+                                                              10.0, 0.0, 0.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -895,7 +902,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                     .fromSTEB(
                                                                     20.0,
                                                                     0.0,
-                                                                    0.0,
+                                                                    20.0,
                                                                     0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1044,8 +1051,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                             const Duration(milliseconds: 100),
                                                                         curve: Curves
                                                                             .elasticOut,
-                                                                        width:
-                                                                            353.0,
+                                                                        width: MediaQuery.sizeOf(context).width -
+                                                                            40,
                                                                         height:
                                                                             38.0,
                                                                         decoration:
@@ -1192,8 +1199,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                             const Duration(milliseconds: 100),
                                                                         curve: Curves
                                                                             .elasticOut,
-                                                                        width:
-                                                                            353.0,
+                                                                        width: MediaQuery.sizeOf(context).width -
+                                                                            40.0,
                                                                         height:
                                                                             38.0,
                                                                         decoration:
@@ -1296,8 +1303,8 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                     (context) =>
                                                                         Text(
                                                                   valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.shortDescription,
+                                                                      detailedProfileUsersRecord
+                                                                          .shortDescription,
                                                                       ''),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1339,7 +1346,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                     20.0,
-                                                                    0.0,
+                                                                    40.0,
                                                                     0.0,
                                                                     0.0),
                                                             child: Text(
@@ -1717,25 +1724,55 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                         gridViewMediaRecordList[
                                                                             gridViewIndex];
                                                                     return ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          gridViewMediaRecord
-                                                                              .mediaUrl,
-                                                                          'https://picsum.photos/seed/480/600',
-                                                                        ),
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                      ),
-                                                                    );
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(
+                                                                                8.0),
+                                                                        child:
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await Navigator.push(
+                                                                              context,
+                                                                              PageTransition(
+                                                                                type: PageTransitionType.fade,
+                                                                                child: FlutterFlowExpandedImageView(
+                                                                                  image: CachedNetworkImage(
+                                                                                    imageUrl: gridViewMediaRecord.mediaUrl,
+                                                                                    fit: BoxFit.contain,
+                                                                                  ),
+                                                                                  allowRotation: true,
+                                                                                  tag: gridViewMediaRecord.mediaUrl + Random(2).toString(),
+                                                                                  useHeroAnimation: true,
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                          child:
+                                                                              Hero(
+                                                                            tag:
+                                                                                gridViewMediaRecord.mediaUrl,
+                                                                            transitionOnUserGestures:
+                                                                                true,
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(12),
+                                                                              child: Image.network(
+                                                                                gridViewMediaRecord.mediaUrl,
+                                                                                width: 300,
+                                                                                height: 200,
+                                                                                fit: BoxFit.cover,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ));
                                                                   },
                                                                 ),
                                                               );
@@ -1753,7 +1790,7 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                   20.0,
-                                                                  12.0,
+                                                                  35.0,
                                                                   0.0,
                                                                   0.0),
                                                           child: Text(

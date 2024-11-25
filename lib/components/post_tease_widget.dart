@@ -73,15 +73,30 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: CachedNetworkImage(
-                            imageUrl:
-                                'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-                            width: double.infinity,
-                            height: 75.0,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Builder(builder: (builder) {
+                              if (widget.post!.hasImage() &&
+                                  widget.post!.image.length > 0) {
+                                return CachedNetworkImage(
+                                  imageUrl: valueOrDefault<String>(
+                                    widget.post?.image,
+                                    '#',
+                                  ),
+                                  width: double.infinity,
+                                  height: 75.0,
+                                  fit: BoxFit.cover,
+                                );
+                              } else {
+                                print("post no image");
+                                return Image.asset(
+                                  FlutterFlowTheme.of(context)
+                                      .postPlaceholderPath,
+                                  width: double.infinity,
+                                  height: 75.0,
+                                  fit: BoxFit.cover,
+                                );
+                              }
+                            })),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 8.0),
@@ -206,37 +221,34 @@ class _PostTeaseWidgetState extends State<PostTeaseWidget> {
               ),
             ),
           ),
-          Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(170.0, 0.0, 0.0, 120.0),
-              child: Container(
-                width: 80.0,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: PostRecord.getDaysLeft(widget.post?.endTime) > 2
-                      ? FlutterFlowTheme.of(context).warning
-                      : FlutterFlowTheme.of(context).error,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(0.0),
-                    topLeft: Radius.circular(0.0),
-                    topRight: Radius.circular(10.0),
-                  ),
+          Padding(
+            padding:
+                const EdgeInsetsDirectional.fromSTEB(170.0, 0.0, 0.0, 120.0),
+            child: Container(
+              width: 80.0,
+              height: 40.0,
+              decoration: BoxDecoration(
+                color: PostRecord.getDaysLeft(widget.post?.endTime) > 2
+                    ? FlutterFlowTheme.of(context).warning
+                    : FlutterFlowTheme.of(context).error,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(15.0),
+                  bottomRight: Radius.circular(0.0),
+                  topLeft: Radius.circular(0.0),
+                  topRight: Radius.circular(10.0),
                 ),
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    "${PostRecord.getDaysLeft(widget.post?.endTime)} Day${PostRecord.getDaysLeft(widget.post?.endTime) > 1 ? "s" : ""}",
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Roboto Slab',
-                          color: FlutterFlowTheme.of(context).primaryBtnText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
+              ),
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Text(
+                  "${PostRecord.getDaysLeft(widget.post?.endTime)} Day${PostRecord.getDaysLeft(widget.post?.endTime) > 1 ? "s" : ""}",
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Roboto Slab',
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        fontSize: 15.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w600,
+                      ),
                 ),
               ),
             ),

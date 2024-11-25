@@ -44,7 +44,7 @@ class _StaffPostWidgetState extends State<StaffPostWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(1.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Stack(
         children: [
           Align(
@@ -74,15 +74,30 @@ class _StaffPostWidgetState extends State<StaffPostWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-                          width: double.infinity,
-                          height: 75.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Builder(builder: (builder) {
+                            if (widget.post!.hasImage() &&
+                                widget.post!.image.length > 0) {
+                              return CachedNetworkImage(
+                                imageUrl: valueOrDefault<String>(
+                                  widget.post?.image,
+                                  '#',
+                                ),
+                                width: double.infinity,
+                                height: 75.0,
+                                fit: BoxFit.cover,
+                              );
+                            } else {
+                              print("post no image");
+                              return Image.asset(
+                                FlutterFlowTheme.of(context)
+                                    .postPlaceholderPath,
+                                width: double.infinity,
+                                height: 75.0,
+                                fit: BoxFit.cover,
+                              );
+                            }
+                          })),
                       Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 8.0),
@@ -227,9 +242,11 @@ class _StaffPostWidgetState extends State<StaffPostWidget> {
               child: Container(
                 width: 150.0,
                 height: 30.0,
-                decoration: const BoxDecoration(
-                  color: Color(0xFFFBA203),
-                  borderRadius: BorderRadius.only(
+                decoration: BoxDecoration(
+                  color: PostRecord.getDaysLeft(widget.post?.endTime) > 2
+                      ? Color(0xFFFBA203)
+                      : FlutterFlowTheme.of(context).error,
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(10.0),
                     topLeft: Radius.circular(15.0),

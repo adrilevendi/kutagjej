@@ -11,9 +11,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'list11_messages_model.dart';
-export 'list11_messages_model.dart';
 
 class List11MessagesWidget extends StatefulWidget {
   const List11MessagesWidget({super.key});
@@ -150,7 +148,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 30),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'oqmpl6wx' /* Below are messages with others... */,
@@ -317,7 +315,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                           MainAxisSize.max,
                                                       crossAxisAlignment:
                                                           CrossAxisAlignment
-                                                              .start,
+                                                              .center,
                                                       children: [
                                                         Container(
                                                           width: 44,
@@ -333,7 +331,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              width: 2,
+                                                              width: 1,
                                                             ),
                                                           ),
                                                           child: Padding(
@@ -437,7 +435,7 @@ class _List11MessagesWidgetState extends State<List11MessagesWidget> {
                                                                           String>(
                                                                         containerUsersRecord
                                                                             .displayName,
-                                                                        'Test Name',
+                                                                        'User',
                                                                       ),
                                                                       textAlign:
                                                                           TextAlign

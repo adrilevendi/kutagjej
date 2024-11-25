@@ -92,7 +92,9 @@ void main() async {
   // TODO: Set up background message handler
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  if (Platform.isAndroid) {
+  if (kIsWeb) {
+    // Some web specific code there
+  } else if (Platform.isAndroid) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       // systemNavigationBarColor:  // navigation bar color
       statusBarColor: Color.fromARGB(255, 65, 185, 95), // status bar color
@@ -320,6 +322,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 children: [
                   InkWell(
                     child: Container(
+                        // width: 80,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: FlutterFlowTheme.of(context).alternate,
@@ -420,7 +423,7 @@ class _NavBarPageState extends State<NavBarPage> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                            25, 10, 0, 0),
+                                                            25, 10, 0, 25),
                                                     child: Column(
                                                       children: [
                                                         Row(
@@ -433,8 +436,8 @@ class _NavBarPageState extends State<NavBarPage> {
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.8,
+                                                                            .width -
+                                                                        50,
                                                                     // height: 4.0,
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
@@ -491,7 +494,7 @@ class _NavBarPageState extends State<NavBarPage> {
                                                                         10.0,
                                                                         10.0),
                                                                 child: Container(
-                                                                    width: MediaQuery.sizeOf(context).width * 0.8,
+                                                                    width: MediaQuery.sizeOf(context).width - 50,
                                                                     // height: 4.0,
                                                                     decoration: BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
@@ -522,7 +525,7 @@ class _NavBarPageState extends State<NavBarPage> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 10.0, 10.0),
                                                                               child: Container(
                                                                                   // width: 50.0,
                                                                                   // height: 4.0,

@@ -55,6 +55,7 @@ abstract class FlutterFlowTheme {
   late Color info;
   late Color chat;
   late BoxShadow navbar;
+  late String postPlaceholderPath;
 
   late Color primaryBtnText;
   late Color lineColor;
@@ -155,7 +156,7 @@ class LightModeTheme extends FlutterFlowTheme {
     blurRadius: 3,
     offset: Offset(0, -3),
   );
-
+  late String postPlaceholderPath = "assets/images/post-placeholder.png";
   late Color primaryBtnText = const Color(0xFFFFFFFF);
   late Color lineColor = const Color(0xFFE0E3E7);
   late Color background = const Color(0xFF1A1F24);
@@ -338,6 +339,7 @@ class DarkModeTheme extends FlutterFlowTheme {
     blurRadius: 3,
     offset: Offset(0, -3),
   );
+  late String postPlaceholderPath = "assets/images/post-placeholder-dark.png";
   late Color primaryBtnText = const Color(0xFFFFFFFF);
   late Color lineColor = const Color(0xFF22282F);
   late Color background = const Color(0xFF1A1F24);

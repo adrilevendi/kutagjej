@@ -56,6 +56,7 @@ class _StarsComponentWidgetState extends State<StarsComponentWidget> {
         itemCount: 5,
         itemSize: 24.0,
         glowColor: FlutterFlowTheme.of(context).alternate,
+        ignoreGestures: true,
       ),
     );
   }
