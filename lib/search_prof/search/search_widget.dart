@@ -309,7 +309,7 @@ class _SearchProfessionalScreenState extends State<SearchProfessionalScreen> {
                                       } else {
                                         if (currentUserDocument!
                                             .hasSubscription()) {
-                                          context.pushNamed('Plans');
+                                          // context.pushNamed('Plans');
                                         } else {
                                           context.pushNamed('freeTrial');
                                         }

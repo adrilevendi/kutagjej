@@ -1202,7 +1202,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           const AlignmentDirectional(0.0, -1.0),
                                       child: InkWell(
                                         onTap: () {
-                                          context.pushNamed("Plans");
+                                          // context.pushNamed("Plans");
                                         },
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
