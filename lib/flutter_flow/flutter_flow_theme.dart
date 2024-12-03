@@ -1,5 +1,5 @@
 // ignore_for_file: overridden_fields, annotate_overrides
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,6 +7,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const kThemeModeKey = '__theme_mode__';
 SharedPreferences? _prefs;
+FlutterView view = WidgetsBinding.instance.platformDispatcher.views.first;
+
+// Dimensions in physical pixels (px)
+Size size = view.physicalSize;
+double width = size.width;
+double height = size.height;
 
 abstract class FlutterFlowTheme {
   static Future initialize() async =>
@@ -248,14 +254,14 @@ class ThemeTypography extends Typography {
         'Noto Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 22.0,
+        fontSize: width <= 398 ? 20 : 22.0,
       );
   String get titleMediumFamily => 'Noto Sans';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Noto Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 18.0,
+        fontSize: width <= 398 ? 16 : 18.0,
       );
   String get titleSmallFamily => 'Noto Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(

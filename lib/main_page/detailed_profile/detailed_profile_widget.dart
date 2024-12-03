@@ -559,10 +559,10 @@ class _DetailedProfileWidgetState extends State<DetailedProfileWidget>
                                                                           'i  pergjithshem',
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .titleMedium
+                                                                            .titleLarge
                                                                             .override(
                                                                               fontFamily: 'Noto Sans',
-                                                                              fontSize: 22.0,
+                                                                              fontWeight: FontWeight.w600,
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
